@@ -1,0 +1,33 @@
+Boost
+When project start, the boost_1.55 was available. And working.
+
+We did not test with boost 1.56, but 1.57 is also working
+
+If you wish to use boost 1.55, please refer to the page [Cross compile Boost 1.55] (configuration changes from 1.56)
+
+Cross compile Boost 1.57
+
+Boost must be cross compiled because the apt-get do not provide all requested libraries.
+
+Download boost_1_57_0.tar.bz2
+
+Extract it
+    tar xjf boost_1_57_0.tar.bz2
+
+Create bootstrap
+    cd boost_1_57_0
+
+    ./bootstrap.sh
+Create the user-config.jam in your home directory
+
+    vi ~/user-config.jam
+
+        using gcc : arm : arm-linux-gnueabihf-g++ ;
+
+Cross compile boost (only useful libraries)
+
+    ./b2 --with-atomic --with-system --with-filesystem --with-thread --with-date_time --with-chrono --with-program_options --with-regex toolset=gcc-arm link=shared toolset=gcc-arm
+
+in behtare
+
+ ./bjam install toolset=gcc-arm   --prefix=/home/qasem/Development/raspi/sysroot
