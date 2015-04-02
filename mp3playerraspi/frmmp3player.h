@@ -21,9 +21,14 @@ private slots:
 
     void on_btnStop_clicked();
 
+    void on_btnpause_clicked();
+    void onPositionTracking(float percentage);
+    void onPlayerStatus(int statuscode);
+
 private:
     Ui::frmmp3player *ui;
     mp3Admin *_mp3Admin ;
+
 };
 
 #endif // FRMMP3PLAYER_H
