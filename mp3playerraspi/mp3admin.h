@@ -17,6 +17,7 @@ class mp3Admin: public QObject
 public:
     static bool _play;
     explicit mp3Admin(QObject *parent = 0);
+    ~mp3Admin();
 
     void playLocal(QString actualSongPath);
     bool getPlayFlag();

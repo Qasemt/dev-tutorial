@@ -16,7 +16,9 @@ frmmp3player::frmmp3player(QWidget *parent) :
 
 frmmp3player::~frmmp3player()
 {
+    delete _mp3Admin;
     delete ui;
+
 }
 
 void frmmp3player::on_btnPlay_clicked()

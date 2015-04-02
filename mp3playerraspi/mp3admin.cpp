@@ -9,6 +9,12 @@ mp3Admin::mp3Admin(QObject *parent) :QObject(parent)
     QObject::connect(_timerTracking,SIGNAL(timeout()),this,SLOT(timeout_timerTracking()));
 }
 
+mp3Admin::~mp3Admin()
+{
+    _timerTracking->stop();
+    delete _timerTracking;
+}
+
 //----------------------------------------------------------LOGICA DE GSTREAMER------------------------------------
 
 extern "C" gboolean timeout_callback(gpointer data);
