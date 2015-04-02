@@ -23,11 +23,11 @@ PKGCONFIG += gstreamer-0.10
 SOURCES += main.cpp\
         mainwindow.cpp \
     mp3admin.cpp \
-    frmplayer.cpp
+    frmmp3player.cpp
 
 HEADERS  += mainwindow.h \
     mp3admin.h \
-    frmplayer.h
+    frmmp3player.h
 
 FORMS    += mainwindow.ui \
-    frmplayer.ui
+    frmmp3player.ui

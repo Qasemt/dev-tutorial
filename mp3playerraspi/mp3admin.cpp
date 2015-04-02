@@ -301,25 +301,26 @@ void mp3Admin::playLocal(QString actualSongPath)
         /* we add all elements into the pipeline */
         /* file-source | mp3-decoder | converter | resample | alsa-output */
         gst_bin_add_many (GST_BIN (pipelineLocal), source, decoder, conv, resample, sink, NULL);
-
+        qDebug()<<"Test5";
         /* we link the elements together */
         /* file-source -> mp3-decoder -> converter -> resample -> alsa-output */
         gst_element_link_many (source, decoder, conv, sink, NULL);
 
         /* Set the pipeline to "playing" state*/
-        g_print ("Now playing: %s\n", _actualSongPath);
-        gst_element_set_state (pipelineLocal, GST_STATE_PLAYING);
+        qDebug()<<"Now playing:"<< _actualSongPath;
+         gst_element_set_state (pipelineLocal, GST_STATE_PLAYING);
 
         /* Iterate */
-        g_print ("Running...\n");
+        qDebug()<<"Running...";
+
         g_timeout_add (100 , timeout_callback , loop);
         g_main_loop_run (loop);
 
         /* Out of the main loop, clean up nicely */
-        g_print ("Returned, playping playback\n");
+        qDebug()<<"Returned, playping playback\n";
         gst_element_set_state (pipelineLocal, GST_STATE_NULL);
-        g_print ("Deleting pipeline\n");
+        qDebug()<<"Deleting pipeline\n";
         gst_object_unref (GST_OBJECT (pipelineLocal));
-        g_print ("Song has ended\n");
+        qDebug()<<"Song has ended\n";
     }
 }
