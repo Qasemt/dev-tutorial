@@ -1,0 +1,19 @@
+export QT_PLUGIN_PATH=/usr/local/Trolltech/Qt-4.8.6-raspi/plugins/
+export QT_PLUGIN_PATH=/usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend
+
+
+
+ldconfig -p | grep libjpeg
+
+apt-get install phonon-backend-vlc
+apt-get remove phonon-backend-gstreamer
+
+sudo ln -s /usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend /usr/local/Trolltech/Qt-4.8.6-raspi/plugins/phonon_backend
+
+
+sudo ln -s /usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend /usr/bin
+sudo ln -s /usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend /root/phonon_backend
+
+sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf 
+
+
