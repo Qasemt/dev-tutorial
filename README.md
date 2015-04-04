@@ -24,3 +24,16 @@ aplay /usr/share/sounds/alsa/Front_Center.wav
 
 sound card info
 amixer 
+
+
+
+scp -r /home/qasem/Development/BeagleBone/sysroot root@192.168.1.56:~/sysroot
+
+
+ssh root@192.168.1.56
+
+# mkdir -p /usr/local/Trolltech/Qt-4.8.6-beaglebone
+# exit
+
+scp -r /usr/local/Trolltech/Qt-4.8.6-beaglebone/lib/ root@192.168.1.56:/usr/local/Trolltech/Qt-4.8.6-beaglebone
+scp -r /usr/local/Trolltech/Qt-4.8.6-beaglebone/plugins/ root@ 192.168.1.56:/usr/local/Trolltech/Qt-4.8.6-beaglebone
