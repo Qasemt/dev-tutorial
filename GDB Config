@@ -1,0 +1,12 @@
+apt-get install gdbserver
+
+
+
+
+install on the host computer
+sudo apt-get install gdb-multiarch
+and ->
+
+qtcreator ->Build&Run -> Debubggers 
+name = cross-GDB 
+path = /usr/bin/gdb-multiarch
