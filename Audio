@@ -1,0 +1,6 @@
+ aplay -L
+ 
+ 
+ speaker-test -D default:Balck (or headset)
+ 
+ install alsa-utils
