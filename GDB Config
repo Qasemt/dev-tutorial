@@ -1,3 +1,4 @@
+install on the target if not installed
 apt-get install gdbserver
 
 
