@@ -13,6 +13,12 @@ nano /boot/uboot/uEnv.txt
 
 in khato be file ezafe konid
 optargs=text (for Whezzy) 
+
+
+baray run shodan desktop
+sudo ligthdm (Wheezy)
+sudo systemctl start graphical.target (Jessie)
+
 =======================================================================
 
 
