@@ -4,3 +4,10 @@
  speaker-test -D default:Balck (or headset)
  
  install alsa-utils
+=========================================== BBB ======================================
+be to pish farz gstreame roy bbb nasbe faghat in 
+packe gstreamer0.10-plugins-ugly baray decoder [mad] nasb kon
+
+sudo apt-get install gstreamer0.10-plugins-ugly
+
+****************************************************************
