@@ -2,6 +2,10 @@ export QT_PLUGIN_PATH=/usr/local/Trolltech/Qt-4.8.6-raspi/plugins/
 export QT_PLUGIN_PATH=/usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend
 
 
+//----------------------------- beaglebone black -----------------
+(usb ip )BBB using default 192.168.7.2 IP after installing drivers for this board. 
+
+
 
 ldconfig -p | grep libjpeg
 
@@ -31,13 +35,20 @@ sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 scp -r /home/qasem/Development/BeagleBone/sysroot root@192.168.1.56:~/sysroot
 
 change password : passwd
-
-
+nano /etc/profile
+-----------------------------------
+if [ "`id -u`" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/Trolltech/Qt-4.8.6-beaglebone/lib"
+else
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/usr/local/Trolltech/Qt-4.8.6-beaglebone/lib"
+fi
+export PATH
+-----------------------------------
 ssh root@192.168.1.56
 
 # mkdir -p /usr/local/Trolltech/Qt-4.8.6-beaglebone
 # exit
-
+scp -r /media/Q8/1.mp3 root@192.168.1.56:/home/debian/
 scp -r /usr/local/Trolltech/Qt-4.8.6-beaglebone/lib/ root@192.168.1.56:/usr/local/Trolltech/Qt-4.8.6-beaglebone
 scp -r /usr/local/Trolltech/Qt-4.8.6-beaglebone/plugins/ root@192.168.1.56:/usr/local/Trolltech/Qt-4.8.6-beaglebone
 scp /home/qasem/Development/BeagleBone/sysroot/lib/libffi.* root@192.168.1.56:/usr/lib/
