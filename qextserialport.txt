@@ -6,3 +6,7 @@ cd qextserialport-build
 /opt/qt4.8.6/bin/qmake ../qextserialport/qextserialport.pro
 make -j4
 sudo make install
+
+--------------------------BBB------------------
+/usr/local/Trolltech/Qt-4.8.6-beaglebone/bin/qmake ../qextserialport/qextserialport.pro
+
