@@ -1,0 +1,8 @@
+git clone https://github.com/qextserialport/qextserialport.git
+or 
+git clone https://github.com/Qasemt/qextserialport.git
+mkdir qextserialport-build
+cd qextserialport-build
+/opt/qt4.8.6/bin/qmake ../qextserialport/qextserialport.pro
+make -j4
+sudo make install
