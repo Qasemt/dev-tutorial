@@ -6,7 +6,8 @@
   
   
   ----------
-  sudo apt-get install tree
+sudo apt-get install tree
+tree /sys/bus/usb/drivers
   ├── pl2303
 │   ├── 1-2.1:1.0 -> ../../../../devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb1/1-2/1-2.1/1-2.1:1.0
 │   ├── bind
@@ -17,7 +18,7 @@
 
 So 1-2.1:1.0 is the identifier of my ttyUSB0(it can be discovered also via dmesg).
 
-  tree /sys/bus/usb/drivers
+
   disconnect the device (as root):
   echo -n "1-1:1.1" > /sys/bus/usb/drivers/pl2303/unbind
   
