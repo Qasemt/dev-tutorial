@@ -1,0 +1,3 @@
+ ls /sys/bus/usb-serial/devices/ -ltrah
+ 
+ dmesg | grep tty*
