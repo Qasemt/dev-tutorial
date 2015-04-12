@@ -2,7 +2,13 @@
 source link :
 http://serverfault.com/questions/326268/python-new-install-showing-error-while-loading-shared-libraries
 
-
+--------------------------------
+ldconfig creates the necessary links and cache to the most recent shared libraries
+found in the directories specified on the command line, in the file /etc/ld.so.conf, and in the trusted
+directories (/lib and /usr/lib). The cache is used by the run-time linker, ld.so or ld-linux.so. ldconfig
+checks the header and filenames of the libraries it encounters when determining which versions should have
+their links updated.
+--------------------------------------
 #echo "/usr/local/Trolltech/geo123/lib" > /etc/ld.so.conf.d/gdal.conf
 
 #echo "/usr/local/softwares/vtl" > /etc/ld.so.conf.d/vtl.conf
