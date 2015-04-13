@@ -1,3 +1,5 @@
+http://mrmamba.stack-overflow.net/post/39740092452/upstart-disable-service-from-starting-up-during
+ echo  "manual" | sudo tee -a /etc/init/lightdm.override
 # update-rc.d -f gdm remove
 
 To restore it back:
