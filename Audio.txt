@@ -15,3 +15,5 @@ sudo apt-get install gstreamer0.10-plugins-ugly
 apt-get install gstreamer0.10-plugins-good 
 
 apt-get install gstreamer0.10-tools 
+-----------------optional install --------------------
+apt-get install gstreamer0.10-plugins-bad 
