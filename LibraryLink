@@ -11,6 +11,8 @@ their links updated.
 --------------------------------------
 #echo "/usr/local/Trolltech/geo123/lib" > /etc/ld.so.conf.d/gdal.conf
 
+#echo "/usr/local/Trolltech/g123cubie2/lib" > /etc/ld.so.conf.d/g.conf
+
 #echo "/usr/local/softwares/vtl" > /etc/ld.so.conf.d/vtl.conf
 
 #ldconfig
