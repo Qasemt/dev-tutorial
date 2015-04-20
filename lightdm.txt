@@ -1,14 +1,7 @@
-http://mrmamba.stack-overflow.net/post/39740092452/upstart-disable-service-from-starting-up-during
- echo  "manual" | sudo tee -a /etc/init/lightdm.override
-# update-rc.d -f gdm remove
-
-To restore it back:
-# update-rc.d -f gdm defaults
-
 ///-------------------------- Genral for all boards ------------------
 sudo update-rc.d lightdm disable
 sudo update-rc.d lightdm enable
-///---------------------------- or ------------------------------------
+///---------------------------- or bbb ------------------------------------
 (usb ip )BBB using default 192.168.7.2 IP after installing drivers for this board. 
 
 Disable kardan lightdm (desktop defualt debian )
