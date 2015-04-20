@@ -1,3 +1,6 @@
+ ///-------------------------- stop / start manual ------------------
+ sudo service lightdm start
+  sudo service lightdm stop
 ///-------------------------- Genral for all boards ------------------
 sudo update-rc.d lightdm disable
 sudo update-rc.d lightdm enable
