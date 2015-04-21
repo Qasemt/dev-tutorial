@@ -1,0 +1,29 @@
+sudo nano /etc/init.d/vtlstart
+
+#! /bin/sh
+# /etc/init.d/vtlstart
+#
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+start)
+    su root  -c '/usr/local/softwares/vtl/vtlcore -qws'
+    echo "Starting vtlcore "
+    ;;
+stop)
+    pkill vtlcore
+    echo "vtlcore  has been stopped (didn't double check though)"
+    ;;
+*)
+    echo "Usage: /etc/init.d/blah {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
+----------------------------------------------------
+sudo /etc/init.d/vtlstart start
+cd /etc/init.d
+sudo update-rc.d vtlstart defaults
+
