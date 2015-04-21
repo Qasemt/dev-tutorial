@@ -26,4 +26,8 @@ exit 0
 sudo /etc/init.d/vtlstart start
 cd /etc/init.d
 sudo update-rc.d vtlstart defaults
+-------------------------------------------------
+
+sudo update-rc.d vtlstart disable
+sudo update-rc.d vtlstart enable
 
