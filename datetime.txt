@@ -14,7 +14,7 @@ source : http://derekmolloy.ie/automatically-setting-the-beaglebone-black-time-u
 
 
 rm /etc/localtime
-ln -s /usr/share/zoneinfo/iran /etc/localtime
+ln -s /usr/share/zoneinfo/Iran /etc/localtime
 
 for check
 #ls -al|grep localtime
