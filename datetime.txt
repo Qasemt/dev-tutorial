@@ -20,4 +20,8 @@ for check
 #ls -al|grep localtime
  lrwxrwxrwx  1 root root      24 Apr 22 10:02 localtime -> /usr/share/zoneinfo/iran
 
+
+Update from the command line against a time server
+You can update the clock manually, without the need of the daemon with ntpdate
+ntpdate 129.6.15.28
  
