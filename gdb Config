@@ -17,3 +17,4 @@ path = /usr/bin/gdb-multiarch
 qtcreator ->Devices  ->select device (BBB) -> GDB server exexcutable : [gdbserver]
 
 
+Build&Run->Kits->Sysroot =>/home/qasem/Development/[cubie2]/sysroot/
