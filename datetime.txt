@@ -1,0 +1,23 @@
+date +%Y%m%d -s "20150422"
+Set time from the command line
+
+date +%T -s "11:14:00"
+Set time and date from the command line
+
+date -s "19 APR 2012 11:14:00"
+Linux check date from command line
+
+date
+
+-----------------------------------------
+source : http://derekmolloy.ie/automatically-setting-the-beaglebone-black-time-using-ntp/
+
+
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/iran /etc/localtime
+
+for check
+#ls -al|grep localtime
+ lrwxrwxrwx  1 root root      24 Apr 22 10:02 localtime -> /usr/share/zoneinfo/iran
+
+ 
