@@ -1,0 +1,14 @@
+
+
+
+sudo dpkg-reconfigure locales
+
+The following packages have unmet dependencies:
+ libc6 : Depends: libc-bin (= 2.11.3-4) but 2.13-38+deb7u1 is installed
+ locales : Depends: glibc-2.13-1
+ nscd : Depends: libc6 (> 2.13) but 2.11.3-4 is installed
+E: Unmet dependencies. Try using -f.
+
+agar error glibc ro dad az command install glibc.txt estefade kon 
+------------- baad dobare in cmd ra run konid--------------------------
+sudo dpkg-reconfigure locales
