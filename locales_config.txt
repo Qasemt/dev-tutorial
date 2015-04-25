@@ -12,3 +12,7 @@ E: Unmet dependencies. Try using -f.
 agar error glibc ro dad az command install glibc.txt estefade kon 
 ------------- baad dobare in cmd ra run konid--------------------------
 sudo dpkg-reconfigure locales
+
+
+baray test 
+ locale -a
