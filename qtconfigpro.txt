@@ -1,3 +1,5 @@
+http://stackoverflow.com/questions/24912778/qtcreator-kit-specific-precompiler-macro-definitions
+
 CONFIG(debug, debug|release): DEFINES += _debug
 CONFIG(debug, debug|release): DEFINES += _release
 CONFIG(cubie2, desktoplinux4|cubie2): DEFINES += PLATFORM_CUBIE2
