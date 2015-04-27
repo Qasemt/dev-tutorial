@@ -1,6 +1,14 @@
 sudo nano /etc/init.d/vtlstart
 
 #! /bin/sh
+### BEGIN INIT INFO
+# Provides:          vtlstart
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: vtlstart
+### END INIT INFO
 # /etc/init.d/vtlstart
 #
 
@@ -26,6 +34,7 @@ exit 0
 sudo /etc/init.d/vtlstart start
 cd /etc/init.d
 sudo update-rc.d vtlstart defaults
+sudo update-rc.d vtlstart defaults 98 02
 -------------------------------------------------
 
 sudo update-rc.d vtlstart disable
