@@ -9,6 +9,9 @@ Linux check date from command line
 
 date
 
+time zone query :
+date +%Z
+
 -----------------------------------------
 source : http://derekmolloy.ie/automatically-setting-the-beaglebone-black-time-using-ntp/
 
