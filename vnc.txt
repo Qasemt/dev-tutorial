@@ -65,4 +65,8 @@ You will then be prompted to enter a new password twice. Choose your new vnc ser
 
 
 service vncserver restart
+----------------------------------------------------------------XRDP-----------------------
+To install xrdp on a Raspberry Pi running Raspbian use:
+
+sudo apt-get install xrdp
 
