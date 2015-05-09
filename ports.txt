@@ -24,3 +24,12 @@ So 1-2.1:1.0 is the identifier of my ttyUSB0(it can be discovered also via dmesg
   
   reconnect it
   echo -n "1-1:1.1" > /sys/bus/usb/drivers/cp210x/bind
+---------------------------------------------------------------------------------
+enable uart 1 to 5 for beaglebone black 
+root@beaglebone:~# vi /boot/uboot/uEnv.txt
+Scroll down until you see this section of lines:
+#cape_enable=capemgr.enable_partno=
+edit to 
+cape_enable=capemgr.enable_partno=BB-UART1,BB-UART2,BB-UART4, BB-UART5
+exit and save 
+ ls -l /dev/ttyO*
