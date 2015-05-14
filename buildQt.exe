@@ -1,5 +1,0 @@
-
---------------- Qt 4.8.6 ------------
-./configure -v -opensource -confirm-license -prefix /opt/qt4.8.6  -nomake examples  -nomake demos 
-make -j3
-sudo make install
