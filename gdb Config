@@ -31,3 +31,10 @@ cd gdb*
 ./configure --prefix /usr/local/bin/gdb-python2 --with-python
 make
 make install
+
+agar bar tarf nashod man ba in ravesh javab gerftam
+apt-get remove gdb 
+apt-get install gdb
+agar baz error dad 
+version QT creator ra avaz konid ke man be 3.4.0 ertegha dadam
+--------------------------------------------------------------------------------------------
