@@ -3,6 +3,8 @@
  
  speaker-test -D default:Balck (or headset)
  
+ source : http://wiki.laptop.org/go/Fluendo_mp3_decoder
+ 
  install alsa-utils
  apt-cache search ^gstreamer
 =========================================== BBB ======================================
