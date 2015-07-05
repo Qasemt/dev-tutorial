@@ -26,3 +26,14 @@ POWERDOWN_TIME=0
 I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone else probably knows the nuances better.
 
 shareimprove this answer
+
+/////------------------------------
+------------------------behtarin source -----------------------------
+source khob : http://alexba.in/blog/2013/01/07/use-your-raspberrypi-to-power-a-company-dashboard/
+
+ghable hame bayad vtlrun.bash ro 
+ba dastor zire ejrayee kkoni -> chmod +x vtlrun.bash
+
+nano  ~/.config/lxsession/LXDE/autostart 
+and add this code 
+vtlrun.bash
