@@ -36,3 +36,6 @@ exit and save
  ls -l /dev/ttyO*
  ----------------------------------- Port test ---------------------
  root@beaglebone:~# minicom -D /dev/ttyO2 -b 115200
+ 
+ ---------------------------------- cubie boards-=------------------------
+ http://homeduino.blogspot.nl/2014/05/cubieboard-lubuntu-open-uart.html
