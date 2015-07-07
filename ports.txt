@@ -40,3 +40,6 @@ exit and save
 ****************************************************************************** 
  ---------------------------------- cubie boards-=------------------------
  http://homeduino.blogspot.nl/2014/05/cubieboard-lubuntu-open-uart.html
+ 
+ https://abhinavgupta2812.wordpress.com/2013/08/27/configuring-the-gpio-and-uart-on-the-cubieboard/
+ -------------------------------------------------------------------------
