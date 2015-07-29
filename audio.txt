@@ -1,3 +1,7 @@
+ apt-get install mplayer 
+ # play mp3 file
+ mplayer -ao alsa:device=default=Device /usr/local/softwares/1.mp3
+ 
  aplay -L
  
  
