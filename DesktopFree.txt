@@ -30,10 +30,14 @@ shareimprove this answer
 /////------------------------------
 ------------------------behtarin source -----------------------------
 source khob : http://alexba.in/blog/2013/01/07/use-your-raspberrypi-to-power-a-company-dashboard/
+nano ~/vtlrun.bash
+----
+/usr/local/softwares/vtl/vtlcore -qws
+----
 
 ghable hame bayad vtlrun.bash ro 
 ba dastor zire ejrayee kkoni -> chmod +x vtlrun.bash
 
 nano  ~/.config/lxsession/LXDE/autostart 
 and add this code 
-vtlrun.bash
+~/vtlrun.bash
