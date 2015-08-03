@@ -41,3 +41,9 @@ ba dastor zire ejrayee kkoni -> chmod +x vtlrun.bash
 nano  ~/.config/lxsession/LXDE/autostart 
 and add this code 
 ~/vtlrun.bash
+===================== Remove cursor mouse === behtarin method =============== حتما از این روش استفاده کن
+nano /etc/lightdm/lightdm.conf
+in tago pida kon 
+xserver-command=X -bs -core -nocursor
+source :: http://askubuntu.com/questions/157134/how-to-hide-the-mouse-cursor
+
