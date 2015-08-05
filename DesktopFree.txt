@@ -45,5 +45,7 @@ and add this code
 nano /etc/lightdm/lightdm.conf
 in tago pida kon 
 xserver-command=X -bs -core -nocursor
+and 
+autologin-user= root
 source :: http://askubuntu.com/questions/157134/how-to-hide-the-mouse-cursor
 
