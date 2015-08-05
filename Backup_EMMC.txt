@@ -1,0 +1,17 @@
+host Requierment:
+sudo apt-get install openssh-client openssh-server
+check servic ssh : # service ssh status 
+
+get ip : ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://'
+
+
+ sudo dd if=/dev/mmcblk0 bs=1M | ssh -t -t  qasem@192.168.1.26   " dd of=/Users/qasem/Desktop/BBB_Backup_date.img bs=1m"
+
+
+
+Fire this command:
+
+sudo iptables -L
+and what do you see? If you are seeing that no traffic is allowed. In that case if that's true, then
+
+sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
