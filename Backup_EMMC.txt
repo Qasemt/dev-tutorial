@@ -9,7 +9,7 @@ get ip : ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://'
 ------------------------------------------------
 
 ----------- in board ---------------------------
-sudo dd if=/dev/mmcblk0 bs=1M | ssh -t -t  qasem@192.168.1.26   " dd of=/Users/qasem/Desktop/BBB_Backup_date.img bs=1m"
+sudo dd if=/dev/mmcblk0 bs=1M | ssh   hamed@192.168.1.1 "dd of=/home/hamed/a12/BBB_Backup_date.img bs=1M"
 
 
 
