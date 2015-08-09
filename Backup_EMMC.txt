@@ -1,4 +1,4 @@
-
+https://github.com/slayersoft/MineNinja/wiki/Flashing-the-BeagleBone-eMMc
 --------------host Requierment----------------
 sudo apt-get install openssh-client openssh-server
 check servic ssh : # service ssh status 
