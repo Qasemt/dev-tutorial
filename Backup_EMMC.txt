@@ -2,6 +2,7 @@
 source : 
 https://github.com/slayersoft/MineNinja/wiki/Flashing-the-BeagleBone-eMMc
 https://www.mail-archive.com/beagleboard@googlegroups.com/msg24103.html
+http://www.circuidipity.com/getting-started-with-beaglebone-black.html
 --------------host Requierment----------------
 sudo apt-get install openssh-client openssh-server
 check servic ssh : # service ssh status 
