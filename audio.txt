@@ -1,7 +1,16 @@
- apt-get install mplayer 
+ 
+ 
  # play mp3 file
  mplayer -ao alsa:device=default=Device /usr/local/softwares/1.mp3
- 
+ ----------------------------------------
+ agar error [[[codec audio codec family [mpg123] (afm=mpg123) not available] dad in command ro ejra kon
+ source : https://linuxindetails.wordpress.com/2011/09/24/audio-codec-family-mpg123-afmmpg123-not-available/
+ root@localhost:~#apt-get install libmpg123-0
+ Then, enable the use of this codec within your own mplayer configuration file :
+
+fool@localhost:~$echo "afm=mp3lib" >> ~/.mplayer/config
+
+------------------------------------
  aplay -L
  
  
