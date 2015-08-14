@@ -33,8 +33,7 @@ reboot kon
 
 bad az reboot dobare porte eshghal mishe 
 va address morede nazar besorate [[[[  UU  ]]] dide mishe 
-agar [i2cdetect -y 1] run kardi va in payam ro dad 
-    0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
 10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
