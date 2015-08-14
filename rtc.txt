@@ -1,0 +1,21 @@
+agar [i2cdetect -y 0] i2cdetect -y1 ro ejra kardi var in error dad ->
+Error: Could not open file `/dev/i2c-0' or `/dev/i2c/0': No such file or directory
+az in method estefade bekon ta dorost she (i2c enable nist) 
+---------------------------------------------------------------------------
+In case someone else is experiencing the same issue.
+
+From http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=97257
+
+Model A & B users should add this to /boot/config.txt
+device_tree=bcm2708-rpi-b.dtb
+device_tree_param=i2c1=on
+device_tree_param=spi=on
+
+reboot
+Model A+ & B+ users should add this to /boot/config.txt
+device_tree=bcm2708-rpi-b-plus.dtb
+device_tree_param=i2c1=on
+device_tree_param=spi=on
+
+reboot
+---------------------------------------------------------------------------------------------------------------------
