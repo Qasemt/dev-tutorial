@@ -1,3 +1,31 @@
+
+# enable i2c to pi 
+sudo raspi-config
+>> advanced config >> I2c >> yes >> yes 
+
+
+nano  /etc/modules
+=====================
+#snd-bcm2835
+i2c-bcm2708
+i2c-dev
+rtc_ds1307
+
+nano  /etc/modprobe.d/raspi-blacklist.conf
+=====================
+blacklist spi-bcm2708
+#blacklist i2c-bcm2708
+
+apt-get install i2c-tools
+
+pin hay i2c moudle ro be board raspberry pi vasl kon (agar board 3 volte be pin 3 volte board pi vasl kon )
+
+reboot kon 
+
+
+
+
+
 agar [i2cdetect -y 0] i2cdetect -y1 ro ejra kardi var in error dad ->
 Error: Could not open file `/dev/i2c-0' or `/dev/i2c/0': No such file or directory
 az in method estefade bekon ta dorost she (i2c enable nist) 
@@ -19,3 +47,15 @@ device_tree_param=spi=on
 
 reboot
 ---------------------------------------------------------------------------------------------------------------------
+agar [i2cdetect -y 1] run kardi va in payam ro dad 
+    0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --   
+be khatere ine ke voltage 5 volt be rtc dadi va bayad pin vcc rtc ro be pin 3.5 volte board vasl konie.
+------------------------------------------------------------------------------
