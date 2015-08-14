@@ -1,3 +1,5 @@
+best source :
+http://www.raspberrypi-spy.co.uk/2015/05/adding-a-ds3231-real-time-clock-to-the-raspberry-pi/
 
 # enable i2c to pi 
 sudo raspi-config
@@ -18,11 +20,26 @@ blacklist spi-bcm2708
 
 apt-get install i2c-tools
 
-pin hay i2c moudle ro be board raspberry pi vasl kon (agar board 3 volte be pin 3 volte board pi vasl kon )
+pin hay i2c moudle ro be board raspberry pi vasl kon (pin vcc ro  pin (3 volte) board pi vasl kon )
 
+
+===============================================
+sudo nano /etc/rc.local
+echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
+hwclock -s
+
+=============
 reboot kon 
 
-
+bad az reboot dobare porte eshghal mishe 
+va address morede nazar besorate [[[[  UU  ]]] dide mishe 
+agar [i2cdetect -y 1] run kardi va in payam ro dad 
+    0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 
+=======================================
 
 
 
