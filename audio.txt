@@ -33,3 +33,8 @@ apt-get install gstreamer0.10-plugins-good
 apt-get install gstreamer0.10-tools 
 -----------------optional install --------------------
 apt-get install gstreamer0.10-plugins-bad 
+++++++++++++++++++++++ USB Audio Config +++++++++++++++
+baray inke gstream betone voice ro az usb pakhsh kone bayad
+asla ro be in sorate config koni 
+root@beaglebone:~# nano .asoundrc 
+pcm.!default sysdefault:Device
