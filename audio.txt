@@ -1,7 +1,11 @@
  
+ wget https://cdn.shopify.com/s/files/1/0062/6682/files/sample.wav
+ wget http://www.nch.com.au/acm/sample.wav
+
  
  # play mp3 file
  mplayer -ao alsa:device=default=Device /usr/local/softwares/1.mp3
+ ffmpeg -i test2.mp3  -f alsa "default:CARD=Black" -re -vol 20
  ----------------------------------------
  agar error [[[codec audio codec family [mpg123] (afm=mpg123) not available] dad in command ro ejra kon
  source : https://linuxindetails.wordpress.com/2011/09/24/audio-codec-family-mpg123-afmmpg123-not-available/
