@@ -4,6 +4,7 @@ http://elinux.org/RPI-Wireless-Hotspot(best)
 http://dev.ardupilot.com/wiki/companion-computers/raspberry-pi-via-mavlink/making-a-mavlink-wifi-bridge-using-the-raspberry-pi/
 
 https://learn.adafruit.com/setting-up-a-raspberry-pi-as-a-wifi-access-point/install-software (best)
+
 -----------------------------------------------------
 hatman be in wifi ro injor /etc/network/interfaces  tarif koni 
 va nabayad be wifi digar vasl bashad ...
@@ -11,6 +12,11 @@ va nabayad be wifi digar vasl bashad ...
 iface wlan0 inet static
   address 192.168.42.1
   netmask 255.255.255.0
+  ---------------------------------------------------------
+run sudo nano /etc/network/interfaces and add 
+ up iptables-restore < /etc/iptables.ipv4.nat
+to the very end
+
   ----------------- sample my rasp -------------------------
   auto lo
 
@@ -19,7 +25,9 @@ iface eth0 inet static
 address 192.168.1.56
 netmask 255.255.255.0
 gateway 192.168.1.210
-#------------------------------------------
+
+
+
 #auto wlan0
 #allow-hotplug wlan0
 #iface wlan0 inet static
@@ -29,9 +37,17 @@ gateway 192.168.1.210
 #wpa-passphrase 4321wifi!@#$
 #wpa-ssid Raspberry
 
+
+
+allow-hotplug wlan0
 iface wlan0 inet static
-address 192.168.1.1
+address 192.168.1.111
 netmask 255.255.255.0
+
+
+up iptables-restore < /etc/iptables.ipv4.nat
+
+
 
 //-----------------------------------
 apt-get install hostapd
