@@ -1,6 +1,9 @@
 http://willhaley.com/willhaley/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/
 https://www.maketecheasier.com/set-up-raspberry-pi-as-wireless-access-point/
 http://elinux.org/RPI-Wireless-Hotspot(best)
+http://dev.ardupilot.com/wiki/companion-computers/raspberry-pi-via-mavlink/making-a-mavlink-wifi-bridge-using-the-raspberry-pi/
+
+https://learn.adafruit.com/setting-up-a-raspberry-pi-as-a-wifi-access-point/install-software (best)
 -----------------------------------------------------
 hatman be in wifi ro injor /etc/network/interfaces  tarif koni 
 va nabayad be wifi digar vasl bashad ...
@@ -73,6 +76,20 @@ option domain-name "local";
 option domain-name-servers 8.8.8.8, 8.8.4.4;
 }
 
+-------------------- 
+noke hamzan nemishavad ham ethernet va wifi esftedae kard 
+baray test dhcp server 
 
 
+Run the following commands
+ sudo service hostapd start 
+sudo service isc-dhcp-server start
 
+you can always check the status of the host AP server and the DHCP server with
+ sudo service hostapd status
+sudo service isc-dhcp-server status
+
+To start the daemon services. Verify that they both start successfully (no 'failure' or 'errors')
+Then to make it so it runs every time on boot
+ sudo update-rc.d hostapd enable 
+sudo update-rc.d isc-dhcp-server enable
