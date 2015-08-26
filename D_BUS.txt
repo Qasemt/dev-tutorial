@@ -4,3 +4,10 @@ test sender hay ke debus ersal mikonad bayad [string "org.freedesktop.UDisks"] d
  
  
 sudo dbus-monitor --system
+agar  [string "org.freedesktop.UDisks"] dar listnames bbb nabod in karo anjam bede
+
+config bbb 
+--begin--
+apt-get install  udisks --reinstall
+apt-get install   udisks-glue
+--end--
