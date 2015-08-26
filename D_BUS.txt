@@ -1,1 +1,6 @@
 sudo apt-get install usbmount 
+test sender hay ke debus ersal mikonad bayad [string "org.freedesktop.UDisks"] dar list bashad .
+ sudo dbus-send --system --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ListNames
+ 
+ 
+sudo dbus-monitor --system
