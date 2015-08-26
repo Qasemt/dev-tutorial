@@ -19,3 +19,6 @@ Device file /dev/sdb1 inserted
 Trying to automount /dev/sdb1...
 Failed to automount /dev/sdb1: Not Authorized
 Device file /dev/sdb inserted
+
+-------------
+sudo lsblk -f
