@@ -11,3 +11,11 @@ config bbb
 apt-get install  udisks --reinstall
 apt-get install   udisks-glue
 --end--
+
+ su pi -c "/usr/bin/udisks-glue -f"
+you'd probably see something like:
+
+Device file /dev/sdb1 inserted
+Trying to automount /dev/sdb1...
+Failed to automount /dev/sdb1: Not Authorized
+Device file /dev/sdb inserted
