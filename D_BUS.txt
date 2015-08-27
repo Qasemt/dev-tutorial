@@ -22,3 +22,15 @@ Device file /dev/sdb inserted
 
 -------------
 sudo lsblk -f
+http://askubuntu.com/questions/297412/how-do-i-make-udev-rules-work
+http://ubuntuforums.org/archive/index.php/t-502864.html
+
+sudo udevadm control --reload-rules
+sudo /etc/init.d/udev restart
+udevadm info --attribute-walk --name /dev/sdb?
+sudo nano /etc/udev/rules.d/watchusb.rules
+
+ACTION=="add", KERNEL=="sd?", SUBSYSTEM=="usb", RUN+="/home/qasem/usbfinder.sh"
+mount |grep "sdb1" | grep "^$path" | awk '{print $3}'
+lsblk -nlo  mountpoint | grep  'media'
+
