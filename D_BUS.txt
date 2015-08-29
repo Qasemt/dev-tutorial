@@ -69,7 +69,9 @@ ACTION=="remove", KERNELS=="sdc2", RUN+="/lib/udev/myusblinker.sh KERNELS d5 rem
 ACTION=="remove", KERNELS=="sdc3", RUN+="/lib/udev/myusblinker.sh KERNELS d6 remove"
 
 ++++++++++
+ chmod +x /lib/udev/myusblinker.sh
 afater any changes run this command:
+
 sudo /etc/init.d/udev restart
 
 _________________________________________________________________________________________
