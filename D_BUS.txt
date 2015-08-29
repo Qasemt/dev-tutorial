@@ -21,7 +21,7 @@ sudo umount -l /media/$val1
 }
 
 
-logfile="/home/qasem/usb.txt"
+logfile="/root/usb.txt"
 
 echo "---------------------" >> $logfile
 src_mnt=$1 #sdc1 or sdb1 or sdb2 ....
@@ -29,6 +29,7 @@ src_mountpoint=$2 #/media/d1 ....
 action=$3 #add or remove usb
 
 if [[ $action == "add" ]];then
+rm $logfile
 add_mountusb $src_mnt $src_mountpoint
 echo "add flash drive >>> /media/$src_mountpoint/" >> $logfile
 
@@ -37,7 +38,10 @@ echo "Find pack ...."
 pathpack="/media/$src_mountpoint/packupdatecarpc/linuxscript.sh" 
 if [ -f $pathpack ];
 then 
+
 echo "File $pathpack exists" >> $logfile
+echo "Run $pathpack " >> $logfile
+bash  $pathpack /media/$src_mountpoint
 
 else
 echo "file $pathpack does not exists" >> $logfile
@@ -59,6 +63,9 @@ ACTION=="add", KERNELS=="sdc1", RUN+="/lib/udev/myusblinker.sh sdc1 d4 add"
 ACTION=="add", KERNELS=="sdc2", RUN+="/lib/udev/myusblinker.sh sdc2 d5 add"
 ACTION=="add", KERNELS=="sdc3", RUN+="/lib/udev/myusblinker.sh sdc3 d6 add"
 
+ACTION=="add", KERNELS=="sda1", RUN+="/lib/udev/myusblinker.sh sda1 d7 add"
+ACTION=="add", KERNELS=="sda2", RUN+="/lib/udev/myusblinker.sh sda2 d8 add"
+ACTION=="add", KERNELS=="sda3", RUN+="/lib/udev/myusblinker.sh sda3 d9 add"
 
 ACTION=="remove", KERNELS=="sdb1", RUN+="/lib/udev/myusblinker.sh KERNELS d1 remove"
 ACTION=="remove", KERNELS=="sdb2", RUN+="/lib/udev/myusblinker.sh KERNELS d2 remove"
@@ -68,6 +75,9 @@ ACTION=="remove", KERNELS=="sdc1", RUN+="/lib/udev/myusblinker.sh KERNELS d4 rem
 ACTION=="remove", KERNELS=="sdc2", RUN+="/lib/udev/myusblinker.sh KERNELS d5 remove"
 ACTION=="remove", KERNELS=="sdc3", RUN+="/lib/udev/myusblinker.sh KERNELS d6 remove"
 
+ACTION=="remove", KERNELS=="sda1", RUN+="/lib/udev/myusblinker.sh KERNELS d7 remove"
+ACTION=="remove", KERNELS=="sda2", RUN+="/lib/udev/myusblinker.sh KERNELS d8 remove"
+ACTION=="remove", KERNELS=="sda3", RUN+="/lib/udev/myusblinker.sh KERNELS d9 remove"
 ++++++++++
  chmod +x /lib/udev/myusblinker.sh
 afater any changes run this command:
