@@ -72,3 +72,5 @@ scp /home/qasem/Development/BeagleBone/sysroot/lib/libffi.* root@192.168.1.56:/u
 scp -d -r  /usr/local/Trolltech/geo123 root@192.168.1.56:/usr/local/Trolltech/
 
 scp Development/BeagleBone/sysroot/lib/libffi.* root@192.168.1.56:/usr/lib/
+
+zip -y -r vtl.zip ./vtl
