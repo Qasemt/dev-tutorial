@@ -46,7 +46,7 @@ echo $Result;
 
 copy_to_dev()
          {
-         logg "------------------- Cp --------------------"
+         logg "-------------------<< Cp >>--------------------"
          local a1=$1
          local a2=$2
          # name folder ra fetch mikonad
@@ -86,7 +86,7 @@ copy_to_dev()
 #_______________ Define Fileds ______________________________________________________
 
 
-Pack_Name="Pack.zip"
+Pack_Name="pack.tar.gz"
 MAIN_FOLDER="packupdatecarpc" # folder dakhele pack.zip 
 
 ##
@@ -141,7 +141,7 @@ logg "Do Extract file $d_Path_Pack_zip"
 extrpath="$BASE_DIR_PATH/"
 #echo $extrpath
 
-sudo unzip $d_Path_Pack_zip -d $extrpath
+sudo tar -xvzf $d_Path_Pack_zip -C $extrpath
 sudo chmod -R 777 .
 
 else
