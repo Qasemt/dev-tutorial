@@ -52,3 +52,4 @@ copy_folder  "$src_vtl_from_Device/$vtlfolder" "$dest/$main_folder"
 cd $dest
 create_pack 
 
+logg "________________ Finished ________________"
