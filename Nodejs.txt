@@ -8,3 +8,7 @@ npm uninstall -g node-inspector
 global path = /usr/local/lib/node_modules
 
 npm install <module> --save-dev
+
+========= Dependency pack for build ============
+npm install -g node-gyp
+npm install -g node-pre-gyp
