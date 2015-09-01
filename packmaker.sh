@@ -16,40 +16,60 @@ dest=/home/qasem/workingtemp
 		echo "$msg"
 	}
 
+        check_flags()
+	{
+		local  pstring=$1
+		local   Result=''
+		if [[ $pstring == *"\$"* ]]
+		then Result="\$"
+		elif [[ $pstring == *"#"* ]]
+		then Result="#"
+		else Result=""
+
+		fi
+		echo $Result;
+	}
+
 	copy_folder()
 	{
 		s=$1
 		d=$2
 		logg ">>>> Copy $s to $d"
-		rsync -av $s $d
-
+		#rsync -av $s $d
+                mkdir -p $d
+                res=$(check_flags $d)
+                if([[ "$res" != "\$" ]])
+			then
+	                rsync -av $s $d
+			fi
 	}
+
+        #not used
 	copy_folder_from_device()
 	{
 		s=$1
 		d=$2
 		logg ">>>> Copy $s to $d"
-		rsync -rpz -l $s $d
+		rsync -av -l $s $d
 
 	}
 
 	create_pack()
 	{
-        
-         tar -cvzf "$pack_folder"  $"$main_folder/"
+                tar -cvzf "$pack_folder"  $"$main_folder/"
 	}
-#---------------end -------------------------
-rm -r $dest
 
-mkdir -p $dest
-
-copy_folder "$src_from_host/$gisdatafolder" "$dest/$main_folder"
-copy_folder "$src_from_host/$datafolder" "$dest/$main_folder"
-copy_folder "$src_from_host/$voicesfolder" "$dest/$main_folder"
-copy_folder  "$src_vtl_from_Device/$vtlfolder" "$dest/$main_folder"
+	
+#-------------------- end -------------------------
+	rm -r $dest
+            mkdir -p $dest
+copy_folder "$src_from_host/$datafolder/*" "$dest/$main_folder/$datafolder$/"
+copy_folder "$src_from_host/$gisdatafolder/*" "$dest/$main_folder/$gisdatafolder#/"
+copy_folder "$src_from_host/$voicesfolder/*" "$dest/$main_folder/$voicesfolder#/"
+copy_folder  "$src_vtl_from_Device/$vtlfolder/*" "$dest/$main_folder/$vtlfolder/"
 
 
 cd $dest
 create_pack 
 
-logg "________________ Finished ________________"
+logg "---------------> Finished <---------------"
