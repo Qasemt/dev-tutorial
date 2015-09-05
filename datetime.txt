@@ -12,6 +12,15 @@ date
 time zone query :
 date +%Z
 
+
+date --utc
+ Sat Sep  5 07:57:50 UTC 2015
+
+
+I always keep my hardware clocks set to UTC/GMT. This maintains my clocks uniformly without any worries about "Daylight Savings Time". This is important, because when you set the hardware clock from the system clock (kept by the Linux kernel), you need to know if this is the case. To set the hardware clock from the system clock, leaving the hardware clock in UTC, enter the following: 
+
+
+# hwclock --systohc --utc
 -----------------------------------------
 source : http://derekmolloy.ie/automatically-setting-the-beaglebone-black-time-using-ntp/
 
