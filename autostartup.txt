@@ -15,7 +15,7 @@ sudo nano /etc/init.d/vtlstart
 # Carry out specific functions when asked to by the system
 case "$1" in
 start)
-    su root  -c '/usr/local/softwares/vtl/vtlcore -qws'
+    su root  -c '/usr/local/softwares/vtl/vtlcore -qws  < /dev/null &'
     echo "Starting vtlcore "
     ;;
 stop)
