@@ -10,7 +10,7 @@ logg()
 MSG=$1
 echo $MSG >> "$BASE_ADD/usb.txt"
 }
-
+#---------------------------------------------------
 clear_and_GetfolderName()
 {
 address="$1"
@@ -22,14 +22,14 @@ folder=${folder/"\$"/""}
 echo $folder
 
 }
-
+#---------------------------------------------------
 remove_temp_folder() {
 
         logg "Remove all Files"
         cd "${BASE_DIR_PATH}"
         sudo rm -r *
         }
-
+#---------------------------------------------------
 check_flags()
 {
 local  pstring=$1
@@ -43,7 +43,34 @@ else Result=""
 fi
 echo $Result;
 }
+#---------------------------------------------------
+database_process()
+{
+foler_script="$1"
+  res=$(check_flags $foler_script)
+	
+if [ "$res" == "\$" ]
+        then
+            return
+	fi
 
+path_script_alter="$foler_script/1.altertable.sh"
+path_script_bulk_insert="$foler_script/2.bulkinsert.sh"
+
+  if [ -f  $path_script_alter ] ;
+        then
+	logg "Run Script > Alter Db > $path_script_alter"
+	 bash $path_script_alter
+	fi
+
+  if [ -f  $path_script_bulk_insert ] ;
+        then
+        logg "Run Script > bulk insert > $path_script_bulk_insert"	
+        bash $path_script_bulk_insert
+	fi
+
+}
+#---------------------------------------------------
 copy_to_dev()
          {
          logg "-------------------<< Cp >>--------------------"
@@ -104,7 +131,7 @@ DIR_DATA="data"
 DIR_VTL="vtl"
 DIR_VOICE="voices"
 DIR_GISDATA="gisdata"
-
+DIR_SCRIPT="script"
 #________________ MAin Block ____________________
 logg " >>>> INIT Script <<<<"
 
@@ -175,13 +202,15 @@ copy_to_dev  "${BASE_DIR_PATH}/${MAIN_FOLDER}/$result/"  "$Des_PATH/${DIR_VOICE}
 elif [[ ("$tmpfoldername" == "${DIR_GISDATA}")  ]]
 then 
 copy_to_dev  "${BASE_DIR_PATH}/${MAIN_FOLDER}/$result/"  "$Des_PATH/${DIR_GISDATA}/"
+elif [[ ("$tmpfoldername" == "${DIR_SCRIPT}")  ]]
+then 
+database_process  "${BASE_DIR_PATH}/${MAIN_FOLDER}/$result" 
 fi
 
 done
-#copy_to_dev  "${BASE_DIR_PATH}/${MAIN_FOLDER}/${DIR_DATA}#/"  "$Des_PATH/${DIR_DATA}"
-#copy_to_dev  "${BASE_DIR_PATH}/${MAIN_FOLDER}/${DIR_VTL}/"  "$Des_PATH/"
-#copy_to_dev  "${BASE_DIR_PATH}/${MAIN_FOLDER}/${DIR_VOICE}/"  "$Des_PATH/"
-#copy_to_dev  "${BASE_DIR_PATH}/${MAIN_FOLDER}/${DIR_GISDATA}/"  "$Des_PATH/"
+
+
+
 
 
 
