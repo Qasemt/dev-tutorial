@@ -66,6 +66,7 @@ dest=/home/qasem/workingtemp
 copy_folder "$src_from_host/$datafolder/*" "$dest/$main_folder/$datafolder$/"
 copy_folder "$src_from_host/$gisdatafolder/*" "$dest/$main_folder/$gisdatafolder#/"
 copy_folder "$src_from_host/$voicesfolder/*" "$dest/$main_folder/$voicesfolder#/"
+copy_folder "$src_from_host/$pack_script/*" "$dest/$main_folder/$pack_script/"
 copy_folder  "$src_vtl_from_Device/$vtlfolder/*" "$dest/$main_folder/$vtlfolder/"
 
 
