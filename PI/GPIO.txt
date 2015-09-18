@@ -1,3 +1,5 @@
+install gpio from http://wiringpi.com/the-gpio-utility/
+------------------------
 root@raspberrypi:~# gpio -g mode 17 out
 root@raspberrypi:~# gpio -g write 17 1
 
