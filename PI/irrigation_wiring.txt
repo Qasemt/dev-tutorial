@@ -1,0 +1,14 @@
+
+
+------------ Relay ------------------
+Pi - GPIO 17 ----- > Relay pin inp1
+pi - GPIO 27 ----- > Relay pin inp2
+pi - GPIO 22 ----- > Relay pin inp3
+pi - GPIO 23 ----- > Relay pin inp4
+pi - Pin 4 (5v) ----------- Relay VCC
+pi - pin 20 (GND) --------- Relay GND
+
+put Jumper on Relay Board ( JVCC  & VCC)
+
+--------- LCD 1602 -------------
+PI - Pin 2 (5v) ------ VCC LCD
