@@ -1,2 +1,2 @@
-root@raspberrypi:~# gpio mode 17 out
+root@raspberrypi:~# gpio -g mode 17 out
 root@raspberrypi:~# gpio -g write 17 1
