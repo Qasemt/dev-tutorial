@@ -5,6 +5,10 @@ npm install -g node-inspector@0.10.0
 
 npm uninstall -g node-inspector
 
+npm cache ls
+
+npm cache clean 
+
 global path = /usr/local/lib/node_modules
 
 npm install <module> --save-dev
