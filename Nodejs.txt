@@ -4,8 +4,11 @@ sudo apt-get install nodejs
 sudo apt-get install npm
 
 
-You can upgrade npm using npm itself as well
+You can upgrade npm and nodejs using npm itself as well
 sudo npm install -g npm
+
+sudo npm cache clean -f
+sudo npm install n -g
 
 ******* NPM *********
 npm install -g node-inspector
