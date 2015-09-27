@@ -3,6 +3,10 @@ sudo apt-get remove --purge node
 sudo apt-get install nodejs
 sudo apt-get install npm
 
+
+You can upgrade npm using npm itself as well
+sudo npm install -g npm
+
 ******* NPM *********
 npm install -g node-inspector
 npm install -g node-inspector@0.10.0
