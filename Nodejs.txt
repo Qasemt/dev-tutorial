@@ -10,6 +10,13 @@ sudo npm install -g npm
 sudo npm cache clean -f
 sudo npm install n -g
 
+sudo  npm cache clean -f
+sudo npm install -g n
+sudo  n stable
+OR 
+sudo n 0.12.7 
+copy to usr/local/n/versions/node/0.12.7/
+
 ******* NPM *********
 npm install -g node-inspector
 npm install -g node-inspector@0.10.0
