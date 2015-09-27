@@ -87,6 +87,19 @@ function LCD1602v2() {
         lcdWrite4(mode | (data & 0xF0));
         lcdWrite4(mode | ((data << 4) & 0xF0));
     }
+      function LCDINIT() {
+        if (is_rpi_available) {
+            lcdWrite(0x03, 0);
+            lcdWrite(0x03, 0);
+            lcdWrite(0x03, 0);
+            lcdWrite(0x02, 0);
+
+            lcdWrite(LCD_FUNCTIONSET | LCD_2LINE | LCD_5x8DOTS | LCD_4BITMODE, 0);
+            lcdWrite(LCD_DISPLAYCONTROL | LCD_DISPLAYON, 0);
+            lcdWrite(LCD_CLEARDISPLAY, 0);
+            lcdWrite(LCD_ENTRYMODESET | LCD_ENTRYLEFT, 0);
+        }
+    }
     this.ShowTime = function () {
 
       //  var now = new Date();
@@ -120,7 +133,7 @@ function LCD1602v2() {
             lcdWrite(c.charCodeAt(0), 1);
         });
     };
-
+ LCDINIT();
     lcdWrite(LCD_CLEARDISPLAY,0);
 }
 module.exports.LCD1602v2 = new LCD1602v2();
