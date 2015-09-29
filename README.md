@@ -1,13 +1,14 @@
-# mp3-player-raspi-gstreamer
-
+# Dev Tutorial
+````bash
+mp3-player-raspi-gstreamer
 ./program -qws -display VNC::size=640x480:depth=32:3
 
-
+````
 
 
 http://wiki.laptop.org/go/Fluendo_mp3_decoder
 
-
+````bash
 sudo apt-get update 
 sudo apt-get install gstreamer1.0
 
@@ -25,6 +26,14 @@ aplay /usr/share/sounds/alsa/Front_Center.wav
 sound card info
 amixer 
 
+````
 
+### Author:
+
+* Qasem Taheri: taaheri2@gmail.com
+
+
+### License:
+ [The MIT License (MIT)](http://opensource.org/licenses/MIT)
 
 
