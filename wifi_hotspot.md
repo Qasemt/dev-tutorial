@@ -37,7 +37,7 @@ iface wlan0 inet static
 address 192.168.1.111
 netmask 255.255.255.0
 ````
-#### Hotsopt Define.....
+#### Hotspot Define.....
 ````bash
 iface wlan0 inet static
   address 192.168.42.1
