@@ -8,18 +8,9 @@ http://dev.ardupilot.com/wiki/companion-computers/raspberry-pi-via-mavlink/makin
 https://learn.adafruit.com/setting-up-a-raspberry-pi-as-a-wifi-access-point/install-software (best)
 ````
 
-hatman be in wifi ro injor /etc/network/interfaces  tarif koni 
-va nabayad be wifi digar vasl bashad ...
+##### hatman be in wifi ro injor /etc/network/interfaces  tarif koni va nabayad be wifi digar vasl bashad ...
 ````bash
-iface wlan0 inet static
-  address 192.168.42.1
-  netmask 255.255.255.0
-  ---------------------------------------------------------
-run sudo nano /etc/network/interfaces and add 
- up iptables-restore < /etc/iptables.ipv4.nat
-to the very end
-
-  ----------------- sample my rasp -------------------------
+#----------------- sample my rasp -------------------------
   auto lo
 
 iface lo inet loopback
@@ -45,6 +36,17 @@ allow-hotplug wlan0
 iface wlan0 inet static
 address 192.168.1.111
 netmask 255.255.255.0
+````
+#### Hotsopt Define.....
+````bash
+iface wlan0 inet static
+  address 192.168.42.1
+  netmask 255.255.255.0
+  ---------------------------------------------------------
+run sudo nano /etc/network/interfaces and add 
+ up iptables-restore < /etc/iptables.ipv4.nat
+to the very end
+
 
 
 up iptables-restore < /etc/iptables.ipv4.nat
@@ -94,21 +96,23 @@ option domain-name "local";
 option domain-name-servers 8.8.8.8, 8.8.4.4;
 }
 
--------------------- 
-noke hamzan nemishavad ham ethernet va wifi esftedae kard 
-baray test dhcp server 
+````
 
-
+######noke hamzan nemishavad ham ethernet va wifi esftedae kard baray test dhcp server 
+````bash
 Run the following commands
  sudo service hostapd start 
 sudo service isc-dhcp-server start
-
-you can always check the status of the host AP server and the DHCP server with
- sudo service hostapd status
+````
+######you can always check the status of the host AP server and the DHCP server with
+````bash
+sudo service hostapd status
 sudo service isc-dhcp-server status
 
-To start the daemon services. Verify that they both start successfully (no 'failure' or 'errors')
-Then to make it so it runs every time on boot
- sudo update-rc.d hostapd enable 
+````
+
+######To start the daemon services. Verify that they both start successfully (no 'failure' or 'errors') Then to make it so it runs every time on boot
+````bash
+sudo update-rc.d hostapd enable 
 sudo update-rc.d isc-dhcp-server enable
 ````
