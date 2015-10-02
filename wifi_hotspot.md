@@ -1,3 +1,4 @@
+````bash
 http://willhaley.com/willhaley/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/
 https://www.maketecheasier.com/set-up-raspberry-pi-as-wireless-access-point/
 http://elinux.org/RPI-Wireless-Hotspot(best)
@@ -109,3 +110,4 @@ To start the daemon services. Verify that they both start successfully (no 'fail
 Then to make it so it runs every time on boot
  sudo update-rc.d hostapd enable 
 sudo update-rc.d isc-dhcp-server enable
+````
