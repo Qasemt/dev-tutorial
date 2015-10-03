@@ -15,17 +15,33 @@ $config ip in vm-ware
 get ip : ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://'
 
 ```
-### in board back up emmc
+###BBB back up EMMC
 ```bash
 sudo dd if=/dev/mmcblk0 bs=1M | ssh   hamed@192.168.1.1 "dd of=/home/hamed/a12/qasem_emmc_BBB_Backup_940518.img bs=1M"
 ```
 ### Restore image file
+#### step 1: 
+image backup gerfte shode ro ba in command zir ya softeware win32diskImager.exe copy kon to ye ssd 4G Or 8G 
+##### Note: Mitavnid az har noe linux estefade koni mohem ine ke ye *** linux ba ssh va ip *** biad balla.
 ```bash
 Copy image to card using dd ...
 $ sudo dd if=qasem_emmc_BBB_Backup_940518.img of=/dev/sdb bs=1M
 ya 
 Win32DiskImager.exe estefade kon 
 ```
+#### step 2: 
+bad flash ro be beagle bone black insert(ssd card ) kon va mogheye bala omadan button s2 kenar *** SSD Card *** ro feshar bede ke board az SSD Bala biad ,bad az negah dashtan button s2 hmazaman power board ro Connect kon bad motmaen bash ke board IP Gerfte 
+#### step 3: 
+file image ro toy *** flash usb *** copy kon va az toy *** Host (Ubuntu) *** in Command ro ejra kon 
+
+```bash
+cd Flash Dirver ( any Path )
+sudo dd if=ff.img bs=1M | ssh   root@192.168.1.56 "dd of=/dev/mmcblk1  bs=1M"
+``` 
+#### Note :
+Vaghti SSD be board Vasle Address *** SSD = /dev/mmcblk0 *** va Address  *** EMMC = /dev/mmcblk1 **** mibashad 
+va Vaghti SSD Connect nist Address *** EMMC = /dev/mmcblk0 *** mibashad 
+
 ### Description
 
 Step 1:  Use exiting Beaglebone Black to create a flasher image on your 
