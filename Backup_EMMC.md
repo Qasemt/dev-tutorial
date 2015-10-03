@@ -39,9 +39,9 @@ file image ro toy ***flash usb*** copy kon va az toy ***Host (Ubuntu)*** in Comm
 cd Flash Dirver ( any Path )
 sudo dd if=ff.img bs=1M | ssh   root@192.168.1.56 "dd of=/dev/mmcblk1  bs=1M"
 ``` 
-#### Note :
+#### Note : (1394-07-11)
 Vaghti SSD be board Vasle Address ***SSD = /dev/mmcblk0*** va Address  ***EMMC = /dev/mmcblk1**** mibashad 
-va Vaghti SSD Connect nist Address ***EMMC = /dev/mmcblk0*** mibashad  (1394-07-11)
+va Vaghti SSD Connect nist Address ***EMMC = /dev/mmcblk0*** mibashad  
 
 ### Description 
 
