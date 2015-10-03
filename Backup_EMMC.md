@@ -1,8 +1,9 @@
 
-source : 
-https://github.com/slayersoft/MineNinja/wiki/Flashing-the-BeagleBone-eMMc
-https://www.mail-archive.com/beagleboard@googlegroups.com/msg24103.html
-http://www.circuidipity.com/getting-started-with-beaglebone-black.html
+####source : 
+1. https://github.com/slayersoft/MineNinja/wiki/Flashing-the-BeagleBone-eMMc
+2. https://www.mail-archive.com/beagleboard@googlegroups.com/msg24103.html
+3. http://www.circuidipity.com/getting-started-with-beaglebone-black.html
+```bash
 --------------host Requierment----------------
 sudo apt-get install openssh-client openssh-server
 check servic ssh : # service ssh status 
@@ -19,6 +20,7 @@ $ sudo dd if=qasem_emmc_BBB_Backup_940518.img of=/dev/sdb bs=1M
 ya 
 Win32DiskImager.exe estefade kon 
 ya 
+```
 //////////////////////////////////////////////////////////////////////////////////////////////
 Step 1:  Use exiting Beaglebone Black to create a flasher image on your 
 microSD card.
