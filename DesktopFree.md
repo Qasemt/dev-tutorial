@@ -1,16 +1,18 @@
-I think @Jivings answer may be better, but I have it in my notes to do this:
+#####I think @Jivings answer may be better, but I have it in my notes to do this:
+#####Install apt-get install x11-xserver-utils
 
-Install apt-get install x11-xserver-utils
+#####Edit /etc/xdg/lxsession/LXDE/autostart
+
 ````bash
-Edit /etc/xdg/lxsession/LXDE/autostart
-
 Append these lines:
 
 @xset s noblank
 @xset s off
 @xset -dpms
 pkill openbox
+````
 
+````bash
 Possibly also comment out the line that says @xscreensaver -no-splash, so the complete file should look something like this:
 
 @lxpanel --profile LXDE
