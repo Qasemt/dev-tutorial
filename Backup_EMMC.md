@@ -5,6 +5,7 @@
 3. http://www.circuidipity.com/getting-started-with-beaglebone-black.html
 4. http://compositecode.com/2013/11/10/using-ssh-locally-to-work-with-ubuntu-vm-vmware-tools-installation-via-shell/
 
+
 #### host Requierment
 ```bash
 sudo apt-get install openssh-client openssh-server
