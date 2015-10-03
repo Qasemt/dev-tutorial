@@ -3,14 +3,14 @@
 
 #####Edit /etc/xdg/lxsession/LXDE/autostart
 
-````bash
-Append these lines:
 
+#####Append these lines:
+```bash
 @xset s noblank
 @xset s off
 @xset -dpms
 pkill openbox
-````
+```
 
 ````bash
 Possibly also comment out the line that says @xscreensaver -no-splash, so the complete file should look something like this:
