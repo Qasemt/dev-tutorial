@@ -22,7 +22,7 @@ sudo dd if=/dev/mmcblk0 bs=1M | ssh   hamed@192.168.1.1 "dd of=/home/hamed/a12/q
 ### Restore image file
 #### step 1: 
 image backup gerfte shode ro ba in command zir ya softeware win32diskImager.exe copy kon to ye ssd 4G Or 8G 
-##### Note: Mitavnid az har noe linux estefade koni mohem ine ke ye ***linux ba ssh va ip*** biad balla.
+Note: Mitavnid az har noe linux estefade koni mohem ine ke ye ***linux ba ssh va ip*** biad balla.
 ```bash
 Copy image to card using dd ...
 $ sudo dd if=qasem_emmc_BBB_Backup_940518.img of=/dev/sdb bs=1M
@@ -30,9 +30,9 @@ ya
 Win32DiskImager.exe estefade kon 
 ```
 #### step 2: 
-bad flash ro be beagle bone black insert(ssd card ) kon va mogheye bala omadan button s2 kenar *** SSD Card *** ro feshar bede ke board az SSD Bala biad ,bad az negah dashtan button s2 hmazaman power board ro Connect kon bad motmaen bash ke board IP Gerfte 
+bad flash ro be beagle bone black insert(ssd card ) kon va mogheye bala omadan button s2 kenar ***SSD Card*** ro feshar bede ke board az SSD Bala biad ,bad az negah dashtan button s2 hmazaman power board ro Connect kon bad motmaen bash ke board IP Gerfte 
 #### step 3: 
-file image ro toy *** flash usb *** copy kon va az toy *** Host (Ubuntu) *** in Command ro ejra kon 
+file image ro toy ***flash usb*** copy kon va az toy ***Host (Ubuntu)*** in Command ro ejra kon 
 
 ```bash
 cd Flash Dirver ( any Path )
