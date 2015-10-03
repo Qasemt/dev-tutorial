@@ -13,7 +13,7 @@ pkill openbox
 ```
 
 
-######Possibly also comment out the line that says @xscreensaver -no-splash, so the complete file should look something like this:
+#####Possibly also comment out the line that says @xscreensaver -no-splash, so the complete file should look something like this
 ```bash
 @lxpanel --profile LXDE
 @pcmanfm --desktop --profile LXDE
@@ -24,14 +24,14 @@ pkill openbox
 @xset -dpms
 pkill openbox
 ```
-######Also edit /etc/kbd/config and make sure these values are set as follows (however I believe this is only for when the lightweight desktop (LXDE) is not running (i.e. the pi is still in text / terminal mode):
+#####Also edit /etc/kbd/config and make sure these values are set as follows (however I believe this is only for when the lightweight desktop (LXDE) is not running (i.e. the pi is still in text / terminal mode)
 ```bash
 BLANK_TIME=0
 BLANK_DPMS=off
 POWERDOWN_TIME=0
 ```
 
-######I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone ######else probably knows the nuances better.
+#####I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone else probably knows the nuances better.
 
 ##important
 ### behtarin source Ke Man Dar board hay estefade kardam
