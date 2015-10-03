@@ -62,10 +62,11 @@ xserver-command=X -bs -core -nocursor
 and 
 
 autologin-user= root
-****** important *********
-hatman [autologin-user= root] user root ro set kon ,agar in
-parametr set nashavad autostart baray profile root call nemishavad 
+
 ```
+#### important 2 :
+### hatman [autologin-user= root] user root ro set kon ,agar in parametr set nashavad autostart baray profile root call nemishavad 
+
 ### Source 
 1. https://glframebuffer.wordpress.com/2014/01/28/how-to-auto-login-in-lxde-for-raspberrypi-and-bbb/
 2. http://askubuntu.com/questions/157134/how-to-hide-the-mouse-cursor
