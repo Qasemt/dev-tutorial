@@ -1,7 +1,7 @@
 I think @Jivings answer may be better, but I have it in my notes to do this:
 
 Install apt-get install x11-xserver-utils
-
+````bash
 Edit /etc/xdg/lxsession/LXDE/autostart
 
 Append these lines:
@@ -57,6 +57,6 @@ parametr set nashavad autostart baray profile root call nemishavad
 **************************
 https://glframebuffer.wordpress.com/2014/01/28/how-to-auto-login-in-lxde-for-raspberrypi-and-bbb/
 source :: http://askubuntu.com/questions/157134/how-to-hide-the-mouse-cursor
-
+````
 
 
