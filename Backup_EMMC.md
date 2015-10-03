@@ -21,7 +21,7 @@ sudo dd if=/dev/mmcblk0 bs=1M | ssh   hamed@192.168.1.1 "dd of=/home/hamed/a12/q
 ```
 ### Restore image file
 #### step 1: 
-image backup gerfte shode ro ba in command zir ya softeware win32diskImager.exe copy kon to ye ssd 4G Or 8G 
+image backup gerfte shode ro ba in command zir ya softeware ***win32diskImager.exe*** copy kon to ye ssd 4G Or 8G 
 #### Note :
 Mitavnid az har noe linux estefade koni mohem ine ke ye ***linux ba ssh va ip*** biad balla.
 ```bash
@@ -41,9 +41,9 @@ sudo dd if=ff.img bs=1M | ssh   root@192.168.1.56 "dd of=/dev/mmcblk1  bs=1M"
 ``` 
 #### Note :
 Vaghti SSD be board Vasle Address ***SSD = /dev/mmcblk0*** va Address  ***EMMC = /dev/mmcblk1**** mibashad 
-va Vaghti SSD Connect nist Address ***EMMC = /dev/mmcblk0*** mibashad 
+va Vaghti SSD Connect nist Address ***EMMC = /dev/mmcblk0*** mibashad  (1394-07-11)
 
-### Description
+### Description 
 
 Step 1:  Use exiting Beaglebone Black to create a flasher image on your 
 microSD card.
