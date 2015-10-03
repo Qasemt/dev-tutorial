@@ -19,7 +19,7 @@ get ip : ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://'
 ```bash
 sudo dd if=/dev/mmcblk0 bs=1M | ssh   hamed@192.168.1.1 "dd of=/home/hamed/a12/qasem_emmc_BBB_Backup_940518.img bs=1M"
 ```
-### Restore image file
+### Restore Image to EMMC (BBB)
 #### step 1: 
 image backup gerfte shode ro ba in command zir ya softeware ***win32diskImager.exe*** copy kon to ye ssd 4G Or 8G 
 #### Note :
