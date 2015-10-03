@@ -34,7 +34,7 @@ POWERDOWN_TIME=0
 #####I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone else probably knows the nuances better.
 
 ##important
-### behtarin source Ke Man Dar board hay estefade kardam
+### بهترین روش که من در بردها استفاده کردم
 #### 1. Step 1
 ```bash
 source khob : [link 3]
