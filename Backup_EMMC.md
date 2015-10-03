@@ -4,24 +4,25 @@
 2. https://www.mail-archive.com/beagleboard@googlegroups.com/msg24103.html
 3. http://www.circuidipity.com/getting-started-with-beaglebone-black.html
 4. http://compositecode.com/2013/11/10/using-ssh-locally-to-work-with-ubuntu-vm-vmware-tools-installation-via-shell/
-
+#### host Requierment
 ```bash
---------------host Requierment----------------
 sudo apt-get install openssh-client openssh-server
 check servic ssh : # service ssh status 
 $config ip in vm-ware
 
 get ip : ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://'
 
------------ in board back up emmc ---------------------------
+```
+### in board back up emmc
+```bash
 sudo dd if=/dev/mmcblk0 bs=1M | ssh   hamed@192.168.1.1 "dd of=/home/hamed/a12/qasem_emmc_BBB_Backup_940518.img bs=1M"
-
----------- Restor image file --------------
+```
+### Restor image file
+```bash
 Copy image to card using dd ...
 $ sudo dd if=qasem_emmc_BBB_Backup_940518.img of=/dev/sdb bs=1M
 ya 
 Win32DiskImager.exe estefade kon 
-
 ```
 ### Description
 
