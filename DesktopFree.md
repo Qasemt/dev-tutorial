@@ -33,10 +33,9 @@ POWERDOWN_TIME=0
 
 I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone else probably knows the nuances better.
 shareimprove this answer
-
+## behtarin source Ke Man Dar board hay estefade kardam
+### 1. Step 1
 ```bash
-/////------------------------------
-------------------------behtarin source -----------------------------
 source khob : http://alexba.in/blog/2013/01/07/use-your-raspberrypi-to-power-a-company-dashboard/
 nano ~/vtlrun.bash
 ----
@@ -49,7 +48,10 @@ ba dastor zire ejrayee kkoni -> chmod +x vtlrun.bash
 nano  ~/.config/lxsession/LXDE/autostart 
 and add this code 
 ~/vtlrun.bash
-===================== Remove cursor mouse === behtarin method =============== حتما از این روش استفاده کن
+```
+### 1. Step 2
+##### Remove cursor mouse  حتما از این روش استفاده کن
+```bash
 nano /etc/lightdm/lightdm.conf
 in tago pida kon 
 xserver-command=X -bs -core -nocursor
@@ -58,7 +60,7 @@ autologin-user= root
 ****** important *********
 hatman [autologin-user= root] user root ro set kon ,agar in
 parametr set nashavad autostart baray profile root call nemishavad 
-````
+```
 ### Source 
 1. https://glframebuffer.wordpress.com/2014/01/28/how-to-auto-login-in-lxde-for-raspberrypi-and-bbb/
 2. http://askubuntu.com/questions/157134/how-to-hide-the-mouse-cursor
