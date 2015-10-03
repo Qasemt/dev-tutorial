@@ -22,7 +22,8 @@ sudo dd if=/dev/mmcblk0 bs=1M | ssh   hamed@192.168.1.1 "dd of=/home/hamed/a12/q
 ### Restore image file
 #### step 1: 
 image backup gerfte shode ro ba in command zir ya softeware win32diskImager.exe copy kon to ye ssd 4G Or 8G 
-Note: Mitavnid az har noe linux estefade koni mohem ine ke ye ***linux ba ssh va ip*** biad balla.
+#### Note :
+Mitavnid az har noe linux estefade koni mohem ine ke ye ***linux ba ssh va ip*** biad balla.
 ```bash
 Copy image to card using dd ...
 $ sudo dd if=qasem_emmc_BBB_Backup_940518.img of=/dev/sdb bs=1M
