@@ -3,12 +3,14 @@
 1. https://github.com/slayersoft/MineNinja/wiki/Flashing-the-BeagleBone-eMMc
 2. https://www.mail-archive.com/beagleboard@googlegroups.com/msg24103.html
 3. http://www.circuidipity.com/getting-started-with-beaglebone-black.html
+4. http://compositecode.com/2013/11/10/using-ssh-locally-to-work-with-ubuntu-vm-vmware-tools-installation-via-shell/
+
 ```bash
 --------------host Requierment----------------
 sudo apt-get install openssh-client openssh-server
 check servic ssh : # service ssh status 
 $config ip in vm-ware
-http://compositecode.com/2013/11/10/using-ssh-locally-to-work-with-ubuntu-vm-vmware-tools-installation-via-shell/
+
 get ip : ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://'
 
 ----------- in board back up emmc ---------------------------
@@ -19,7 +21,7 @@ Copy image to card using dd ...
 $ sudo dd if=qasem_emmc_BBB_Backup_940518.img of=/dev/sdb bs=1M
 ya 
 Win32DiskImager.exe estefade kon 
-ya 
+
 ```
 ### Description
 
