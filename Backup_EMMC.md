@@ -39,8 +39,8 @@ cd Flash Dirver ( any Path )
 sudo dd if=ff.img bs=1M | ssh   root@192.168.1.56 "dd of=/dev/mmcblk1  bs=1M"
 ``` 
 #### Note :
-Vaghti SSD be board Vasle Address *** SSD = /dev/mmcblk0 *** va Address  *** EMMC = /dev/mmcblk1 **** mibashad 
-va Vaghti SSD Connect nist Address *** EMMC = /dev/mmcblk0 *** mibashad 
+Vaghti SSD be board Vasle Address ***SSD = /dev/mmcblk0*** va Address  ***EMMC = /dev/mmcblk1**** mibashad 
+va Vaghti SSD Connect nist Address ***EMMC = /dev/mmcblk0*** mibashad 
 
 ### Description
 
