@@ -31,8 +31,7 @@ BLANK_DPMS=off
 POWERDOWN_TIME=0
 ```
 
-I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone else probably knows the nuances better.
-shareimprove this answer
+######I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone ######else probably knows the nuances better.
 
 ##important
 ### behtarin source Ke Man Dar board hay estefade kardam
@@ -55,9 +54,13 @@ and add this code
 ##### Remove cursor mouse  حتما از این روش استفاده کن
 ```bash
 nano /etc/lightdm/lightdm.conf
+
 in tago pida kon 
+
 xserver-command=X -bs -core -nocursor
+
 and 
+
 autologin-user= root
 ****** important *********
 hatman [autologin-user= root] user root ro set kon ,agar in
