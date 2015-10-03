@@ -21,7 +21,8 @@ ya
 Win32DiskImager.exe estefade kon 
 ya 
 ```
-//////////////////////////////////////////////////////////////////////////////////////////////
+### Description
+
 Step 1:  Use exiting Beaglebone Black to create a flasher image on your 
 microSD card.
 There is a file on most newer Beaglebone Blacks that can make a flasher 
@@ -29,8 +30,8 @@ image on a microSD card.
 from ssh terminal window, change your directory and run the script if it is 
 on your OS distribution.
 THIS WILL OVER WRITE YOUR microSD card and take some time till completed.
-# cd /opt/scripts/tools/eMMC
-# ./beaglebone-black-make-microSD-flasher-from-eMMC.sh
+$ cd /opt/scripts/tools/eMMC
+$ ./beaglebone-black-make-microSD-flasher-from-eMMC.sh
 when process is done, you need to power down Beaglebone Black and remove 
 your microSD card.
 
