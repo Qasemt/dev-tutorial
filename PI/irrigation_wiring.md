@@ -15,5 +15,5 @@ Pi - GPIO | Relay pin
 ***put Jumper on Relay Board ( JVCC  & VCC)***
 
 
-##### LCD 1602 
-***PI - Pin 2 (5v) ------ VCC LCD***
+##### LCD 1602 :
+**PI - Pin 2 (5v) ------ VCC LCD**
