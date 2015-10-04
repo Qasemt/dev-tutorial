@@ -1,6 +1,7 @@
 
 
 ##### Relay pin :
+___
 Pi - GPIO | Relay pin
 --- | ---
 17 | inp1
