@@ -1,5 +1,5 @@
 ##### Source : 
-*http://stackoverflow.com/questions/24912778/qtcreator-kit-specific-precompiler-macro-definitions
+* http://stackoverflow.com/questions/24912778/qtcreator-kit-specific-precompiler-macro-definitions
 ___
 ```bash
 CONFIG(debug, debug|release): DEFINES += _debug
