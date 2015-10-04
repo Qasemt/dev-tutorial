@@ -34,7 +34,7 @@ fool@localhost:~$echo "afm=mp3lib" >> ~/.mplayer/config
  speaker-test -D default:Balck (or headset)
  ```
  
- ##### source :
+##### source :
 * http://wiki.laptop.org/go/Fluendo_mp3_decoder
  ```bash
  install alsa-utils
