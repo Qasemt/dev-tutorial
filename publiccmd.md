@@ -1,5 +1,5 @@
 ### Change IP Address
-#### Step1 :
+##### Step1 :
 ```bash
 sudo nano /etc/network/interfaces
 auto eth0
@@ -8,11 +8,11 @@ address 192.168.1.56
 netmask 255.255.255.0
 cb2 =>> gateway 192.168.1.210
 ```
-#### Step2 :
+##### Step2 :
 ```bash
 sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf 
 ```
-
+##### Description
 ```bash 
 export QT_PLUGIN_PATH=/usr/local/Trolltech/Qt-4.8.6-raspi/plugins/
 export QT_PLUGIN_PATH=/usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend
