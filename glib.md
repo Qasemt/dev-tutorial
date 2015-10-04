@@ -1,4 +1,5 @@
-#!/bin/sh
+
+```bash 
 1- to in file  in khato comment kon /etc/apt/sources.list
 deb [arch=armhf] http://debian.beagleboard.org/packages wheezy-bbb main
 
@@ -12,6 +13,11 @@ echo "Please remember to hash out sid main from your sources list. /etc/apt/sour
 It works, application now runs.
 
 
-------[[agar method bala error dad az in ravesh estefade kon ---az in ravesh estefade koni behtare ]] ----------
+
+```
+
+###agar method bala error dad az in ravesh estefade kon ---az in ravesh estefade koni behtare
+```bash
 aptitude update
 aptitude install libc6-dev
+```
