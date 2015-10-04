@@ -31,7 +31,7 @@ ya
 Win32DiskImager.exe estefade kon 
 ```
 #### step 2: 
-bad flash ro be beagle bone black insert(ssd card ) kon va mogheye bala omadan button s2 kenar ***SSD Card*** ro feshar bede ke board az SSD Bala biad ,bad az negah dashtan button s2 hmazaman power board ro Connect kon bad motmaen bash ke board IP Gerfte 
+bad flash ro be beagle bone black insert(ssd card ) kon va mogheye bala omadan button **s2** kenar ***SSD Card*** ro feshar bede ke board az SSD Bala biad ,bad az negah dashtan button **s2** hmazaman power board ro Connect kon bad motmaen bash ke board IP Gerfte 
 #### step 3: 
 file image ro toy ***flash usb*** copy kon va az toy ***Host (Ubuntu)*** in Command ro ejra kon 
 
