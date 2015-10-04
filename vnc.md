@@ -53,7 +53,7 @@ ps aux | grep vnc
 chmod +x /etc/init.d/vncboot
 ```
 
- ##### start up setting 
+##### start up setting 
 ```bash
 sudo /etc/init.d/vncboot start
 cd /etc/init.d
