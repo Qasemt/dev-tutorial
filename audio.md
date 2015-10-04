@@ -3,6 +3,7 @@
 
 1. wget https://cdn.shopify.com/s/files/1/0062/6682/files/sample.wav
 2. wget http://www.nch.com.au/acm/sample.wav
+3. http://wiki.laptop.org/go/Fluendo_mp3_decoder
  
  ```bash
  aplay /usr/share/sounds/alsa/Side_Right.wav
@@ -60,3 +61,25 @@ asla ro be in sorate config koni
 root@beaglebone:~# nano .asoundrc 
 pcm.!default sysdefault:Device
 ```
+
+
+##### gstreamer Install 
+````bash
+sudo apt-get update 
+sudo apt-get install gstreamer1.0
+
+
+baray neshan dadan  codec va feature hay gstreamer
+gst-inspect flump3dec
+
+
+Test gstreamer
+
+gst-launch-0.10 playbin uri=file:///home/pi/1.mp3
+aplay /usr/share/sounds/alsa/Front_Center.wav
+
+
+sound card info
+amixer 
+
+````
