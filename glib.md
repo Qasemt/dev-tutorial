@@ -16,7 +16,7 @@ It works, application now runs.
 
 ```
 
-###agar method bala error dad az in ravesh estefade kon az in ravesh estefade koni behtare
+###agar method bala error dad az in ravesh estefade kon 1394-07-12 (این روش ساده و بهتره)  
 ```bash
 aptitude update
 aptitude install libc6-dev
