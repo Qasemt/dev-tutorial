@@ -16,3 +16,8 @@ apt-cache search ^zlib
 ```bash
 sudo apt-get install --reinstall zlibc zlib1g zlib1g-dev
 ```
+
+##### Tools For Serial Port on Linux
+1. gtkterm
+2. minicom
+3. cutecom
