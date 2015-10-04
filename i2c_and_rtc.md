@@ -53,7 +53,7 @@ va address morede nazar besorate [[[[  UU  ]]] dide mishe
 30: -- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 
 ```
 #### Note 2:
-agar **[i2cdetect -y 0] i2cdetect -y 1 ** ro ejra kardi var in error dad ->
+agar **[i2cdetect -y 0] i2cdetect -y 1** ro ejra kardi var in error dad ->
 Error: Could not open file `/dev/i2c-0' or `/dev/i2c/0': No such file or directory
 az in method estefade bekon ta dorost she **(i2c enable nist)** 
 
