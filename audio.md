@@ -1,5 +1,5 @@
  
-##### Samples :
+##### Sample Sounds :
 
 1. wget https://cdn.shopify.com/s/files/1/0062/6682/files/sample.wav
 2. wget http://www.nch.com.au/acm/sample.wav
