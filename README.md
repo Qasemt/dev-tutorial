@@ -35,12 +35,12 @@ amixer
 ````
 
 
-### Author:
+##### Author:
 
 * Qasem Taheri: taaheri2@gmail.com
 
 
-### License:
+##### License:
  [The MIT License (MIT)](http://opensource.org/licenses/MIT)
 
 
