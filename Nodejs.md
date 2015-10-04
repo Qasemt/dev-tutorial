@@ -1,5 +1,5 @@
 
-### NPM Install on ubuntu 
+### NPM Install on Linux 
 ```bash
 sudo apt-get remove --purge node 
 sudo apt-get install nodejs
