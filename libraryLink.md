@@ -23,7 +23,7 @@ $  ldconfig
 
 ```
 
-### Resolve link dll
+### Resolve link libs
 ##### Step 1 
 ```bash
 nano relink.sh
