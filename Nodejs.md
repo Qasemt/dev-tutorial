@@ -30,7 +30,7 @@ npm install <module> --save-dev
 
 ```
 
-####Dependency pack for build
+####Dependency pack for build (if need)
 ```bash
 npm install -g node-gyp
 npm install -g node-pre-gyp
