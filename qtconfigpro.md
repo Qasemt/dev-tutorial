@@ -22,3 +22,8 @@ unix:!macx: LIBS += /usr/local/Trolltech/g123cubie2/lib/libgdal.a
 unix:!macx: PRE_TARGETDEPS += /usr/local/Trolltech/g123cubie2/lib/libgdal.a
 #endif
 ```
+
+##### Run Qt From VNC in Frame Buffer Mode 
+```bash
+./program -qws -display VNC::size=640x480:depth=32:3
+```
