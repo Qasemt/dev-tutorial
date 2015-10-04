@@ -1,4 +1,6 @@
-------- NPM Install on ubuntu -----------
+
+### NPM Install on ubuntu 
+```bash
 sudo apt-get remove --purge node 
 sudo apt-get install nodejs
 sudo apt-get install npm
@@ -36,3 +38,4 @@ killall -9 any node
 ========= Dependency pack for build ============
 npm install -g node-gyp
 npm install -g node-pre-gyp
+```
