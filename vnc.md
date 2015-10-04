@@ -1,15 +1,19 @@
 
-نصب VNC
+### Install VNC
+```bash
 root@beaglebone:~# apt-get update
 root@beaglebone:~# apt-get upgrade
 root@beaglebone:~# apt-get dist-upgrade
 sudo apt-get install tightvncserver
+```
 
-
+```bash
 cd /etc/init.d
 sudo nano /etc/init.d/vncboot
 sudo nano  vncboot
-Add the following content to the file:
+```
+##### Add the following content to the file:
+```bash
 #!/bin/bash
 ### BEGIN INIT INFO
 # Provides:          tightvncserver
@@ -38,35 +42,44 @@ stop)
 esac
 
 exit 0
+```
 
-Check the VNC server is not running:
+##### Check the VNC server is not running:
+```bash
 ps aux | grep vnc
-
-baray ejraye kardan file
+```
+##### baray ejraye kardan file
+```bash
 chmod +x /etc/init.d/vncboot
+```
 
----------------------------------- start up setting ---------------------------------
-
+ ##### start up setting 
+```bash
 sudo /etc/init.d/vncboot start
 cd /etc/init.d
 sudo update-rc.d vncboot defaults
-Note:
+```
+##### Note:
 agar in cmd "sudo update-rc.d vncboot defaults" ro vared kardi va error zir ro dad 
 be khater in eke script hay aval file ro to file vncboot vared nakardi (4 or 5 khate aval)
 
 insserv: warning: script 'K01vncboot' missing LSB tags and overrides
 insserv: warning: script ' vncboot ' missing LSB tags and overrides
 
-How to change VNC Server password on Linux
+##### How to change VNC Server password on Linux
+```bash
 vncpasswd
-
+```
+##### How to Reset
 
 You will then be prompted to enter a new password twice. Choose your new vnc server password and then restart the vncserver service using the following command.
-
-
+```bahs
 service vncserver restart
-----------------------------------------------------------------XRDP-----------------------
-To install xrdp on a Raspberry Pi running Raspbian use:
+```
 
+#### XRDP
+To install xrdp on a **Raspberry Pi** running Raspbian use:
+```bahs
 sudo apt-get install xrdp
+```
 
