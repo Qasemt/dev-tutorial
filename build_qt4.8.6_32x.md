@@ -1,3 +1,6 @@
+#### Build Qt 4.8.6 For 32 bit
+___
+```bash
 tar xzf qt-everywhere-opensource-src-4.8.6.tar.gz
 
 cd qt-everywhere-opensource-src-4.8.6
@@ -20,3 +23,4 @@ cd qt-everywhere-opensource-src-4.8.6
 make -j4
 
 sudo make install
+```
