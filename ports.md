@@ -1,3 +1,4 @@
+ ```bash
  ls /sys/bus/usb-serial/devices/ -ltrah
  
  dmesg | grep tty*
@@ -43,3 +44,4 @@ exit and save
  
  https://abhinavgupta2812.wordpress.com/2013/08/27/configuring-the-gpio-and-uart-on-the-cubieboard/
  -------------------------------------------------------------------------
+ ```
