@@ -9,4 +9,7 @@ nano  ~/pkglist
 ___
 
 ### ADD/Remove Program in linux (GUI Base) 
+
+```bash
 apt-get install synaptic
+```
