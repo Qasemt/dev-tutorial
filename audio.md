@@ -63,6 +63,8 @@ pcm.!default sysdefault:Device
 ```
 
 
+___
+
 ##### gstreamer Install 
 ````bash
 sudo apt-get update 
