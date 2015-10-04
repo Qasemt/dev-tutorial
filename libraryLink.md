@@ -10,11 +10,11 @@ directories (/lib and /usr/lib). The cache is used by the run-time linker, ld.so
 checks the header and filenames of the libraries it encounters when determining which versions should have
 their links updated.
 ```bash
-#echo "/usr/local/Trolltech/geo123/lib" > /etc/ld.so.conf.d/gdal.conf
+echo "/usr/local/Trolltech/geo123/lib" > /etc/ld.so.conf.d/gdal.conf
 
-#echo "/usr/local/Trolltech/g123cubie2/lib" > /etc/ld.so.conf.d/g.conf
+echo "/usr/local/Trolltech/g123cubie2/lib" > /etc/ld.so.conf.d/g.conf
 
-#echo "/usr/local/softwares/vtl" > /etc/ld.so.conf.d/vtl.conf
+echo "/usr/local/softwares/vtl" > /etc/ld.so.conf.d/vtl.conf
 ```
 ##### Step 2
 run this Command 
