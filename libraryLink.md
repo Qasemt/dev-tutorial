@@ -16,7 +16,7 @@ their links updated.
 
 #echo "/usr/local/softwares/vtl" > /etc/ld.so.conf.d/vtl.conf
 ```
-##### Step 
+##### Step 2
 run this Command 
 ```bash
 $  ldconfig
