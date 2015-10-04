@@ -21,3 +21,4 @@ sudo apt-get install --reinstall zlibc zlib1g zlib1g-dev
 1. gtkterm
 2. minicom
 3. cutecom
+
