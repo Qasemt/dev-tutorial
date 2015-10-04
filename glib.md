@@ -14,7 +14,7 @@ echo "deb http://ftp.debian.org/debian sid main" >> /etc/apt/sources.list
 apt-get update
 apt-get -t sid install libc6 libc6-dev libc6-dbg
 ```
-##### Step4: Please remember to hash out sid main from your sources list. **/etc/apt/sources.list* [It works, application now runs.]
+##### Step4: Please remember to hash out sid main from your sources list. **/etc/apt/sources.list** [It works, application now runs.]
 
 
 ###agar method bala error dad az in ravesh estefade kon 1394-07-12 (این روش ساده و بهتره)  
