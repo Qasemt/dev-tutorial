@@ -19,12 +19,6 @@ OR
 sudo n 0.12.7 
 copy to usr/local/n/versions/node/0.12.7/
 
-******* NPM *********
-npm install -g node-inspector
-npm install -g node-inspector@0.10.0
-
-npm uninstall -g node-inspector
-
 npm cache ls
 
 npm cache clean 
@@ -33,9 +27,25 @@ global path = /usr/local/lib/node_modules
 
 npm install <module> --save-dev
 
-ps aux | grep node
-killall -9 any node
-========= Dependency pack for build ============
+
+```
+
+####Dependency pack for build
+```bash
 npm install -g node-gyp
 npm install -g node-pre-gyp
+```
+
+#### Node JS Debugger
+```bash
+npm install -g node-inspector
+npm install -g node-inspector@0.10.0
+
+npm uninstall -g node-inspector
+```
+#### Kill Nodejs
+
+```bash
+ps aux | grep node
+killall -9 any node
 ```
