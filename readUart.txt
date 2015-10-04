@@ -1,3 +1,0 @@
-1-gtkterm
-2-minicom
-3-cutecom
