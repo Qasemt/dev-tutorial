@@ -1,9 +1,12 @@
 #### Source :
-
+```bash
 git clone https://github.com/qextserialport/qextserialport.git
+```
 ####or 
-
+```bash
 git clone https://github.com/Qasemt/qextserialport.git
+```
+____
 ```bash
 mkdir qextserialport-build
 cd qextserialport-build
