@@ -19,7 +19,7 @@ To disable the GUI in the Debian Desktop and just have a normal terminal login, 
 ```bash
 nano /boot/uboot/uEnv.txt
 ```
-in khato be file ezafe konid
++ in khato be file ezafe konid
 ```bash
 optargs=text (for Whezzy) 
 ```
