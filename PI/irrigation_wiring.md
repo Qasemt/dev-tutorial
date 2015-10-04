@@ -1,6 +1,6 @@
 
 
-##### Relay pin
+##### Relay pin :
 Pi - GPIO | Relay pin
 --- | ---
 17 | inp1
@@ -16,4 +16,5 @@ Pi - GPIO | Relay pin
 
 
 ##### LCD 1602 :
+___
 **PI - Pin 2 (5v) ------ VCC LCD**
