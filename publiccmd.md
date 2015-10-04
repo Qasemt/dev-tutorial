@@ -1,3 +1,15 @@
+### Change IP Address
+```bash
+sudo nano /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+address 192.168.1.56
+netmask 255.255.255.0
+cb2 =>> gateway 192.168.1.210
+-----------------------------------------
+sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf 
+```
+```bash 
 export QT_PLUGIN_PATH=/usr/local/Trolltech/Qt-4.8.6-raspi/plugins/
 export QT_PLUGIN_PATH=/usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend
 
@@ -33,14 +45,7 @@ sudo ln -s /usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend /usr/local/Tr
 sudo ln -s /usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend /usr/bin
 sudo ln -s /usr/lib/arm-linux-gnueabihf/qt4/plugins/phonon_backend /root/phonon_backend
 ----------------------------------------------
-sudo nano /etc/network/interfaces
-auto eth0
-iface eth0 inet static
-address 192.168.1.56
-netmask 255.255.255.0
-cb2 =>> gateway 192.168.1.210
------------------------------------------
-sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf 
+
 
 
 
@@ -75,3 +80,4 @@ scp Development/BeagleBone/sysroot/lib/libffi.* root@192.168.1.56:/usr/lib/
 
 zip -y -r vtl.zip ./vtl
 ssh -n root@192.168.1.56 'tar zcvf - /usr/local/softwares/vtl' | cat - > localZip.tar.gz
+```
