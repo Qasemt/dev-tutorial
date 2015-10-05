@@ -1,8 +1,13 @@
 #####I think @Jivings answer may be better, but I have it in my notes to do this:
-#####Install apt-get install x11-xserver-utils
+```bash
+Install apt-get install x11-xserver-utils
+```
 
-#####Edit /etc/xdg/lxsession/LXDE/autostart
+#####Edit autostart file 
 
+```bash
+nano /etc/xdg/lxsession/LXDE/autostart
+```
 
 #####Append these lines:
 ```bash
