@@ -18,8 +18,9 @@ sudo chmod u+s /sbin/shutdown
 Check out examples of chmod here.
 Now you can run shutdown without needing **sudo**.
 
-2. Modify /etc/sudoers with visudo
+2. Modify **/etc/sudoers** with **visudo**
 This seems to be proper way to allow a command to run as root from specified users without needing to type password.
+
 ```bash
 sudo visudo
 ```
@@ -34,11 +35,11 @@ For ubuntu, usually the default user is in the %admin group. Therefore, you can 
 %admin ALL = NOPASSWD: /sbin/shutdown
 ```
 
-In fact, you still need sudo to shutdown, but this time you do not need to specified password.
+In fact, you still need **sudo to shutdown***, but this time you do not need to specified **password**.
 ```bash
 sudo shutdown -h now
 ```
-You can also reboot the system by using shutdown command too.
+You can also **reboot** the system by using **shutdown** command too.
 ```bash
 sudo shutdown -r now
 ```
