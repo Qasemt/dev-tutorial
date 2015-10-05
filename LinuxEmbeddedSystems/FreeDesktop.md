@@ -18,7 +18,8 @@ pkill openbox
 ```
 
 
-#####Possibly also comment out the line that says @xscreensaver -no-splash, so the complete file should look something like this
+Possibly also comment out the line that says **@xscreensaver -no-splash**, so the complete file should look something like this
+
 ```bash
 @lxpanel --profile LXDE
 @pcmanfm --desktop --profile LXDE
