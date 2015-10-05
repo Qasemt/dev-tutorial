@@ -1,4 +1,5 @@
 
+```bash
 #unix:!macx: LIBS += -L"/opt/gdal-linux32/lib" -lproj
 
 #INCLUDEPATH += /opt/gdal-linux32/include
@@ -40,3 +41,4 @@ sudo ln -s /usr/local/Trolltech/geo123/lib/libproj.so.0.7.0 /usr/local/Trolltech
 scp -d -r  /usr/local/Trolltech/geo123 root@192.168.1.56:/usr/local/Trolltech/geo123
 
 scp Development/BeagleBone/sysroot/lib/libffi.* root@192.168.1.56:/usr/lib/
+```
