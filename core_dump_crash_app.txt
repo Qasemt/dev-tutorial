@@ -1,8 +1,0 @@
-1: run this cmd befor run app
-#ulimit -c unlimited
-
-2: run this for tracing
- gdb <executable> <core-file> or gdb <executable> -c <core-file> or
- 
- for exam 
- gdb ./irrigationsysApp -c core
