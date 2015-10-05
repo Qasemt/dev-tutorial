@@ -2,7 +2,7 @@
 ###### Step 1 :
 run this cmd befor run app
 ```bash
-#ulimit -c unlimited
+ulimit -c unlimited
 ```
 
 ###### Step 2 :
