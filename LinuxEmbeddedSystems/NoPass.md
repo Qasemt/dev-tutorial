@@ -13,7 +13,8 @@ The answer is yes, there are two ways to do that (Any other ways available?)
 ___
 ##### Method 1
 
-1. Adding suid mode to /sbin/shutdown
+1. Adding suid mode to */sbin/shutdown*
+
 By adding suid mode to shutdown command, you are allowing regular user to run shutdown command as **root**.
 ```bash
 sudo chmod u+s /sbin/shutdown
@@ -24,6 +25,7 @@ ___
 ##### Method 2
 
 2. Modify **/etc/sudoers** with **visudo**
+
 This seems to be proper way to allow a command to run as root from specified users without needing to type **password**.
 
 ```bash
