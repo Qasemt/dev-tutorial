@@ -6,18 +6,22 @@ sudo shutdown -h now
 For more detail examples of shutdown, continue to read here.
 With sudo, you need to type your password. Sometimes it will be more convenient to us if we are able to shutdown without sudo. Is it possible?
 The answer is yes, there are two ways to do that (Any other ways available?)
-
 ```bash
 1. Adding suid mode to /sbin/shutdown
 2. Modify /etc/sudoers with visudo
-1. Adding suid mode to /sbin/shutdown
 ```
+___
+##### Method 1
+
+1. Adding suid mode to /sbin/shutdown
 By adding suid mode to shutdown command, you are allowing regular user to run shutdown command as **root**.
 ```bash
 sudo chmod u+s /sbin/shutdown
 ```
 Check out examples of chmod here.
 Now you can run shutdown without needing **sudo**.
+___
+##### Method 2
 
 2. Modify **/etc/sudoers** with **visudo**
 This seems to be proper way to allow a command to run as root from specified users without needing to type **password**.
