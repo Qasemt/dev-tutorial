@@ -29,7 +29,7 @@ qtcreator ->Devices  ->select device (BBB) -> GDB server exexcutable : [gdbserve
 ```bash
 Build&Run->Kits->Sysroot =>/home/qasem/Development/[cubie2]/sysroot/
 ```
-
+___
 #### gdb config for 32 bit desktop
 error after run with debug mod =   &"warning: GDB: Failed to set controlling terminal: Invalid argument\n"
 
