@@ -35,8 +35,10 @@ error after run with debug mod =   &"warning: GDB: Failed to set controlling ter
 
 ###### Solution  1 :
 
-1. **first install requirment:**
-2. sudo apt-get install python2.7
+**first install requirment:**
+```bash
+ sudo apt-get install python2.7
+```
 
 I also upgraded gdb to latest 7.9: I installed libncurses5-dev package: **sudo apt-get install libncurses5-dev** , which is needed to build gdb.
 I downloaded latest gz archive from **http://ftp.gnu.org/gnu/gdb** to the temporary folder, and executed the following commands:
