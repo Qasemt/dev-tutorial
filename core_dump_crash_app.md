@@ -11,7 +11,7 @@ run this for tracing
  gdb <executable> <core-file> or gdb <executable> -c <core-file> or
  ```
  
- ###### For Exam 
+###### For Exam 
  ```bash
  gdb ./irrigationsysApp -c core
 ```
