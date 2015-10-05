@@ -1,4 +1,4 @@
-#####I think @Jivings answer may be better, but I have it in my notes to do this:
+I think  answer may be better, but I have it in my notes to do this:
 ```bash
 Install apt-get install x11-xserver-utils
 ```
@@ -30,18 +30,21 @@ Possibly also comment out the line that says **@xscreensaver -no-splash**, so th
 @xset -dpms
 pkill openbox
 ```
-#####Also edit /etc/kbd/config and make sure these values are set as follows (however I believe this is only for when the lightweight desktop (LXDE) is not running (i.e. the pi is still in text / terminal mode)
+
+Also edit **/etc/kbd/config** and make sure these values are set as follows (however I believe this is only for when the **lightweight desktop (LXDE)** is not running (i.e. the pi is still in text / terminal mode)
+
 ```bash
 BLANK_TIME=0
 BLANK_DPMS=off
 POWERDOWN_TIME=0
 ```
 
-#####I believe that the /etc/xdg/lxsession/LXDE/autostart may be the sort of system-wide version of ~/.xinitrc but someone else probably knows the nuances better.
+I believe that the **/etc/xdg/lxsession/LXDE/autostart** may be the sort of system-wide version of **~/.xinitrc** but someone else probably knows the nuances better.
 
 ##important
 ### بهترین روش که من در بردها استفاده کردم
 #### 1. Step 1
+
 ```bash
 source khob : [link 3]
 nano ~/vtlrun.bash
