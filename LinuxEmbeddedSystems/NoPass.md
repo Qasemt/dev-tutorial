@@ -5,7 +5,7 @@ sudo shutdown -h now
 ```
 For more detail examples of shutdown, continue to read here.
 With sudo, you need to type your password. Sometimes it will be more convenient to us if we are able to shutdown without sudo. Is it possible?
-The answer is yes, there are two ways to do that (Any other ways available?)
+The answer is yes, there are **two ways** to do that (Any other ways available?)
 ```bash
 1. Adding suid mode to /sbin/shutdown
 2. Modify /etc/sudoers with visudo
