@@ -33,7 +33,7 @@ Build&Run->Kits->Sysroot =>/home/qasem/Development/[cubie2]/sysroot/
 #### gdb config for 32 bit desktop
 error after run with debug mod =   &"warning: GDB: Failed to set controlling terminal: Invalid argument\n"
 
-+ ###### Solution  1 :
+###### Solution  1 :
 
 **first install requirment:**
 ```bash
@@ -50,7 +50,7 @@ cd gdb*
 make
 make install
 ```
-+ ###### Solution  2 :
+###### Solution  2 :
 agar bar tarf nashod man ba in ravesh javab gerftam (albate roy laptop)
 ```bash
 apt-get remove gdb 
