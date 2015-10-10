@@ -12,6 +12,10 @@ date +%T -s "11:14:00"
 
 ```bash
 date -s "19 APR 2012 11:14:00"
+
+or 
+
+date -s "2013-11-19 15:11:40"
 ```
 
 ##### Linux check date from command line
@@ -56,6 +60,12 @@ for check
 ls -al|grep localtime
  lrwxrwxrwx  1 root root      24 Apr 22 10:02 localtime -> /usr/share/zoneinfo/iran
  ```
+Setting the system time using the date command does not automatically synchronize the RTCs. Use the hwclock command after entering the date command to synchronize an RTC with the updated system time:
+
+```bash
+hwclock -w
+```
+
 
 Update from the command line against a time server
 You can update the clock manually, without the need of the daemon with ntpdate
