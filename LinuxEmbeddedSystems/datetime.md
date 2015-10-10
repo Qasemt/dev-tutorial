@@ -74,3 +74,15 @@ You can update the clock manually, without the need of the daemon with ntpdate
 ntpdate 129.6.15.28
 ```
  
+Using the date and hwclock Command
+Use these two commands to manipulate the system clock and hardware clock directly.
+From http://busybox.net/downloads/BusyBox.html#hwclock .
+```bash
+hwclock -r 
+(Show hardware clock time)
+hwclock -w 
+(Set hardware clock to system time)
+hwclock -s 
+(Set system time from hardware clock)
+-f FILE can be used to specify a particular RTC device (e.g. /dev/rtc2).
+```
