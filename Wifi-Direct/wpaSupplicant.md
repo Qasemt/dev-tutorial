@@ -19,3 +19,10 @@ sudo modprobe mt7601Usta
 ```bash
 patch < DPO_MT7601U_LinuxSTA_3.0.0.4_20130913-Linux-3.17.0-v2.patch
 ```
+
+##### config
+```bash
+sudo ./wpa_supplicant -Dnl80211 -ira0 -c/home/qasem/wpa.config -Bd
+
+sudo ./wpa_cli -i ra0
+```
