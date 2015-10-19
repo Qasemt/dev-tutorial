@@ -43,3 +43,26 @@ CONFIG_AP=y
 CFLAGS += -I/usr/include/libnl3
 
 ```
+
+##### WPA Config 
+```bash
+nano ~/wpa.config 
+
+ctrl_interface=/var/run/wpa_supplicant
+ap_scan=1
+
+device_name=Qasem-p2p
+device_type=1-0050F204-1
+driver_param=use_p2p_group_interface=1
+# If you need to modify the group owner intent, 0-15, the higher
+# number indicates preference to become the GO
+#p2p_go_intent=15
+
+# optional, can be useful for monitoring, forces
+# wpa_supplicant to use only channel 1 rather than
+# 1, 6 and 11:
+#p2p_listen_reg_class=81
+#p2p_listen_channel=1
+#p2p_oper_reg_class=81
+#p2p_oper_channel=1
+```
