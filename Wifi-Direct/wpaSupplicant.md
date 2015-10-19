@@ -5,7 +5,17 @@
 
 * http://askubuntu.com/questions/577941/installing-the-driver-for-tp-link-tl-wn727n-on-ubuntu-14-04
 ```bash
-/// hatman patch ro ejra konid
+sudo apt-get install linux-headers-generic build-essential git
+git clone https://github.com/porjo/mt7601.git 
+cd mt7601/src
+make
+sudo make install
+sudo mkdir -p /etc/Wireless/RT2870STA/
+sudo cp RT2870STA.dat /etc/Wireless/RT2870STA/
+sudo modprobe mt7601Usta
 
+```
+###### hatman patch ro ejra konid
+```bash
 patch < DPO_MT7601U_LinuxSTA_3.0.0.4_20130913-Linux-3.17.0-v2.patch
 ```
