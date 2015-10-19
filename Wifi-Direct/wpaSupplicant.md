@@ -26,3 +26,20 @@ sudo ./wpa_supplicant -Dnl80211 -ira0 -c/home/qasem/wpa.config -Bd
 
 sudo ./wpa_cli -i ra0
 ```
+
+#### Config File  for make
+```bash
+CONFIG_DRIVER_NL80211=y
+# optional, depending on libnl version you want to use:
+CONFIG_LIBNL32=y
+
+CONFIG_CTRL_IFACE=y
+CONFIG_WPS=y
+#CONFIG_WPS2=y
+CONFIG_P2P=y
+CONFIG_AP=y
+
+# and maybe DBus
+CFLAGS += -I/usr/include/libnl3
+
+```
