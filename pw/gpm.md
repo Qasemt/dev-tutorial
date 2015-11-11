@@ -9,7 +9,9 @@ GPM  | TTL
 Note : az samte poshte board ro be Buzzer be samte buzzer pin 1 mishavad
 
 ##### Power Board  :
-wire Narenjee : VCC
-wire Zard : GND
+
+* wire Narenjee : VCC
+* wire Zard : GND
+
 
 
