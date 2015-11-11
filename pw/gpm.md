@@ -1,0 +1,12 @@
+##### TTL be GMP pin out :
+
+GPM  | TTL 
+--- | ---
+1 | GND
+6 (TX) | White (RX)
+7 (RX) | Green (TX)
+
+Note : az samte poshte board ro be Buzzer be samte buzzer pin 1 mishavad
+
+
+
