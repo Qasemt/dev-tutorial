@@ -2,7 +2,7 @@
 
 GPM  | TTL 
 --- | ---
-1 | GND
+1 (GND)| GND
 6 (TX) | White (RX)
 7 (RX) | Green (TX)
 
