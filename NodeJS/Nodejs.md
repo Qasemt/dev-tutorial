@@ -9,7 +9,11 @@ apt-get upgrade
 [See this Document ](https://github.com/Qasemt/dev-tutorial/blob/master/Python/Installing_Python_on_Beaglebone_Black.md)
 
 ---
+### Reinstall node-gyp (khily mohem ****)
+```bash
+npm install node-gyp@latest
 
+```
 ### NPM Install on Linux 
 ```bash
 sudo apt-get remove --purge node 
@@ -51,7 +55,7 @@ npm install <module> --save-dev
 npm install 
 ```
 
-####Dependency pack for build (if need)
+####Dependency pack for build (hatman update shavand )
 ```bash
 npm install -g node-gyp
 npm install -g node-pre-gyp
