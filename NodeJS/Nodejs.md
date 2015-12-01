@@ -9,7 +9,7 @@ apt-get upgrade
 [See this Document ](https://github.com/Qasemt/dev-tutorial/blob/master/Python/Installing_Python_on_Beaglebone_Black.md)
 
 
-### update  node-gyp (khily mohem ****)
+#### update  node-gyp (khily mohem ****)
 agar heyne build kardan package ha mesel [serialport] khataye 
 ( gyp_main.py: error: no such option: --no-parallel)  dad hatman akharin versionesho begir
 ```bash
