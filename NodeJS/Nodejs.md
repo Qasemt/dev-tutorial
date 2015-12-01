@@ -5,7 +5,7 @@ apt-get upgrade
 ```
 #### install python if you need 
 [See this Document ](https://github.com/Qasemt/dev-tutorial/blob/master/Python/Installing_Python_on_Beaglebone_Black.md)
-
+---
 ### NPM Install on Linux 
 ```bash
 sudo apt-get remove --purge node 
