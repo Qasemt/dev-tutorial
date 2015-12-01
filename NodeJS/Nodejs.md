@@ -29,6 +29,10 @@ npm install <module> --save-dev
 
 
 ```
+### install Local Package 
+```bashe 
+npm install 
+```
 
 ####Dependency pack for build (if need)
 ```bash
