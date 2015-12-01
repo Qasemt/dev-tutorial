@@ -1,3 +1,10 @@
+### Requirment for install in arm board (hatman anjam bede )
+```bash
+apt-get update 
+apt-get upgrade 
+```
+#### install python if you need 
+[See this Document ](https://github.com/Qasemt/dev-tutorial/blob/master/Python/Installing_Python_on_Beaglebone_Black.md)
 
 ### NPM Install on Linux 
 ```bash
