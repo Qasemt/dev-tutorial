@@ -1,5 +1,6 @@
 ### Requirment for install in arm board (hatman anjam bede )
 ```bash
+sudo apt-get install build-essential
 apt-get update 
 apt-get upgrade 
 ```
