@@ -19,13 +19,22 @@ npm install node-gyp@latest
 
 ---
 
-### NPM Install on Linux 
+
+#### NPM Install on Linux 
+##### method 1 (best Method)
+[(See Doc) ](https://github.com/Qasemt/dev-tutorial/blob/master/NodeJS/Node.js_for_the_BBB.md)
+
+##### method 2
+
 ```bash
 sudo apt-get remove --purge node 
 sudo apt-get install nodejs
 sudo apt-get install npm
+```
 
 
+#### any Command 
+```bash
 You can upgrade npm and nodejs using npm itself as well
 sudo npm install -g npm
 
