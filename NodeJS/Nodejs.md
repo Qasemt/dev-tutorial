@@ -27,6 +27,10 @@ global path = /usr/local/lib/node_modules
 
 npm install <module> --save-dev
 
+### remove  Package 
+```bash
+npm uninstall <module> 
+```
 
 ```
 ### install Local Package 
