@@ -3,7 +3,7 @@
 apt-get update 
 apt-get upgrade 
 ```
-#### install python if you need 
+#### install python 2.7.6 if you need 
 [See this Document ](https://github.com/Qasemt/dev-tutorial/blob/master/Python/Installing_Python_on_Beaglebone_Black.md)
 ---
 ### NPM Install on Linux 
