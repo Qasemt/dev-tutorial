@@ -15,15 +15,15 @@ adjust this to the desired version.
 We will unpack it in the current directory. Specify the -C <path> option to extract it elsewhere.
 ```bash
 
-wget http://nodejs.org/dist/v0.10.5/node-v0.10.5.tar.gz
-tar xzvf node-v0.10.5.tar.gz
+wget http://nodejs.org/dist/v0.12.8/node-v0.12.8.tar.gz
+tar xzvf node-v0.12.8.tar.gz
 
 ```
 #### Step 3: Configure
 At the time of this writing, there is a problem with the Google V8 Snapshot feature causing node to segmentation fault.
 Snapshotting helps node start faster and is not a big-deal feature; we will just compile without it.
 ```bash
-cd node-v0.10.5
+cd node-v0.12.8
 ./configure --without-snapshot
 ```
 
