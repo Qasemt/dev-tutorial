@@ -17,9 +17,9 @@ Pi - GPIO | Relay pin
 
 
 ##### LCD 1602 :
-___
-**PI - Pin 2 (5v) ------ VCC LCD**
 
+**PI - Pin 2 (5v) ------ VCC LCD**
+___
 
 ##### Boot App :
 nano ~/myprj/runapp.sh
