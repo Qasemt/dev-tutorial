@@ -1,4 +1,8 @@
+#### add Rule 
+```bash
 nano /etc/udev/rules.d/01-usbwatcher.rules
+``` 
+
 ```bash
 ACTION=="add", KERNELS=="sda1", RUN+="/lib/udev/myusblinker.sh sda1 d1 add"
 ACTION=="add", KERNELS=="sda2", RUN+="/lib/udev/myusblinker.sh sda2 d2 add"
@@ -7,9 +11,12 @@ ACTION=="remove", KERNELS=="sda1", RUN+="/lib/udev/myusblinker.sh KERNELS d1 rem
 ACTION=="remove", KERNELS=="sda2", RUN+="/lib/udev/myusblinker.sh KERNELS d2 remove"
 
 ```
+#### run script on action 
+create file [restoreip.sh] in flash
 
+```bash
 nano /lib/udev/myusblinker.sh
-
+```
 ```bash
 #!/bin/bash
 function add_mountusb()
