@@ -1,6 +1,6 @@
 ### Source 
 ````bash
-http://willhaley.com/willhaley/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/
+http://willhaley.com/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/
 https://www.maketecheasier.com/set-up-raspberry-pi-as-wireless-access-point/
 http://elinux.org/RPI-Wireless-Hotspot(best)
 http://dev.ardupilot.com/wiki/companion-computers/raspberry-pi-via-mavlink/making-a-mavlink-wifi-bridge-using-the-raspberry-pi/
