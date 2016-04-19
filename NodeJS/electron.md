@@ -33,3 +33,18 @@ npm install -g node-inspector
 ```bash
 http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&port=5858 
 ```
+## Using Native Node Modules
+Read this link 
+```bash
+http://electron.atom.io/docs/v0.37.6/tutorial/using-native-node-modules/
+```
+## Usage 
+```bash 
+ cd /path-to-module/
+ HOME=~/.electron-gyp node-gyp rebuild --target=0.37.6 --arch=x64 --dist-url=https://atom.io/download/atom-shell
+```
+### Note Importane 'Az Ravesh khode Framework Electron Estefade nakon'
+```bash
+ cd /path-to-module/
+ node-gyp rebuild --target=0.29.1 --arch=x64 --dist-url=https://atom.io/download/atom-shell
+```
