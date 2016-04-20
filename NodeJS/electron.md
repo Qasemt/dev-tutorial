@@ -12,6 +12,15 @@ $ cd electron-quick-start
 #### Install the dependencies and run
 ```bash
 $ npm install && npm start
+
+# Install the `electron` command globally in your $PATH
+npm install electron-prebuilt -g
+
+
+# Install as a development dependency
+# navigate to your project folder first
+npm install electron-prebuilt --save-dev 
+
 ```
 
 ## install Debug Tools 
@@ -48,3 +57,6 @@ http://electron.atom.io/docs/v0.37.6/tutorial/using-native-node-modules/
  cd /path-to-module/
  node-gyp rebuild --target=0.37.6 --arch=x64 --dist-url=https://atom.io/download/atom-shell
 ```
+## Note : best IDE For Debug 
+* <b>VS Code</b> [best source <https://cmatskas.com/creating-electron-apps-with-visual-studio-code/> ]
+
