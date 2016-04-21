@@ -44,9 +44,9 @@ http://127.0.0.1:8080/debug?ws=127.0.0.1:8080&port=5858
 ```
 ## Using Native Node Modules
 Read this link 
-```bash
-http://electron.atom.io/docs/v0.37.6/tutorial/using-native-node-modules/
-```
+
+<http://electron.atom.io/docs/v0.37.6/tutorial/using-native-node-modules/>
+
 #### Usage 
 ```bash 
  cd /path-to-module/
