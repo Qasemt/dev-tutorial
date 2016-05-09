@@ -16,6 +16,7 @@ We will unpack it in the current directory. Specify the -C <path> option to extr
 ```bash
 
 wget http://nodejs.org/dist/v0.12.8/node-v0.12.8.tar.gz
+wget https://nodejs.org/dist/v4.4.4/node-v4.4.4.tar.gz --no-check-certificate
 tar xzvf node-v0.12.8.tar.gz
 
 ```
