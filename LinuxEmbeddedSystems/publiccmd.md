@@ -85,3 +85,8 @@ scp Development/BeagleBone/sysroot/lib/libffi.* root@192.168.1.56:/usr/lib/
 zip -y -r vtl.zip ./vtl
 ssh -n root@192.168.1.56 'tar zcvf - /usr/local/softwares/vtl' | cat - > localZip.tar.gz
 ```
+### extract file in linux 
+```bash 
+tar xpvf /path/to/my_archive.tar.xz -C /path/to/extract
+
+```
