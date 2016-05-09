@@ -26,6 +26,10 @@ Snapshotting helps node start faster and is not a big-deal feature; we will just
 ```bash
 cd node-v0.12.8
 ./configure --without-snapshot
+
+OR 
+
+python ./configure --without-snapshot
 ```
 
 #### Result 
