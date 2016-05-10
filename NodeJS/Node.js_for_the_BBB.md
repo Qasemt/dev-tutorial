@@ -96,3 +96,16 @@ Now that all looks well, we are ready install it.
 make install
 ```
 #### Step 7 : Reset Board 
+
+#### Upgrade Node (old version [0.10.0] to new version)
+best source : 
+ link 1 [https://davidwalsh.name/upgrade-nodejs].
+ 
+ link 2 [http://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version]
+```bash
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+sudo ln -sf /usr/local/n/versions/node/<VERSION>/bin/node /usr/bin/node 
+```
+
