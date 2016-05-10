@@ -13,10 +13,16 @@ apt-get install build-essential
 Download the latest source code from the node.js website. At the time of writing it is version 0.10.5 so
 adjust this to the desired version.
 We will unpack it in the current directory. Specify the -C <path> option to extract it elsewhere.
+
+source node.js [http://nodejs.org/dist/]
 ```bash
 
 wget http://nodejs.org/dist/v0.12.8/node-v0.12.8.tar.gz
 wget https://nodejs.org/dist/v4.4.4/node-v4.4.4.tar.gz --no-check-certificate
+# baray board hay ghadimi mesle BBB in version (0.10.0) rahat compile 
+# mishavad bad az compile az tarighe npm version jadide nodejs ra nasb konid
+wget http://nodejs.org/dist/v0.10.0/node-v0.10.0.tar.gz 
+
 tar xzvf node-v0.12.8.tar.gz
 
 ```
