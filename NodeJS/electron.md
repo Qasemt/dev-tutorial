@@ -8,7 +8,23 @@ $ git clone https://github.com/electron/electron-quick-start
 ```bash
 $ cd electron-quick-start
 ```
+#### install Dependencies For BBB & Pi 
+best source : [http://hownodejs.com/53/81/electron-app-deploying-to-raspberry-pi-3-through-resin-io.html]
+```bash
 
+# native deps for electron
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+xserver-xorg-core \
+xorg \
+libgtk2.0-0 \
+libnotify4 \
+libgconf2-4 \
+libnss3 \
+libasound2 \
+matchbox && \
+apt-get clean && rm -rf /var/lib/apt/lists/*
+
+```
 #### Install the dependencies and run
 ```bash
 $ npm install && npm start
