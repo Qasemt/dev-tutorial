@@ -97,7 +97,9 @@ make install
 ```
 #### Step 7 : Reset Board 
 
-#### Upgrade Node (old version [0.10.0] to new version)
+#### Step 10: Upgrade Node (old version [0.10.0] to new version)
+agar version ghadimi ro nasb kardin az in method estefade konid 
+
 best source : 
 
 link 1 [https://davidwalsh.name/upgrade-nodejs].
