@@ -92,6 +92,6 @@ tar xpvf /path/to/my_archive.tar.xz -C /path/to/extract
 ```
 #### change root password 
 ```bash
-#sudo su
-#passpw
+# sudo su
+# passwp
 ```
