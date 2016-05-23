@@ -94,4 +94,4 @@ tar xpvf /path/to/my_archive.tar.xz -C /path/to/extract
 ```bash
 #sudo su
 #passpw
-``
+```
