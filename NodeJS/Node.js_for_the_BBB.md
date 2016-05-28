@@ -116,7 +116,7 @@ sudo ln -sf /usr/local/n/versions/node/<VERSION>/bin/node /usr/bin/node
 ```
 
 ##### note : 
-baz az nasb version jadid node 
+ba'ad az nasb version jadid node 
 bain cmd ha version ghadimi ra pak konid 
 ```bash
 # make uninstall
