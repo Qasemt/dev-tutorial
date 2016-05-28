@@ -94,6 +94,8 @@ Now that all looks well, we are ready install it.
 
 ```bash
 make install
+
+
 ```
 #### Step 7 : Reset Board 
 
@@ -113,3 +115,10 @@ sudo n stable
 sudo ln -sf /usr/local/n/versions/node/<VERSION>/bin/node /usr/bin/node 
 ```
 
+##### note : 
+baz az nasb version jadid node 
+bain cmd ha version ghadimi ra pak konid 
+```bash
+# make uninstall
+# make clean
+```
