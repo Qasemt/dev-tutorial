@@ -6,6 +6,8 @@ auto eth0
 iface eth0 inet static
 address 192.168.1.56
 netmask 255.255.255.0
+# optional 
+dns-nameservers 8.8.8.8 8.8.4.4
 cb2 =>> gateway 192.168.1.210
 ```
 ##### Step2 :
