@@ -25,7 +25,7 @@ sudo apt-get install isc-dhcp-server
 ```bash
 sudo nano /etc/dhcp/dhcpd.conf
 ```
-
+add below code : 
 ```bash
 ddns-update-style interim;
 default-lease-time 600;
