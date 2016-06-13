@@ -1,3 +1,13 @@
+source : [link](http://slicepi.com/creating-an-ad-hoc-network-for-your-raspberry-pi/)
+### step 1:
+sudo nano /etc/network/interfaces
+### step 2: 
+install a package to allow your Pi to assign a device connecting to it an IP address
+```bash
+sudo apt-get install isc-dhcp-server
+```
+
+### step 3:
 sudo nano /etc/dhcp/dhcpd.conf
 ```bash
 ddns-update-style interim;
