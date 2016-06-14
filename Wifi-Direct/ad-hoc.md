@@ -36,3 +36,10 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
  range 192.168.1.5 192.168.1.150;
  }
 ```
+### step 4
+Edit the file **/etc/default/isc-dhcp-server** and set INTERFACES like this:
+
+```bash
+# or eth0
+INTERFACES="wlan0"
+```
