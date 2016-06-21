@@ -2,14 +2,15 @@
 + simple tutorial [link](https://gist.github.com/0/c73e2557d875446b9603)<br>
 + best source - stackoverflow [link](http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux) <br>
 + best source 2   [link](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=125922) <br>
++ source [link](https://en.wikibooks.org/wiki/Linux_Guide/Linux_and_Bluetooth)<br>
 
 ------
 ```bash
-pair 40:40:A7:7F:46:4D 
-bluetoothctl 40:40:A7:7F:46:4D
-connect 40:40:A7:7F:46:4D 
-remove 40:40:A7:7F:46:4D
-trust 40:40:A7:7F:46:4D 
+pair 40:40:A7:7F:xx:xx 
+bluetoothctl 40:40:A7:7F:xx:xx
+connect 40:40:A7:7F:xx:xx 
+remove 40:40:A7:7F:xx:xx
+trust 40:40:A7:7F:xx:xx 
 ```
 #### Tools 
 ###### for test use this tools [ bluetoothctl -a]<br>
@@ -95,6 +96,13 @@ rfcomm listen /dev/rfcomm0 22
 
 reply msg:
 Waiting for connection on channel 22
+
+Connection from 40:40:A7:7F:xx:xx to /dev/rfcomm0
+
+
+# after connect any device you can see this port 
+root@raspberrypi: ls -l /dev/rfcomm0
+root@raspberrypi: crw-rw---- 1 root dialout 216, 0 Feb  3 21:38 /dev/rfcomm0
 ```
 ------
 ##### Notes :
@@ -107,4 +115,9 @@ rfcomm watch 0 22 cat {}
 ## 0 = /dev/rfcomm0
 rfcomm release 0 
 ```
-
+------
+##### Command's :
+###### For Ping deive's
+```bash
+ l2ping XX:XX:XX:X:XX
+```
