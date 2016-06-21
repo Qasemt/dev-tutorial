@@ -1,7 +1,7 @@
 #### source 
 
 simple tutorial [link](https://gist.github.com/0/c73e2557d875446b9603)<br>
-best source - stackoverflow [link](http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux)<br>
+best source - stackoverflow [link](http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux) <br>
 best source 2 : [link](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=125922)
 ------
 ```bash
@@ -12,8 +12,9 @@ remove 40:40:A7:7F:46:4D
 trust 40:40:A7:7F:46:4D 
 ```
 #### Tools 
-for test use this tools [ bluetoothctl -a]<br>
-Android app for test [link] (https://play.google.com/store/apps/details?id=nextprototypes.BTSerialController&hl=en)<br>
+###### for test use this tools [ bluetoothctl -a]<br>
+###### Android app for test [link] (https://play.google.com/store/apps/details?id=nextprototypes.BTSerialController&hl=en)<br>
+------
 #### Config 
 
 ##### Step 1 
