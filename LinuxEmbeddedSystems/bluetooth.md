@@ -97,7 +97,14 @@ reply msg:
 Waiting for connection on channel 22
 ```
 ------
-###### Note : best Command for auto listing and read data 
+##### Notes :
+###### best Command for auto listing and read data 
 ```bash
 rfcomm watch 0 22 cat {}
 ```
+###### free port 
+```bash
+## 0 = /dev/rfcomm0
+rfcomm release 0 
+```
+
