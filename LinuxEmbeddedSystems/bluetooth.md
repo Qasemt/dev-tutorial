@@ -130,3 +130,7 @@ scan on
 scan off
 pair <dev>
 ```
+###### Display the current bluetooth configuration :
+```bash 
+hciconfig -a
+```
