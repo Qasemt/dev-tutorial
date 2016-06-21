@@ -1,6 +1,7 @@
 #### source 
-simple tutorial [1]<br>
-best source - stackoverflow [2]<br>
+
+simple tutorial [link](https://gist.github.com/0/c73e2557d875446b9603)<br>
+best source - stackoverflow [link](http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux)<br>
 ```bash
 pair 40:40:A7:7F:46:4D 
 bluetoothctl 40:40:A7:7F:46:4D
@@ -85,4 +86,4 @@ Version: 0x0100
 ```
 sudo rfcomm bind /dev/rfcomm0 40:40 <br>
 [1]: http://www.reddit.com <br>
-[2]: http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux <br>
+[link text itself]:  <br>
