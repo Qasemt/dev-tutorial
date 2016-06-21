@@ -1,6 +1,6 @@
 #### source 
-+ simple tutorial [link1]
-+ best source - stackoverflow [link2]
+simple tutorial [link1]<br>
+best source - stackoverflow [link2]<br>
 ```bash
 pair 40:40:A7:7F:46:4D 
 bluetoothctl 40:40:A7:7F:46:4D
