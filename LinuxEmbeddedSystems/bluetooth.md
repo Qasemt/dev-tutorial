@@ -12,8 +12,8 @@ remove 40:40:A7:7F:46:4D
 trust 40:40:A7:7F:46:4D 
 ```
 #### Tools 
-for test use this tools [ bluetoothctl -a]
-Android app for test [link] (https://play.google.com/store/apps/details?id=nextprototypes.BTSerialController&hl=en)
+for test use this tools [ bluetoothctl -a]<br>
+Android app for test [link] (https://play.google.com/store/apps/details?id=nextprototypes.BTSerialController&hl=en)<br>
 #### Config 
 
 ##### Step 1 
