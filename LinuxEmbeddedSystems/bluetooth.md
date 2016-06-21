@@ -134,3 +134,12 @@ pair <dev>
 ```bash 
 hciconfig -a
 ```
+##### Current MAc Address 
+```bash
+hcitool dev
+
+reply msg :
+Devices:
+        hci0    XX:XX:XX:XX:XX:XX
+
+```
