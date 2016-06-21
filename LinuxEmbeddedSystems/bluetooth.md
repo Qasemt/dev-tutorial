@@ -121,3 +121,12 @@ rfcomm release 0
 ```bash
  l2ping XX:XX:XX:X:XX
 ```
+###### bluetoothctl cmd's
+```bash
+power on
+agent on
+scan on
+... wait ...
+scan off
+pair <dev>
+```
