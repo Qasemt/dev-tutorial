@@ -55,7 +55,7 @@ sdptool browse local
 ```
 replay message 
 ```bash 
-Browsing FF:FF:FF:00:00:00 ...
+Browsing FF:FF:FF:00:00:00 
 Service RecHandle: 0x10000
 Service Class ID List:
   "PnP Information" (0x1200)
@@ -81,25 +81,8 @@ Language Base Attr List:
   base_offset: 0x100
 Profile Descriptor List:
   "Serial Port" (0x1101)
-    Version: 0x0100
+Version: 0x0100
 ```
-
 sudo rfcomm bind /dev/rfcomm0 40:40
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[link1]:http://www.reddit.com <br>
-[link2]:http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux <br>
+[1]: http://www.reddit.com <br>
+[2]: http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux <br>
