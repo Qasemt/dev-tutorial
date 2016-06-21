@@ -97,5 +97,6 @@ Waiting for connection on channel 22
 ```
 ------
 ###### Note : best Command for auto listing and read data 
+```bash
 rfcomm watch 0 22 cat {}
-
+```
