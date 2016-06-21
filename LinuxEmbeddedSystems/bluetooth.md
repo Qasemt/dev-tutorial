@@ -2,6 +2,8 @@
 
 simple tutorial [link](https://gist.github.com/0/c73e2557d875446b9603)<br>
 best source - stackoverflow [link](http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux)<br>
+best source 2 : [link](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=125922)
+------
 ```bash
 pair 40:40:A7:7F:46:4D 
 bluetoothctl 40:40:A7:7F:46:4D
@@ -14,14 +16,14 @@ for test use this tools [ bluetoothctl -a]
 
 #### Config 
 
-#### Step 1 
+##### Step 1 
 ```bash
 nano /etc/systemd/system/bluetooth.target.wants/bluetooth.service
 
 to adjust the relevant line to read
 ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=sap --compat
 ```
-### Step 2 
+##### Step 2 
 do this command 
 ```bash
 sudo systemctl daemon-reload
@@ -44,7 +46,7 @@ Jan 27 08:39:12 raspberrypi bluetoothd[359]: Bluetooth management interface 1.9 
 Jan 27 08:39:11 raspberrypi systemd[1]: Started Bluetooth service.
 ```
 
-#### Step 3
+##### Step 3
 Choosing an arbitrary channel 22
 ```bash
 sudo sdptool add --channel=22 SP
@@ -84,6 +86,16 @@ Profile Descriptor List:
   "Serial Port" (0x1101)
 Version: 0x0100
 ```
-sudo rfcomm bind /dev/rfcomm0 40:40 <br>
-[1]: http://www.reddit.com <br>
-[link text itself]:  <br>
+------
+##### Step 4
+###### Then I call 'listen' with rfcomm:
+```bash
+rfcomm listen /dev/rfcomm0 22
+
+reply msg:
+Waiting for connection on channel 22
+```
+------
+###### Note : best Command for auto listing and read data 
+rfcomm watch 0 22 cat {}
+
