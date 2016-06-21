@@ -101,5 +101,5 @@ sudo rfcomm bind /dev/rfcomm0 40:40
 
 
 
-[link1]: http://www.reddit.com <br>
+[link1]:http://www.reddit.com <br>
 [link2]:http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux <br>
