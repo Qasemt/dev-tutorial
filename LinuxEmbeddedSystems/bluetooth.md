@@ -37,7 +37,7 @@ sudo service bluetooth status
  Main PID: 359 (bluetoothd)
    Status: "Running"
    CGroup: /system.slice/bluetooth.service
-           └─359 **/usr/lib/bluetooth/bluetoothd --noplugin=sap --compat**
+           └─359 /usr/lib/bluetooth/bluetoothd --noplugin=sap --compat
 
 Jan 27 08:39:09 raspberrypi systemd[1]: Starting Bluetooth service...
 Jan 27 08:39:10 raspberrypi bluetoothd[359]: Bluetooth daemon 5.23
