@@ -1,6 +1,6 @@
 #### source 
-simple tutorial [link1]<br>
-best source - stackoverflow [link2]<br>
+simple tutorial [1]<br>
+best source - stackoverflow [2]<br>
 ```bash
 pair 40:40:A7:7F:46:4D 
 bluetoothctl 40:40:A7:7F:46:4D
@@ -48,7 +48,7 @@ Choosing an arbitrary channel 22
 ```bash
 sudo sdptool add --channel=22 SP
 reply msg : Serial Port service registered
-``
+```
 for check 
 ```bash 
 sdptool browse local
@@ -83,6 +83,6 @@ Profile Descriptor List:
   "Serial Port" (0x1101)
 Version: 0x0100
 ```
-sudo rfcomm bind /dev/rfcomm0 40:40
+sudo rfcomm bind /dev/rfcomm0 40:40 <br>
 [1]: http://www.reddit.com <br>
 [2]: http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux <br>
