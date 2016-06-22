@@ -25,6 +25,11 @@ nano /etc/systemd/system/bluetooth.target.wants/bluetooth.service
 to adjust the relevant line to read
 ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=sap --compat
 ```
+```bash
+nano /etc/bluetooth/main.conf
+#un commnet this field
+DiscoverableTimeout = 0
+```
 ##### Step 2 
 do this command 
 ```bash
