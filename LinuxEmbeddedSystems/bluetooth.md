@@ -3,7 +3,10 @@
 + best source - stackoverflow [link](http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux) <br>
 + best source 2   [link](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=125922) <br>
 + source [link](https://en.wikibooks.org/wiki/Linux_Guide/Linux_and_Bluetooth)<br>
-+ config serial [link](http://raspberrypi.stackexchange.com/questions/23415/how-can-a-usb-bluetooth-dongle-be-used-as-login-tty)
++ config serial [link](http://raspberrypi.stackexchange.com/questions/23415/how-can-a-usb-bluetooth-dongle-be-used-as-login-tty)<br>
++ config client/server [link](http://www.scriptscoop2.com/t/eff75faf36f2/android-why-cant-i-connect-to-my-linux-bluetooth-serial-port.html)<br>
+
+
 
 ------
 ```bash
@@ -19,6 +22,10 @@ trust 40:40:A7:7F:xx:xx
 ------
 #### Config 
 
+##### Option
+```bash
+mknod -m 666 /dev/rfcomm0 c 216 0
+```
 ##### Step 1 
 ```bash
 nano /etc/systemd/system/bluetooth.target.wants/bluetooth.service
@@ -31,6 +38,7 @@ nano /etc/bluetooth/main.conf
 #un commnet this field
 DiscoverableTimeout = 0
 ```
+
 ##### Step 2 
 do this command 
 ```bash
