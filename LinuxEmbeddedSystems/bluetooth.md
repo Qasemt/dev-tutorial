@@ -151,13 +151,16 @@ Devices:
 ```
 --------
 #### service run at boot 
+nano /etc/init.d/bluetoothhelper
+chmod +x /etc/init.d/bluetoothhelper
+
 ```bash
 # power on 
-
 hciconfig hci0 up        
 # discoverable
 
 hciconfig hci0 piscan
 # add channel
 sdptool add --channel=22 SP
+
 ```
