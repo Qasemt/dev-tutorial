@@ -143,3 +143,15 @@ Devices:
         hci0    XX:XX:XX:XX:XX:XX
 
 ```
+--------
+#### service run at boot 
+```bash
+# power on 
+
+hciconfig hci0 up        
+# discoverable
+
+hciconfig hci0 piscan
+# add channel
+sdptool add --channel=22 SP
+```
