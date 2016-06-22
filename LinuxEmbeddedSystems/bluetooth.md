@@ -3,6 +3,7 @@
 + best source - stackoverflow [link](http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux) <br>
 + best source 2   [link](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=125922) <br>
 + source [link](https://en.wikibooks.org/wiki/Linux_Guide/Linux_and_Bluetooth)<br>
++ config serial [link](http://raspberrypi.stackexchange.com/questions/23415/how-can-a-usb-bluetooth-dongle-be-used-as-login-tty)
 
 ------
 ```bash
@@ -162,5 +163,6 @@ hciconfig hci0 up
 hciconfig hci0 piscan
 # add channel
 sdptool add --channel=22 SP
+rfcomm -r watch 0 22 /sbin/agetty -L rfcomm0 115200
 
 ```
