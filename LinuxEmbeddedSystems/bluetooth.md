@@ -125,6 +125,8 @@ rfcomm release 0
 ###### For Ping deive's
 ```bash
  l2ping XX:XX:XX:X:XX
+ # get driver info
+ hciconfig -a 
 ```
 ###### bluetoothctl cmd's
 ```bash
