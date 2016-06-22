@@ -151,8 +151,8 @@ Devices:
 ```
 --------
 #### service run at boot 
-nano /etc/init.d/bluetoothhelper
-chmod +x /etc/init.d/bluetoothhelper
+nano /etc/init.d/bluetoothhelper <br>
+chmod +x /etc/init.d/bluetoothhelper <br>
 
 ```bash
 # power on 
