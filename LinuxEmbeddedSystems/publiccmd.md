@@ -10,6 +10,15 @@ netmask 255.255.255.0
 dns-nameservers 8.8.8.8 8.8.4.4
 cb2 =>> gateway 192.168.1.210
 ```
+###### Note : For Jessie
+```bash
+sudo nano  /etc/dhcpcd.conf
+#and add at the end of the file
+interface eth0
+static ip_address=192.168.1.56
+static routers=192.168.1.210
+static domain_name_servers=8.8.8.8
+```
 ##### Step2 :
 ```bash
 sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf 
