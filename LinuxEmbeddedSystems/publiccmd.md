@@ -28,13 +28,13 @@ static domain_name_servers=8.8.8.8
 ```
 WIFI static Config <br>
 
-nano /etc/network/interface
+**nano /etc/network/interface**
 ```bash
 allow-hotplug wlan0
 iface wlan0 inet manual
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
-nano /etc/wpa_supplicant/wpa_supplicant.conf
+**nano /etc/wpa_supplicant/wpa_supplicant.conf**
 ```bash
 country=GB
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
