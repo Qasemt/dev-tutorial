@@ -19,17 +19,15 @@ interface eth0
 static ip_address=192.168.1.56
 static routers=192.168.1.210
 static domain_name_servers=8.8.8.8
-```
-WIFI static Config
-nano /etc/network/interface
 
-```bash
 interface wlan0
 static ip_address=192.168.1.111/24
 static routers=192.168.1.210
 static domain_name_servers=8.8.8.8
 
 ```
+WIFI static Config
+nano /etc/network/interface
 ```bash
 allow-hotplug wlan0
 iface wlan0 inet manual
