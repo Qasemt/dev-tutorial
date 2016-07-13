@@ -10,7 +10,8 @@ netmask 255.255.255.0
 dns-nameservers 8.8.8.8 8.8.4.4
 cb2 =>> gateway 192.168.1.210
 ```
-###### Note : For Jessie
+_______
+##### Note : For Jessie
 ```bash
 sudo nano  /etc/dhcpcd.conf
 #and add at the end of the file
@@ -18,6 +19,32 @@ interface eth0
 static ip_address=192.168.1.56
 static routers=192.168.1.210
 static domain_name_servers=8.8.8.8
+```
+WIFI static Config
+nano /etc/network/interface
+
+```bash
+interface wlan0
+static ip_address=192.168.1.111/24
+static routers=192.168.1.210
+static domain_name_servers=8.8.8.8
+
+```
+```bash
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
+nano /etc/wpa_supplicant/wpa_supplicant.conf
+```bash
+country=GB
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="Raspberry"
+    psk="4321wifi!@#$"
+    }
 ```
 ##### Step2 :
 ```bash
