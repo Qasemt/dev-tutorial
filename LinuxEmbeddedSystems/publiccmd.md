@@ -26,7 +26,8 @@ static routers=192.168.1.210
 static domain_name_servers=8.8.8.8
 
 ```
-WIFI static Config
+WIFI static Config <br>
+
 nano /etc/network/interface
 ```bash
 allow-hotplug wlan0
