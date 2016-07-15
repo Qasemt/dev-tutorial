@@ -1,6 +1,7 @@
 
 #### Links 
-+ [linke 1](https://tmrh20.github.io/RF24/RPi.html) <br>
++ [link 1](https://tmrh20.github.io/RF24/RPi.html) <br>
++ [link 2 node.js](https://github.com/natevw/node-nrf) <br>
 
 __________
 #### Manual Install
