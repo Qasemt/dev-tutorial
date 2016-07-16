@@ -38,6 +38,11 @@ nano /etc/bluetooth/main.conf
 #un commnet this field
 DiscoverableTimeout = 0
 ```
+##### Note: Refresh service 
+```bash
+systemctl daemon-reload
+systemctl restart bluetooth.service
+```
 
 ##### Step 2 
 do this command 
