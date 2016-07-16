@@ -51,6 +51,7 @@ sudo systemctl daemon-reload
 sudo service bluetooth restart
 
 sudo service bluetooth status
+
 ● bluetooth.service - Bluetooth service
    Loaded: loaded (/lib/systemd/system/bluetooth.service; enabled)
    Active: active (running) since Wed 2016-01-27 08:39:11 PST; 4min 11s ago
