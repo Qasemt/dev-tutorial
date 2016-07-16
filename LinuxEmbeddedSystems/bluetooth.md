@@ -174,3 +174,30 @@ sdptool add --channel=22 SP
 rfcomm -r watch 0 22 /sbin/agetty -L rfcomm0 115200
 
 ```
+--------
+#### Automatically bind the device at startup
+nano /etc/bluetooth/rfcomm.conf
+```bash
+#
+  # RFCOMM configuration file.
+  #
+  rfcomm0 {
+  #       # Automatically bind the device at startup
+          bind yes;
+  #
+  #       # Bluetooth address of the device
+          device 00:18:C5:xx:xx:xx;
+  #
+  #       # RFCOMM channel for the connection
+          channel 1;
+  #
+  #       # Description of the connection
+  #       comment "Example Bluetooth device";
+  }
+```
+Now with:
+```bash
+modprobe rfcomm
+rfcomm bind all
+```
+
