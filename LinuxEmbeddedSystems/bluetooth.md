@@ -49,6 +49,7 @@ do this command
 ```bash
 sudo systemctl daemon-reload
 sudo service bluetooth restart
+
 sudo service bluetooth status
 ● bluetooth.service - Bluetooth service
    Loaded: loaded (/lib/systemd/system/bluetooth.service; enabled)
@@ -197,7 +198,7 @@ nano /etc/bluetooth/rfcomm.conf
           channel 1;
   #
   #       # Description of the connection
-  #       comment "Example Bluetooth device";
+         comment "Example Bluetooth device";
   }
 ```
 Now with:
