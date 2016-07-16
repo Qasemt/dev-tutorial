@@ -5,9 +5,8 @@
 + source [link](https://en.wikibooks.org/wiki/Linux_Guide/Linux_and_Bluetooth)<br>
 + config serial [link](http://raspberrypi.stackexchange.com/questions/23415/how-can-a-usb-bluetooth-dongle-be-used-as-login-tty)<br>
 + config client/server [link](http://www.scriptscoop2.com/t/eff75faf36f2/android-why-cant-i-connect-to-my-linux-bluetooth-serial-port.html)<br>
-+ install bluez 5.3x [link](https://www.hackster.io/idreams/control-a-bluetooth-le-light-bulb-with-raspberry-pi-6d04cc)
-
-
++ install bluez 5.3x [link](https://www.hackster.io/idreams/control-a-bluetooth-le-light-bulb-with-raspberry-pi-6d04cc) <br>
++ install bluez 5.32 [link](http://www.elinux.org/RPi_Bluetooth_LE) <br>
 
 ------
 ```bash
