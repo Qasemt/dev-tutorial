@@ -143,3 +143,33 @@ PermitRootLogin yes
 $ sudo su
 $ passwd
 ```
+#### Space Avaiable 
+**CMD 1:**
+```bash
+du --max-depth=1 | sort -nr
+
+668716  .
+283508  ./lib
+226560  ./share
+69668   ./local
+58544   ./bin
+25092   ./include
+5332    ./sbin
+4       ./src
+4       ./games
+
+```
+**CMD 2:**
+```bash
+df -h
+%%%%
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       1.2G  1.1G   17M  99% /
+devtmpfs        459M     0  459M   0% /dev
+tmpfs           463M     0  463M   0% /dev/shm
+tmpfs           463M  6.2M  457M   2% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           463M     0  463M   0% /sys/fs/cgroup
+/dev/mmcblk0p1   60M   20M   41M  34% /boot
+
+```
