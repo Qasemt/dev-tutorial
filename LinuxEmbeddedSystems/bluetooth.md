@@ -32,6 +32,9 @@ nano /etc/systemd/system/bluetooth.target.wants/bluetooth.service
 
 to adjust the relevant line to read
 ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=sap --compat
+
+#update qasem : 94.04.29
+ExecStartPost=/usr/bin/sdptool add SP
 ```
 ```bash
 nano /etc/bluetooth/main.conf
