@@ -39,7 +39,7 @@ ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=sap --compat
 #update qasem : 94.04.29
 ExecStartPost=/usr/bin/sdptool add --channel=22 SP 
 ```
-** Discoverable Time out ** : 
+**Discoverable Time out** : 
 ```bash
 nano /etc/bluetooth/main.conf
 #un commnet this field
