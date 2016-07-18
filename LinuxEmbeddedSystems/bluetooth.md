@@ -34,7 +34,7 @@ to adjust the relevant line to read
 ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=sap --compat
 
 #update qasem : 94.04.29
-ExecStartPost=/usr/bin/sdptool add SP
+ExecStartPost=/usr/bin/sdptool add --channel=22 SP 
 ```
 ```bash
 nano /etc/bluetooth/main.conf
