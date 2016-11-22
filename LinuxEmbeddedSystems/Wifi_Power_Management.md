@@ -1,8 +1,9 @@
 ####Source : 
- 1. http://raspberrypi.stackexchange.com/questions/1384/how-do-i-disable-suspend-mode/4518#4518
- 2. http://svay.com/blog/setting-up-a-wifi-connection-on-the-raspberrypi/
- 3. https://www.andreagrandi.it/2014/09/02/how-to-configure-edimax-ew-7811un-wifi-dongle-on-raspbian/
- 4.https://www.andreagrandi.it/2014/09/02/how-to-configure-edimax-ew-7811un-wifi-dongle-on-raspbian/
+1. http://raspberrypi.stackexchange.com/questions/1384/how-do-i-disable-suspend-mode/4518#4518
+2. http://svay.com/blog/setting-up-a-wifi-connection-on-the-raspberrypi/
+3. https://www.andreagrandi.it/2014/09/02/how-to-configure-edimax-ew-7811un-wifi-dongle-on-raspbian/
+4. https://www.andreagrandi.it/2014/09/02/how-to-configure-edimax-ew-7811un-wifi-dongle-on-raspbian/
+
 
  
  
