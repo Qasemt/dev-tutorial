@@ -3,14 +3,22 @@
 npm install -g node-pre-gyp
 ```
 -----
-### step :
+### step 2:
 ```
  install python 2 
+ 
 ```
+add path C:\Python27 in variables system
 ----
-### step :
+### step 3:
 ```
 npm install 
 ```
 -----
- ERR! stack Error: `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe`
+
+### step 4:
+```
+npm install sqlite3@3.1.3 
+```
+-----
+
