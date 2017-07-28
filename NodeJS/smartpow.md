@@ -8,7 +8,7 @@ npm install -g node-pre-gyp
  install python 2 
  
 ```
-add path C:\Python27 in variables system
+#### add path C:\Python27 in variables system
 ----
 ### step 3:
 ```
