@@ -18,6 +18,8 @@ npm install
 
 ### step 4:
 ```
+npm instal sqlite3
+# agar error dasht in version ro install konid
 npm install sqlite3@3.1.3 
 ```
 -----
