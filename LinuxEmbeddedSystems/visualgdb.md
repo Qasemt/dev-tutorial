@@ -15,5 +15,5 @@
   debug.make va release.make <br>
   in value ra baray support floating (printf,scanf,sprintf) change konid (-mthumb -mcpu=cortex-m0 -mfloat-abi=soft) <br>
   ```
-  LDFLAGS := -Wl,-gc-sections, -mthumb -mcpu=cortex-m0 -mfloat-abi=soft <br>
+  LDFLAGS := -Wl,-gc-sections, -mthumb -mcpu=cortex-m0 -mfloat-abi=soft 
   ```
