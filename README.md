@@ -10,7 +10,7 @@
 
 ##### Author:
 
-* Qasem Taheri: taaheri2@gmail.com
+* Qasem Taheri: taaheeri@gmail.com
 
 
 ##### License:
