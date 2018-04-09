@@ -1,4 +1,4 @@
-###Editing the GitLab Configuration File
+### Editing the GitLab Configuration File
 ```bash
 sudo nano /etc/gitlab/gitlab.rb
 ```
