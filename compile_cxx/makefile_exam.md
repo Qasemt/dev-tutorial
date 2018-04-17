@@ -1,3 +1,9 @@
+#### Sorce :
+* https://android.googlesource.com/platform/external/free-image/+/master/Makefile.mingw
+* https://gist.github.com/codebrainz/1494603
+##### bind makefile to VS code
+* http://my-web-site.iobb.net/~yuki/tag/visual-studio-code/
+
 ```makefile
 # Makefile 
 #
