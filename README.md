@@ -3,7 +3,7 @@
 # Dev Tutorial
 ####Source :
 1. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-
+2. [Markdown Master](https://guides.github.com/features/mastering-markdown/)
 
 
 
