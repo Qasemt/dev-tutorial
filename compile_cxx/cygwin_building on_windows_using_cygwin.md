@@ -6,7 +6,6 @@ source : [http://dev.exiv2.org/projects/exiv2/wiki/Building_on_Windows_Using_Cyg
 
    program list | 
    |--- | 
-   *Still* |
    autoconf |
    clang (optional) |
    cmake |
