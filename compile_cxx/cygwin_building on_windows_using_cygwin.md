@@ -1,5 +1,7 @@
-#### Building on Windows Using Cygwin
-source : (http://dev.exiv2.org/projects/exiv2/wiki/Building_on_Windows_Using_Cygwin)[link 1]
+### Building on Windows Using Cygwin
+#### source : 
+* [link 1][1]
+_______
 1. goto cygwin setup 
 2. Choose the following packages: 
 
@@ -17,3 +19,4 @@ source : (http://dev.exiv2.org/projects/exiv2/wiki/Building_on_Windows_Using_Cyg
    subversion |
    zlib-devel |
    
+[1]: http://dev.exiv2.org/projects/exiv2/wiki/Building_on_Windows_Using_Cygwin
