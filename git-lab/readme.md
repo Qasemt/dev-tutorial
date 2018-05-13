@@ -30,7 +30,16 @@ sudo nano /etc/gitlab/gitlab.rb
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
 ```
-
+_______
+##### LDAP Test in ubuntu
+```bash
+sudo apt install ldap-utils
+```
+```
+> ldapsearch -x -LLL -h [host] -D [user] -w [password] -b [base DN] -s sub "([filter])" [attribute list]
+> ldapsearch -x -LLL -h 172.XX.X.X -D XX@domain -w xxxx  -b ou=karaj-users,dc=n2it,dc=local
+```
+_______
 ##### LDAP CONFIG 
 ```yaml
 gitlab_rails['ldap_enabled'] = true
