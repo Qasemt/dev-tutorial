@@ -1,3 +1,25 @@
+## How To Install and Configure GitLab on Ubuntu 16.04
+
+
+#### Source :
+[link1](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04)
+#### S1 :
+```bash
+sudo apt-get update
+sudo apt-get install ca-certificates curl openssh-server postfix
+```
+#### S2 :
+```bash
+cd /tmp
+curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+
+less /tmp/script.deb.sh
+
+sudo bash /tmp/script.deb.sh
+
+sudo apt-get install gitlab-ce
+```
+______
 ### Editing the GitLab Configuration File
 ```bash
 sudo nano /etc/gitlab/gitlab.rb
