@@ -80,10 +80,10 @@ crontab -e
 ```
 
 You may also want to set a limited lifetime for backups to prevent regular backups using all your disk space. To do this add the following lines to /etc/gitlab/gitlab.rb and reconfigure:
-
+``` bash
 # limit backup lifetime to 7 days - 604800 seconds
 gitlab_rails['backup_keep_time'] = 604800
-
+```
 ______
 
 ### Restore
@@ -93,7 +93,7 @@ First make sure your backup tar file is in /var/opt/gitlab/backups (or wherever 
 
 sudo cp 1393513186_gitlab_backup.tar /var/opt/gitlab/backups/
 Next, restore the backup by running the restore command. You need to specify the timestamp of the backup you are restoring.
-
+``` bash
 # Stop processes that are connected to the database
 sudo gitlab-ctl stop unicorn
 sudo gitlab-ctl stop sidekiq
@@ -109,5 +109,6 @@ sudo gitlab-rake gitlab:satellites:create
 
 # Check GitLab
 sudo gitlab-rake gitlab:check SANITIZE=true
+```
 If there is a GitLab version mismatch between your backup tar file and the installed version of GitLab, the restore command will abort with an error. Install a package for the required version and try again.
 
