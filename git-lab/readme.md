@@ -2,8 +2,9 @@
 
 
 #### Source :
-[link1](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04)
-[link backup process](https://blue.cse.buffalo.edu/gitlab/help/raketasks/backup_restore.md)
+
+* [link1](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04)
+* [link_backup_process](https://blue.cse.buffalo.edu/gitlab/help/raketasks/backup_restore.md)
 #### S1 :
 ```bash
 sudo apt-get update
