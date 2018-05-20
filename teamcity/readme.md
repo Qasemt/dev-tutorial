@@ -1,7 +1,17 @@
 #### Source :
 [link1](https://makandracards.com/konjoot/21071-ubuntu-12-04-teamcity-build-agent-installation)
+[lin2 java setup](https://www.atlantic.net/cloud-hosting/how-to-install-java-jre-jdk-ubuntu-16-04/)
 
 ## Ubuntu 12.04 TeamCity build agent installation
+_________________
+#### Install Java Oracle JRE or JDK on Ubuntu 16.04
+``` consle
+sudo apt install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt update
+sudo apt install oracle-java8-installer
+sudo update-alternatives --config java
+```
 _________________
 ``` console 
 mkdir buildAgent
