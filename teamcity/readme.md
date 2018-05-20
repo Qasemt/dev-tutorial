@@ -1,6 +1,6 @@
 #### Source :
-[link1](https://makandracards.com/konjoot/21071-ubuntu-12-04-teamcity-build-agent-installation)
-[lin2 java setup](https://www.atlantic.net/cloud-hosting/how-to-install-java-jre-jdk-ubuntu-16-04/)
+* [link1](https://makandracards.com/konjoot/21071-ubuntu-12-04-teamcity-build-agent-installation)
+* [link2 java setup](https://www.atlantic.net/cloud-hosting/how-to-install-java-jre-jdk-ubuntu-16-04/)
 
 ## Ubuntu 12.04 TeamCity build agent installation
 _________________
