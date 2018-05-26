@@ -88,3 +88,8 @@ npm uninstall -g node-inspector
 ps aux | grep node
 killall -9 any node
 ```
+#### Type script install 
+[source 1 ](https://code.visualstudio.com/docs/languages/typescript)
+``` console 
+npm install -g typescript
+```
