@@ -13,6 +13,9 @@ sudo apt install oracle-java8-installer
 sudo update-alternatives --config java
 ```
 _________________
+#### Build tool for nginx 
+* [link build tools](https://github.com/Qasemt/dev-tutorial/blob/master/LinuxEmbeddedSystems/3.nginx.md)
+_________________
 ``` console 
 mkdir buildAgent
 wget http://your_teamcity.server.com:8111/update/buildAgent.zip
