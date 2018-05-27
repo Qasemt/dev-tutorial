@@ -88,14 +88,13 @@ GROUP=admin
 AGENT_HOME=~/workspace/buildAgent
 #
 
-
 case "$1" in
   start)
-    [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
+    logger -t teamcity-agent "starting $DESC "
     sudo -H -u $USERNAME /bin/bash --login -c "$AGENT_HOME/bin/agent.sh start"
     ;;
   stop)
-    [ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
+    logger -t teamcity-agent "stopping  $DESC "
     sudo -H -u $USERNAME /bin/bash --login -c "$AGENT_HOME/bin/agent.sh stop"
     ;;
   *)
@@ -103,6 +102,7 @@ case "$1" in
     exit 3
     ;;
 esac
+
 ```
 ________
 step 2:
