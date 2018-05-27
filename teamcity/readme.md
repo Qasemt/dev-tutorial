@@ -4,8 +4,9 @@
 
 ## Ubuntu 12.04 TeamCity build agent installation
 #### install tools
+> svn for check build number (if you need)
 ``` console
-apt-get install subversion
+# apt-get install subversion
 ```
 _________________
 #### Install Java Oracle JRE or JDK on Ubuntu 16.04
