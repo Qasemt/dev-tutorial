@@ -17,7 +17,8 @@ _________________
 * [link build tools](https://github.com/Qasemt/dev-tutorial/blob/master/LinuxEmbeddedSystems/3.nginx.md)
 _________________
 ``` console 
-mkdir buildAgent
+mkdir -p workspace/buildAgent & cd workspace/buildAgent
+
 wget http://your_teamcity.server.com:8111/update/buildAgent.zip
 unzip buildAgent.zip
 chown -R your_user:your_group ../buildAgent
