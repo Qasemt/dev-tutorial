@@ -111,5 +111,5 @@ sudo update-rc.d teamcity-agent defaults
 ```
 for test 
 ``` console 
-sudo chmod +x /etc/init.d/teamcity-agent start
+sudo /etc/init.d/teamcity-agent start
 ```
