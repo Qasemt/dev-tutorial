@@ -3,6 +3,10 @@
 * [link2 java setup](https://www.atlantic.net/cloud-hosting/how-to-install-java-jre-jdk-ubuntu-16-04/)
 
 ## Ubuntu 12.04 TeamCity build agent installation
+#### install tools
+``` console
+apt-get install subversion
+```
 _________________
 #### Install Java Oracle JRE or JDK on Ubuntu 16.04
 ``` consle
