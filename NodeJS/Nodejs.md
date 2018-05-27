@@ -94,18 +94,16 @@ killall -9 any node
 npm install -g typescript
 ```
 
-
+________
 ## How to: Allow Node to bind to port 80 and 443 without sudo
-
-### TL;DR
-
 *Only do this if you understand the consequences: all node programs will be able to bind on ports < 1024*
-
+``` bash
     sudo setcap 'cap_net_bind_service=+ep' /usr/bin/node
      or 
      sudo setcap 'cap_net_bind_service=+ep' $(readlink -f $(which node))
+ ```
 Important: your node location may vary. Use `which node` to find it, or use it directly in the command:
-
+``` bash
     sudo setcap 'cap_net_bind_service=+ep' `which node`
+```
 
-### Explanation
