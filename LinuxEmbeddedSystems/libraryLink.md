@@ -2,6 +2,8 @@
 #### source link
 1. http://serverfault.com/questions/326268/python-new-install-showing-error-while-loading-shared-libraries
 2. [link2](http://pinoytux.com/2013/08/19/how-to-add-or-remove-library-path-in-rhel/)
+##### find ld library in cache
+ldconfig -p | grep libjpeg
 ##### Step 1
 
 ldconfig creates the necessary links and cache to the most recent shared libraries
