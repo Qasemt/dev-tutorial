@@ -4,7 +4,7 @@
 ##### bind makefile to VS code
 * http://my-web-site.iobb.net/~yuki/tag/visual-studio-code/
 
-```makefile
+``` makefile
 # Makefile 
 #
 #     make clean
