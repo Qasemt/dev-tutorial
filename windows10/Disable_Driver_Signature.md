@@ -1,6 +1,7 @@
 #### How to Disable Driver Signature Verification on 64-Bit Windows 8 or 10 (So That You Can Install Unsigned Drivers)
 link1
-... bash
+
+``` console
 Option One: Enable Test Signing Mode
 bcdedit /set testsigning on
 bcdedit /set testsigning off
