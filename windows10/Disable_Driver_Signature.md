@@ -5,7 +5,7 @@ link1
 Option One: Enable Test Signing Mode
 bcdedit /set testsigning on
 bcdedit /set testsigning off
-and reset pc (shift)
+and reset pc
 ```
 ``` bash
 Option Two: Use an Advanced Boot Option
