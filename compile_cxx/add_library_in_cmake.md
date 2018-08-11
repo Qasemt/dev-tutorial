@@ -60,7 +60,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 
 #export LD_LIBRARY_PATH="/home/xxx/workspace/libs/Image_magick/lib:$LD_LIBRARY_PATH"
 
-set(rr  "/home/taheri/workspace/libs/Image_magick/lib")
+set(rr  "/home/xxx/workspace/libs/Image_magick/lib")
 #check_include_files (netdb.h HAVE_NETDB_H)
 set(MYOUTDIR "./../bin/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${MYOUTDIR}" )
@@ -81,7 +81,7 @@ link_directories( "${rr}")
 
 
 
-include_directories ( "." "/home/taheri/workspace/libs/Image_magick/include/ImageMagick-6/")
+include_directories ( "." "/home/xxxx/workspace/libs/Image_magick/include/ImageMagick-6/")
 #_______ ADD SOURCES 
 # set (PRG_SOURCE  "teamyar.cpp" 
                   
@@ -108,7 +108,7 @@ add_executable (${PROJECT_NAME} ${PRG_SOURCE} )
 
 
 #______ SET LIBRARY DYNAMIC AND STATIC 
- #set(rr  "/home/taheri/Downloads/ImageMagick-x86_64-pc-linux-gnu/ImageMagick-6.9.2/lib")
+ #set(rr  "/home/xxx/Downloads/ImageMagick-x86_64-pc-linux-gnu/ImageMagick-6.9.2/lib")
  #link_directories( "${rr}")
  #target_link_libraries(${PROJECT_NAME}  "${rr}/libMagickCore-6.Q16.so"   "${rr}/libMagick++-6.Q16.so"   "${rr}/libMagickWand-6.Q16.so" )
  #------------------------------ cmake solution
