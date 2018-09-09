@@ -1,4 +1,4 @@
-[source 1 ](https://gist.github.com/ankushpatel18/180e649b0adf21f35d8f8ad6b1f27159)
+[source 1 ](https://gist.github.com/glappsmobile/4fd9ec605b90844852dc7da048415ff6)
 ### sol 1:
 #### license server jetbrinse
 
