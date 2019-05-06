@@ -1,6 +1,5 @@
 ### RESAHRPER
 
-[source 1 ](https://gist.github.com/glappsmobile/4fd9ec605b90844852dc7da048415ff6)
 ### sol 0 :
 share license resharper
 https://licensez.com/
