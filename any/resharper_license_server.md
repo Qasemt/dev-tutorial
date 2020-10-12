@@ -2,7 +2,7 @@
 #### license server jetbrinse
 1. best way : step by step
 ```
-https://github.com/Mike-bel/jetbrains-agent-latest
+https://github.com/Qasemt/jetbrains-agent-latest
 ```
 
 ### Edit Host File
