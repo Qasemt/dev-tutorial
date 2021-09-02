@@ -1,4 +1,5 @@
 ### remove unnecessary programs raspberry pi
+* src :https://medium.com/@sean_t_king/how-to-remove-un-necessary-software-from-your-raspberry-pi-server-fa312f83e00
 Type the following in the terminal:
 ```
 sudo cp /etc/network/interfaces /etc/network/interfaces.bak
