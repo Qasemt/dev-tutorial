@@ -1,6 +1,7 @@
 ## Setup linux alpine
 
 * https://www.cyberciti.biz/faq/how-to-upgrade-alpine-linux-3-4-to-3-5-xx/
+* https://www.youtube.com/watch?v=RQXpmzVS804
 
 
 ### Setup Command
