@@ -16,11 +16,11 @@ in line ha ro be apks repository ezafe konid va sabr koind to index update shava
 
 vi cat /etc/apk/repositories
 ```
-any lines in file...
+
 
 http://dl-cdn.alpinelinux.org/alpine/v3.16/main
 http://dl-cdn.alpinelinux.org/alpine/v3.16/community
-
+/media/cdrom/apks
 
 ```
 
