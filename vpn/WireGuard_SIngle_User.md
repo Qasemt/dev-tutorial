@@ -1,4 +1,5 @@
 * https://www.youtube.com/watch?v=QjbwKPBZEeU
+* https://wiki.alpinelinux.org/wiki/Configure_a_Wireguard_interface_(wg) az connfig in estefade nakon
 ----
 ## How Install WireGuard Into CentOS 7
 
@@ -12,7 +13,7 @@ RAM: minimum 1024MB (2GB preferable)
 #yum install epel-release https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 #yum install yum-plugin-elrepo
 #yum install kmod-wireguard wireguard-tools
-#yum install qrencode
+#yum install qrencode or apk add libqrencode
 #yum install nano
 ```
 
@@ -50,7 +51,6 @@ ListenPort = 55525
 PrivateKey = _$SERVER_PRIVATE_KEY_
 
 [Peer]
-
 PublicKey = $CLIENT_PUBLIC_KEY
 AllowedIPs = 192.168.200.5/32
 ```
@@ -87,7 +87,6 @@ PrivateKey = $_PRIVATE_KEY
 DNS = 8.8.8.8
 
 [Peer]
-
 PublicKey = $_SERVER_PUBLIC_KEY
 AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint = SERVERIP:55525
@@ -139,8 +138,6 @@ ___________________________
 check file for make QR Code !
 ```
 #ls
-```
-```
 #qrencode -t ansiutf8 < client01.conf
 ```
 you will see qrcode for scan for your mobile phone | Android & IOS
