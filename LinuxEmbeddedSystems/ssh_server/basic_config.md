@@ -1,4 +1,4 @@
-#ctrl service 
+# ctrl service 
 ```
 service sshd restart
 ```
