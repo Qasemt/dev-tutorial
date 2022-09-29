@@ -122,8 +122,11 @@ Check IP forward
 make wireguard ip forward
 
 ___________________________
+Enable IP Forwarding
+If you intend for peers to be able to access external resources (including the internet), you will need to enable forwarding. Edit the file /etc/sysctl.conf (or a .conf file under /etc/sysctl.d/) and add the following line.
 
 #nano /etc/sysctl.d/wireguard.conf
+
 ```
 
 put all of line into the file and some section and SAVE !
