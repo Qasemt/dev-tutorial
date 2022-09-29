@@ -48,9 +48,9 @@ PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEP
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = 55525
 PrivateKey = _$SERVER_PRIVATE_KEY_
-```
+
 [Peer]
-```
+
 PublicKey = $CLIENT_PUBLIC_KEY
 AllowedIPs = 192.168.200.5/32
 ```
@@ -85,9 +85,9 @@ put all of line into the file and some section and SAVE !
 Address = 192.168.200.5/24
 PrivateKey = $_PRIVATE_KEY
 DNS = 8.8.8.8
-```
+
 [Peer]
-```
+
 PublicKey = $_SERVER_PUBLIC_KEY
 AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint = SERVERIP:55525
