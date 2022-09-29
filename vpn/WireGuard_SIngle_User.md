@@ -16,8 +16,9 @@ RAM: minimum 1024MB (2GB preferable)
 #yum install nano
 ```
 
+#### Reboot and then load the module
 ```
-#modprobe wireguard
+$ modprobe wireguard
 ```
 
 If the modprob does not work, you may have to reboot the machine.
