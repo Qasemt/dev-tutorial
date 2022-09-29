@@ -40,9 +40,8 @@ ___________________________
 #nano wg0.conf
 ```
 put all of line into the file and edit some section and SAVE !
-
-[Interface]
 ```
+[Interface]
 Address = 192.168.200.254/24
 SaveConfig = true
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
@@ -81,9 +80,8 @@ ___________________________
 #nano client01.conf
 ```
 put all of line into the file and some section and SAVE !
-
-[Interface]
 ```
+[Interface]
 Address = 192.168.200.5/24
 PrivateKey = $_PRIVATE_KEY
 DNS = 8.8.8.8
