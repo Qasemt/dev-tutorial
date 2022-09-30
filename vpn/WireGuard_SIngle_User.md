@@ -1,7 +1,9 @@
 * https://www.youtube.com/watch?v=QjbwKPBZEeU
 * https://kb.bluvalt.com/howto/setup-wireguard-centos/
+* https://upcloud.com/resources/tutorials/get-started-wireguard-vpn
 * https://wiki.alpinelinux.org/wiki/Configure_a_Wireguard_interface_(wg)  not used
 * https://stanislas.blog/2019/01/how-to-setup-vpn-server-wireguard-nat-ipv6/ not used
+
 ----
 ## How Install WireGuard Into CentOS 7
 
