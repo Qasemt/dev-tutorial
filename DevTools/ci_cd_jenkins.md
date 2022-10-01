@@ -1,6 +1,21 @@
 * https://www.zenesys.com/blog/install-and-configure-jenkins-on-centos-7 not used
 * https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-22-04
-* 
+
+## Prerequisites
+### Minimum hardware requirements:
+```
+256 MB of RAM
+
+1 GB of drive space (although 10 GB is a recommended minimum if running Jenkins as a Docker container)
+
+Recommended hardware configuration for a small team:
+
+4 GB+ of RAM
+
+50 GB+ of drive space
+```
+
+---
 
 ## Installing Jenkins in alpine 
 
