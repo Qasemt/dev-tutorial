@@ -1,0 +1,53 @@
+* https://www.cyberciti.biz/faq/how-to-set-up-wireguard-firewall-rules-in-linux
+* https://dev.to/tangramvision/what-they-don-t-tell-you-about-setting-up-a-wireguard-vpn-1h2g
+* https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/
+
+
+## install wireguard in alpine
+```
+apk add wireguard-tools
+
+modprobe wireguard
+
+```
+
+#### SERVER WIREGUARD ON VIRTUALBOX [NAT] 
+```
+[Interface]
+Address = 10.0.0.1/24
+ListenPort = 55525
+PrivateKey = SERVER_PRIVATE_KEY_
+
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE; ip6tables -A FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE; ip6tables -D FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+ 
+
+[Peer]
+PublicKey = CLIENT_PUBLIC_KEY 
+#AllowedIPs = 10.0.0.2/32,192.168.1.0/24
+AllowedIps = 10.0.0.2/32
+
+
+```
+##### Note :
+
+* On your  server, set AllowedIPs =  10.0.0.2/32 (the WireGuard address of your iPhone).
+* On your client, keep AllowedIPs = 0.0.0.0/0 (all IPv4 addresses). 
+
+---
+##### WIREGUARD  CLIENT  LINUX ON VIRTUALBOX [NAT]
+```
+[Interface]
+Address = 10.0.0.2/32
+PrivateKey = $Client_PRIVATE_KEY
+DNS = 8.8.8.8
+
+
+[Peer]
+PublicKey =  $_SERVER_PUBLIC_KEY
+AllowedIPs = 0.0.0.0/0, ::/0
+#Endpoint = 10.0.2.15:55525
+Endpoint =192.168.1.37:55525
+PersistentKeepalive = 15
+```
+
