@@ -55,4 +55,7 @@ AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint =192.168.1.37:55525
 PersistentKeepalive = 15
 ```
-
+#### TEST SERVER
+```
+wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip
+```
