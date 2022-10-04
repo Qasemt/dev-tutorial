@@ -11,6 +11,11 @@ modprobe wireguard
 
 ```
 
+#### KEY GEN SERVER AND CLIENT
+```
+wg genkey | tee server-private.key | wg pubkey > server-public.key
+wg genkey | tee client-private.key | wg pubkey > client-public.key
+```
 #### SERVER WIREGUARD ON VIRTUALBOX [NAT] 
 ```
 [Interface]
