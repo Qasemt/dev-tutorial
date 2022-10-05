@@ -1,3 +1,4 @@
+* https://gist.github.com/qdm12/4e0e4f9d1a34db9cf63ebb0997827d0d
 * https://www.cyberciti.biz/faq/how-to-set-up-wireguard-firewall-rules-in-linux
 * https://dev.to/tangramvision/what-they-don-t-tell-you-about-setting-up-a-wireguard-vpn-1h2g
 * https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/
