@@ -59,3 +59,27 @@ PersistentKeepalive = 15
 ```
 wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip
 ```
+---
+### AUTO START 
+$ nano /etc/init.d/wireguard
+```
+#!/sbin/openrc-run
+
+description="WireGuard Quick"
+
+depend() {
+    need localmount
+    need net
+}
+
+start() {
+    wg-quick up wg0
+}
+
+stop() {
+    wg-quick down wg0
+}
+```
+* $ chmod +x /etc/init.d/wireguard
+* $ rc-update add wireguard default
+
