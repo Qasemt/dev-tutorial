@@ -82,4 +82,25 @@ stop() {
 ```
 * $ chmod +x /etc/init.d/wireguard
 * $ rc-update add wireguard default
+---
 
+#### Update wireguard config files for firewall and routing support ↑
+
+```
+[Interface]
+...
+...
+PostUp = /etc/wireguard/postup.sh
+PostDown = /etc/wireguard/postdown.sh
+```
+edit postup.sh
+```shellscript
+#!/bin/sh
+iptables -A FORWARD -i wg0 -j ACCEPT;
+...
+...
+...
+```
+
+* chmod a+rx  /etc/wireguard/postup.sh
+* chmod a+rx  /etc/wireguard/postdown.sh
