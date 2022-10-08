@@ -5,7 +5,7 @@
 
 1. Create file in root project **.release.help.yml**
 ``` yaml 
-# .goreleaser.yml
+# .release.help.yml
 project_name: app
 builds:
   - id: dtm_amd64
