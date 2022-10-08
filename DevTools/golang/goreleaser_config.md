@@ -37,7 +37,7 @@ name: Release
 on:
   create:
     tags:
-      - v*
+       - 'v*.*.*'
 
 jobs:
   release:
