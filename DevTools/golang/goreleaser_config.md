@@ -7,19 +7,26 @@
 1. Create file in root project **.release.help.yml**
 ``` yaml 
 # .release.help.yml
-project_name: app
+# env:
+#   - GO111MODULE=on
+
+project_name: AppServer
+
+# gomod:
+#   proxy: true
+
 builds:
   - id: app_amd64
     env: [CGO_ENABLED=0]
     goos:
       - linux
-      - windows
+      # - windows
     goarch:
       - amd64
     dir: .
     main: main.go
     ldflags:
-      - -s -w -X main.Version=v{{.Version}}
+      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.builtBy=goreleaser
 
   - id: linux-armhf-raspberry
     main: main.go
@@ -40,7 +47,7 @@ builds:
     flags:
       - -mod=readonly
     ldflags:
-      - -s -w -X main.version={{.Version}}
+      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}} -X main.builtBy=goreleaser
 
 archives:
   - id: my-archive
