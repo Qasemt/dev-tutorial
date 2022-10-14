@@ -1,3 +1,5 @@
+1. [only one ip to squid proxy server](https://serverfault.com/questions/1008068/how-to-enable-only-one-ip-to-squid-proxy-server)
+---
 ## Squid
 ```
 apt-get install squid 
