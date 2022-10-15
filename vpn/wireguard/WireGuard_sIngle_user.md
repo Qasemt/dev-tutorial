@@ -143,21 +143,4 @@ ___________________________
 #sysctl -p /etc/sysctl.d/wireguard.conf
 #sysctl -a | grep -i ip_forward
 ```
-check file for make QR Code !
-```
-#ls
-#qrencode -t ansiutf8 < client01.conf
-```
-you will see qrcode for scan for your mobile phone | Android & IOS
 
-for make conf file in your windows please print code and copy to .conf file
-```
-#cat client01.conf
-```
-copy code same like video to one file and save with .conf
-
-START SERVICE :
-```
-#systemctl start wg-quick@wg0
-#systemctl status wg-quick@wg0
-```
