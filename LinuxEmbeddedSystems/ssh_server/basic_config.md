@@ -49,6 +49,8 @@ For troubleshooting do # tail -f /var/log/auth.log.
 ---
 #### Disabling SSH Timeout When Connecting to/from Ubuntu
 
+[reference 1](https://queirozf.com/entries/disabling-ssh-timeout-when-connecting-to-from-ubuntu)
+
 nano /etc/ssh/sshd_config
 ```bash
 # other configs above
