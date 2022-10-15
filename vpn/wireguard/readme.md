@@ -4,5 +4,5 @@
    * Installing WireGuard 
 ```
 sudo apt update
-sudo apt install wireguard qrencode
+sudo apt install wireguard qrencode resolvconf
 ```
