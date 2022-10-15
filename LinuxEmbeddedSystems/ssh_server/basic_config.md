@@ -46,3 +46,20 @@ sudo service ssh restart
 For troubleshooting do # tail -f /var/log/auth.log.
 
 ```
+---
+#### Disabling SSH Timeout When Connecting to/from Ubuntu
+
+nano /etc/ssh/sshd_config
+```bash
+# other configs above
+
+ClientAliveInterval 600
+TCPKeepAlive yes
+ClientAliveCountMax 10
+```
+Restart the ssh server so that changes take effect:
+```console
+$ sudo /etc/init.d/ssh restart
+```
+---
+
