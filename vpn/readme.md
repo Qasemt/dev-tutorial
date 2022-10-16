@@ -16,24 +16,4 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 4095
 
 ---
 ### AUTO START 
-$ nano /etc/init.d/wireguard
-```
-#!/sbin/openrc-run
-
-description="WireGuard Quick"
-
-depend() {
-    need localmount
-    need net
-}
-
-start() {
-    wg-quick up wg0
-}
-
-stop() {
-    wg-quick down wg0
-}
-```
-* $ chmod +x /etc/init.d/wireguard
-* $ rc-update add wireguard default
+* [reference 1]( /LinuxEmbeddedSystems/general_config/auto_start_with_open_rc.md)
