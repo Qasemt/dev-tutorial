@@ -27,14 +27,15 @@ stop() {
 }
 ```
 * $ chmod +x /etc/init.d/script
-* $ rc-update add script default
-* $ rc-update del script default
+* $ rc-update add script default ✔️
+* $ rc-update del script default ✔️
 
 in ubuntu :
  * update-rc.d* script defaults
 
 
 [1]:https://wiki.gentoo.org/wiki/OpenRC
+
 ---
 
 ### How to run a Linux Program on Startup ✔️✔️✔️✔️✔️✔️
