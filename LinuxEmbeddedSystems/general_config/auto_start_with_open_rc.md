@@ -24,7 +24,7 @@ start() {
 stop() {
   $ (program stop) &>/dev/null &
   OR 
-  $ kill $(ps aux | grep 'program name' | awk '{print $2}')
+  $ kill $(ps aux | grep 'program name' | awk '{print $1}')
   OR 
   $ pkill <process name>
 }
