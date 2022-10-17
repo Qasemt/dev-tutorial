@@ -31,6 +31,8 @@ stop() {
 * $ rc-update add script default ✔️
 * $ rc-update del script default ✔️
 
+server [name service] (status / restart / start / stop)
+
 in ubuntu :
  * update-rc.d* script defaults
 
