@@ -2,8 +2,9 @@
 * [refrence][1]
 * [reference service ctl ](https://timleland.com/how-to-run-a-linux-program-on-startup/)
 * [reference full service ctl](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
-
-$ nano /etc/init.d/servicename
+---
+### ALPINE 
+ $ nano /etc/init.d/servicename
 ```
 #!/sbin/openrc-run
 
@@ -38,7 +39,8 @@ in ubuntu :
 
 ---
 
-### How to run a Linux Program on Startup ✔️✔️✔️✔️✔️✔️
+### Ubuntu And Debian
+ #### How to run a Linux Program on Startup ✔️✔️✔️✔️✔️✔️
  1. Run this command
 ```
 sudo nano /etc/systemd/system/YOUR_SERVICE_NAME.service
