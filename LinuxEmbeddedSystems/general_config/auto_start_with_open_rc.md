@@ -25,6 +25,8 @@ stop() {
   $ (program stop) &>/dev/null &
   OR 
   $ kill $(ps aux | grep 'program name' | awk '{print $2}')
+  OR 
+  $ pkill <process name>
 }
 ```
 * $ chmod +x /etc/init.d/script
