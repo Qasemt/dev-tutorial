@@ -2,32 +2,40 @@
 * [refrence][1]
 * [reference service ctl ](https://timleland.com/how-to-run-a-linux-program-on-startup/)
 * [reference full service ctl](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
+* [service script for openrc](http://big-elephants.com/2013-01/writing-your-own-init-scripts/)✔️
 ---
 ### ALPINE 
  $ nano /etc/init.d/servicename
 ```
 #!/sbin/openrc-run
 
-description="WireGuard Quick"
+description="app Quick"
 
 depend() {
     need localmount
     need net
 }
-
 start() {
-  # [&] Execute a program from the bash terminal without waiting 
-     
-  $ (program start) &>/dev/null & 
+  ebegin "Starting v2ray"
+    start-stop-daemon --wait 200 \
+    --background --start --exec  /root/folder/app  -u root   --make-pidfile --pidfile /root/folder/app.pid 
+    eend $?
 }
 
 stop() {
-  $ (program stop) &>/dev/null &
-  OR 
-  $ kill $(ps aux | grep 'program name' | awk '{print $1}')
-  OR 
-  $ pkill <process name>
+ebegin "Stopping app"
+    start-stop-daemon --stop --exec /root/folder/app    --pidfile  /root/folder/app.pid
+    eend $? 
 }
+
+reload() {
+ ebegin "Reloading app"
+    start-stop-daemon --exec  /root/folder/app  \
+    --pidfile /root/folder/app.pid \
+    -s 1
+    eend $?
+}
+
 ```
 * $ chmod +x /etc/init.d/script
 * $ rc-update add script default ✔️
