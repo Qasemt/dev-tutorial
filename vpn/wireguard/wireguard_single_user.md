@@ -1,11 +1,12 @@
-* https://www.youtube.com/watch?v=QjbwKPBZEeU
-* https://kb.bluvalt.com/howto/setup-wireguard-centos/
-* https://upcloud.com/resources/tutorials/get-started-wireguard-vpn
-* https://wiki.alpinelinux.org/wiki/Configure_a_Wireguard_interface_(wg)  not used
-* https://stanislas.blog/2019/01/how-to-setup-vpn-server-wireguard-nat-ipv6/ not used
-* https://arash-hatami.ir/config-wireguard/
+- https://www.youtube.com/watch?v=QjbwKPBZEeU
+- https://kb.bluvalt.com/howto/setup-wireguard-centos/
+- https://upcloud.com/resources/tutorials/get-started-wireguard-vpn
+- https://wiki.alpinelinux.org/wiki/Configure_a_Wireguard_interface_(wg) not used
+- https://stanislas.blog/2019/01/how-to-setup-vpn-server-wireguard-nat-ipv6/ not used
+- https://arash-hatami.ir/config-wireguard/
 
-----
+---
+
 ## How Install WireGuard Into CentOS 7
 
 System Requirements :
@@ -13,6 +14,7 @@ System Requirements :
 OS: CentOS7
 
 RAM: minimum 1024MB (2GB preferable)
+
 ```
 #yum install kernel-devel kernel-headers # you have to install kernel headers first
 #yum install epel-release https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
@@ -23,11 +25,13 @@ RAM: minimum 1024MB (2GB preferable)
 ```
 
 #### Reboot and then load the module
+
 ```
 $ modprobe wireguard
 ```
 
 If the modprob does not work, you may have to reboot the machine.
+
 ```
 #reboot
 #lsmod | grep -i wireguard
@@ -45,7 +49,9 @@ If the modprob does not work, you may have to reboot the machine.
 ___________________________
 #nano wg0.conf
 ```
+
 put all of line into the file and edit some section and SAVE !
+
 ```
 [Interface]
 Address = 192.168.200.254/24
@@ -65,11 +71,13 @@ AllowedIPs = 192.168.200.5/32
 ```
 
 copy key and insert
+
 ```
 #nano wg0.conf
 ```
 
 SAVE
+
 ```
 #wg genkey | tee client-private.key | wg pubkey > client-public.key
 #ls
@@ -79,12 +87,15 @@ copy key and insert
 SAVE
 
 ```
-___________________________
+
+---
 
 ```
 #nano client01.conf
 ```
+
 put all of line into the file and some section and SAVE !
+
 ```
 [Interface]
 Address = 192.168.200.5/24
@@ -98,49 +109,56 @@ Endpoint = SERVERIP:55525
 PersistentKeepalive = 15
 ```
 
-_____
+---
+
 ```
 #cat client-private.key
 ```
 
 copy key and insert
+
 ```
 #cat server-public.key
 ```
 
 copy key and insert
 
-Please put your ip address into the file and sale 
+Please put your ip address into the file and sale
 
 IPAdress:PORT
 
-___________________________
+---
 
 Check iptables
+
+```bash
+# iptables -vnL
 ```
-#iptables -vnL
-```
+
 Check IP forward
-```
+
+```bash
 #sysctl -a | grep -i forward
 ```
-make wireguard ip forward
 
-___________________________
+---
+
+## Set forward setting
+
 Enable IP Forwarding
-If you intend for peers to be able to access external resources (including the internet), you will need to enable forwarding. Edit the file /etc/sysctl.conf (or a .conf file under /etc/sysctl.d/) and add the following line.
 
-#nano /etc/sysctl.d/wireguard.conf
-
-```
+> If you intend for peers to be able to access external resources (including the internet), you will need to enable forwarding. Edit the file /etc/sysctl.conf (or a .conf file under /etc/sysctl.d/) and add the following line.
 
 put all of line into the file and some section and SAVE !
 
+```
 net.ipv4.ip_forward = 1
 net.ipv6.conf.all.forwarding=1
-___________________________
-
-#sysctl -p /etc/sysctl.d/wireguard.conf
-#sysctl -a | grep -i ip_forward
 ```
 
+- Test
+
+```bash
+# sysctl -p /etc/sysctl.d/wireguard.conf
+# sysctl -a | grep -i ip_forward
+```
