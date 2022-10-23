@@ -24,3 +24,9 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 4095
 ## AUTO START
 
 - [reference 1](/LinuxEmbeddedSystems/general_config/auto_start_with_open_rc.md)
+
+## 🧪 Test Speed Internet
+
+```bash
+wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip
+```
