@@ -4,7 +4,7 @@
 
 1. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 2. [Markdown Master](https://guides.github.com/features/mastering-markdown/)
-3. [Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
+3. [Emoji List](https://emojipedia.org/people/)
 
 ##### Author:
 
