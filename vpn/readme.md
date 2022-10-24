@@ -29,4 +29,5 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 4095
 
 ```bash
 wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip
+wget --output-document=/dev/null https://speed.hetzner.de/1GB.bin
 ```
