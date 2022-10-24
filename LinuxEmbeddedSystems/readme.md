@@ -24,7 +24,7 @@
 
 - [Nginx Compile](./general_config/nginx_compile.md)
 
-### Devics
+### Devices
 
 - [BBB](./general_config/devices/BBB.md)
 - [BeagleBon Black](./general_config/beaglebone_black.md)
