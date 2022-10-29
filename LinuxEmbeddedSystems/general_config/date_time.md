@@ -1,3 +1,5 @@
+1. [Sync Date Time in Alpine](https://unix.stackexchange.com/questions/171643/virtualbox-time-sync)
+
 ## Time and Timezone
 
 - Alpine 👌 ⏰ ✔️
@@ -5,11 +7,26 @@
 ```bash
 # apk add --no-cache tzdata
 # ls /usr/share/zoneinfo
-# p /usr/share/zoneinfo/Asia/Tehran /etc/localtime
+# cp /usr/share/zoneinfo/Asia/Tehran /etc/localtime
 # echo "Asia/Tehran" >  /etc/timezone
 
 ### You can now remove the other timezones
 # apk del tzdata
+```
+
+#### Sync time apline in VM
+
+برای سینک کردن تایم بعد از اسلیپ خارج شدن کامپیوتر باید این دستورات را اجرا کنید که اتوماتیک تایم سینک شود
+install virtualbox
+
+```bash
+apk add virtualbox-guest-additions
+```
+
+run cmd
+
+```bash
+ /usr/sbin/VBoxService --timesync-set-start
 ```
 
 - ubuntu 👌 ⏰✔️
