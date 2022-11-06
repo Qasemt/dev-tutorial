@@ -87,7 +87,7 @@ KillMode=process
 WantedBy=multi-user.target
 ```
 
-Sample NGINX :
+> Sample NGINX :
 
 ```yml
 Description= v2ray proxy server
@@ -108,7 +108,45 @@ KillMode=mixed
 WantedBy=multi-user.target
 ```
 
+> Sample 2 VPN Server:
+
+```yml
+[Unit]
+Description=SoftEther VPN Server
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/vpnserver/vpnserver start
+ExecStop=/usr/local/vpnserver/vpnserver stop
+
+[Install]
+WantedBy=multi-user.target
+```
+
+> Sampe 3 v2ray
+
+```
+Description=v2ray server
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/root/v2ray/v2ray run -config /root/v2ray/config.json
+Restart=on-failure
+RestartSec=3
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+```
+
 - systemctl start YOUR_SERVICE_NAME
 - systemctl status YOUR_SERVICE_NAME
 - systemctl enable YOUR_SERVICE_NAME (To start a service at boot, use the enable command)
 - systemctl daemon-reload
+
+log
+journalctl -u YOUR_SERVICE_NAME
