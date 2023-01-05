@@ -8,6 +8,7 @@
 - [Curl](./general_config/curl.md)
 - [SSH](./ssh_server/Readme.md)
 - [Rsync](./general_config/rsync.md)
+- [UWF](./general_config/uwf.md)
 - [Resize Disk ](./general_config/resize_disk_linux.md)
 
 #### Alpine
