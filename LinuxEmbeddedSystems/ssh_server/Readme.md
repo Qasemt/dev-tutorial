@@ -43,3 +43,15 @@ Try setting UseDNS to no in **/etc/sshd_config** or **/etc/ssh/sshd_config**
 ```console
  UseDNS no
 ```
+
+### change port SSH
+
+```
+netstat -tulnp | grep ssh
+nano /etc/ssh/sshd_config
+Port 22333
+systemctl restart sshd
+netstat -tulpn | grep ssh
+ssh -p 22333 user@localhost
+ufw allow 22333/tcp
+```
