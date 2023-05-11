@@ -4,6 +4,14 @@
 
 ---
 
+config login with public / private key :
+
+```
+https://wpclouddeploy.com/add-your-existing-ssh-key-to-the-root-user-account/
+```
+
+---
+
 # ctrl service
 
 ```
