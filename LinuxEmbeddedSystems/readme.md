@@ -34,7 +34,7 @@
 - [Raspberry remove unnecessary programs](./general_config/devices/raspberry_remove_unnecessary_programs.md)
 - [Free Desktop](./general_config/devices/free_desktop.md)
 - [Port](./general_config/devices/ports.md)
-- [GPIO](./general_config/devices/gpio.md)
+- [GPIO](./general_config/gpio.md)
 - [Bluethooth](./general_config/devices/bluetooth.md)
 - [I2C/RTC](./general_config/devices/i2c_and_rtc.md)
 - [lighdm](./general_config/devices//lightdm.md)
