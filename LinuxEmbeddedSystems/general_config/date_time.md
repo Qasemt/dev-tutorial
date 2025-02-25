@@ -1,5 +1,11 @@
 1. [Sync Date Time in Alpine](https://unix.stackexchange.com/questions/171643/virtualbox-time-sync)
+## debian ubuntu 
+```
+sudo timedatectl set-timezone Asia/Tehran
+sudo ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
+sudo hwclock --systohc
 
+```
 ## Time and Timezone
 
 - Alpine 👌 ⏰ ✔️
