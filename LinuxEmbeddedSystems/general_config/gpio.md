@@ -4,6 +4,8 @@
 ## gpio status 
 ```
 gpioinfo | grep "sysfs"
+cat /sys/kernel/debug/gpio
+
 ```
 
 ## gpio  
