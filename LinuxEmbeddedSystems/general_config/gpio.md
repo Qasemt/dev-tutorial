@@ -1,5 +1,6 @@
 
-### GPIO 
+# GPIO 
+
 ## gpio status 
 ```
 gpioinfo | grep "sysfs"
