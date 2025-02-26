@@ -59,7 +59,18 @@
 tar xpvf /path/to/my_archive.tar.xz -C /path/to/extract
 
 ```
+## Configure APT to Use the Proxy
+```
+sudo nano /etc/apt/apt.conf.d/90proxy
 
+Acquire::http::Proxy "http://172.20.10.1:3128";
+Acquire::https::Proxy "http://172.20.10.1:3128";
+
+# If your proxy requires a username and password (e.g., myuser:mypass), add
+
+Acquire::http::Proxy "http://username:password@proxy.server:port";
+Acquire::https::Proxy "http://username:password@proxy.server:port";
+```
 ## 🔑 Change root password
 
 ```bash
