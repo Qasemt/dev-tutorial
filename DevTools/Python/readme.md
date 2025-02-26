@@ -9,3 +9,8 @@ sudo apt install build-essential python3-dev gcc-aarch64-linux-gnu
 ```
 pip3 install lgpio --proxy http://172.20.10.1:3128
 ```
+
+## install debugpy in linux board 
+```
+python3 -m pip install debugpy
+```
