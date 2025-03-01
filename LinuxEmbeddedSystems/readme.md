@@ -54,7 +54,11 @@
 - [sim 5320](./general_config/devices/sim5320.md)
 
 ## 📚 extract file in linux
+## set proxy 
+```bash
+echo 'Acquire::http::Proxy "http://USERNAME:PASS@172.20.10.1:3128/";' | sudo tee /etc/apt/apt.conf.d/95proxy
 
+```
 ```bash
 tar xpvf /path/to/my_archive.tar.xz -C /path/to/extract
 
