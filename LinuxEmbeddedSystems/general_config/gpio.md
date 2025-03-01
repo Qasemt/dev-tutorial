@@ -17,6 +17,11 @@ echo 1 > /sys/class/gpio/gpio20/value
 echo 0 > /sys/class/gpio/gpio20/value
 
 ls /sys/class/gpio
+echo 1031 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio1031/direction
+echo 1 > /sys/class/gpio/gpio1031/value
+echo 0 > /sys/class/gpio/gpio1031/value
+
 echo 19 > /sys/class/gpio/export
 echo out > /sys/class/gpio/gpio19/direction
 echo 1 > /sys/class/gpio/gpio19/value
@@ -43,4 +48,8 @@ echo out > /sys/class/gpio/gpio7/direction
 echo 1 > /sys/class/gpio/gpio7/value
 echo 0 > /sys/class/gpio/gpio7/value
 
+```
+## gpio lib for python 
+```linux
+sudo apt install gpiod libgpiod-dev
 ```
