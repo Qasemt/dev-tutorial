@@ -37,6 +37,12 @@ source /etc/environment || error_exit "Failed to reload environment settings."
 # Update package list
 sudo apt update || error_exit "Failed to update package list."
 
+# Install git
+sudo apt install -y git || error_exit "Failed to install git."
+
+# Install net-tools
+sudo apt install -y net-tools || error_exit "Failed to install net-tools."
+
 # Install locales package if not already installed
 sudo apt install -y locales || error_exit "Failed to install locales package."
 
@@ -63,6 +69,26 @@ grep -q '^export LC_ALL=en_US.UTF-8' ~/.bashrc || echo 'export LC_ALL=en_US.UTF-
 
 # Reload ~/.bashrc
 source ~/.bashrc || error_exit "Failed to reload ~/.bashrc."
+
+# Configure static IP using netplan
+NETPLAN_FILE="/etc/netplan/01-netcfg.yaml"
+cat <<EOF | sudo tee $NETPLAN_FILE || error_exit "Failed to write netplan configuration."
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses:
+        - 192.168.40.147/24
+      gateway4: 192.168.40.1
+      nameservers:
+        addresses:
+          - 172.20.10.1
+      broadcast: 192.168.40.255
+EOF
+
+# Apply netplan changes
+sudo netplan apply || error_exit "Failed to apply netplan configuration."
 
 # Display current locale settings
 locale || error_exit "Failed to display locale settings."
