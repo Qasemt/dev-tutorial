@@ -82,23 +82,19 @@ grep -q '^export LANGUAGE=en_US.UTF-8' ~/.bashrc || echo 'export LANGUAGE=en_US.
 
 # Reload ~/.bashrc
 source ~/.bashrc || error_exit "Failed to reload ~/.bashrc."
+ 
+# Configure static IP using /etc/network/interfaces
+INTERFACES_FILE="/etc/network/interfaces"
+echo "
+auto eth0
+iface eth0 inet static
+    address 192.168.40.147
+    netmask 255.255.255.0
+    gateway 192.168.40.1
+    dns-nameservers 172.20.10.1" | sudo tee -a $INTERFACES_FILE || error_exit "Failed to configure static IP."
 
-# Configure static IP using netplan
-NETPLAN_FILE="/etc/netplan/01-netcfg.yaml"
-cat <<EOF | sudo tee $NETPLAN_FILE || error_exit "Failed to write netplan configuration."
-network:
-  version: 2
-  ethernets:
-    eth0:
-      dhcp4: no
-      addresses:
-        - 192.168.40.147/24
-      gateway4: 192.168.40.1
-      nameservers:
-        addresses:
-          - 172.20.10.1
-      broadcast: 192.168.40.255
-EOF
+# Restart networking service
+sudo systemctl restart networking || error_exit "Failed to restart networking service."
 
 # Apply netplan changes
 sudo netplan apply || error_exit "Failed to apply netplan configuration."
