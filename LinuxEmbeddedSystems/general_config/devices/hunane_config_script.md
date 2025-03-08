@@ -53,11 +53,23 @@ sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 || error_exit "Failed to 
 # Apply changes immediately
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Set locale in /etc/default/locale
+echo "LANG=en_US.UTF-8" | sudo tee /etc/default/locale || error_exit "Failed to set LANG in /etc/default/locale."
+echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/default/locale || error_exit "Failed to set LC_ALL in /etc/default/locale."
+echo "LANGUAGE=en_US.UTF-8" | sudo tee -a /etc/default/locale || error_exit "Failed to set LANGUAGE in /etc/default/locale."
+
+# Set locale in /etc/environment
+echo "LANG=en_US.UTF-8" | sudo tee -a /etc/environment || error_exit "Failed to set LANG in /etc/environment."
+echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/environment || error_exit "Failed to set LC_ALL in /etc/environment."
+echo "LANGUAGE=en_US.UTF-8" | sudo tee -a /etc/environment || error_exit "Failed to set LANGUAGE in /etc/environment."
 
 # Disable zh_CN.UTF-8 in ~/.bashrc
 if [[ -f ~/.bashrc ]]; then
     sed -i 's/^export LANG=zh_CN.UTF-8/# export LANG=zh_CN.UTF-8/' ~/.bashrc || error_exit "Failed to disable zh_CN.UTF-8 in ~/.bashrc."
     sed -i 's/^export LC_ALL=zh_CN.UTF-8/# export LC_ALL=zh_CN.UTF-8/' ~/.bashrc || error_exit "Failed to disable zh_CN.UTF-8 in ~/.bashrc."
+    sed -i 's/^export LANGUAGE=zh_CN.UTF-8/# export LANGUAGE=zh_CN.UTF-8/' ~/.bashrc || error_exit "Failed to disable LANGUAGE=zh_CN.UTF-8 in ~/.bashrc."
 else
     echo "~/.bashrc does not exist. Creating a new file..."
     touch ~/.bashrc || error_exit "Failed to create ~/.bashrc."
@@ -66,6 +78,7 @@ fi
 # Add en_US.UTF-8 to ~/.bashrc if not already present
 grep -q '^export LANG=en_US.UTF-8' ~/.bashrc || echo 'export LANG=en_US.UTF-8' >> ~/.bashrc || error_exit "Failed to add LANG to ~/.bashrc."
 grep -q '^export LC_ALL=en_US.UTF-8' ~/.bashrc || echo 'export LC_ALL=en_US.UTF-8' >> ~/.bashrc || error_exit "Failed to add LC_ALL to ~/.bashrc."
+grep -q '^export LANGUAGE=en_US.UTF-8' ~/.bashrc || echo 'export LANGUAGE=en_US.UTF-8' >> ~/.bashrc || error_exit "Failed to add LANGUAGE to ~/.bashrc."
 
 # Reload ~/.bashrc
 source ~/.bashrc || error_exit "Failed to reload ~/.bashrc."
