@@ -106,6 +106,15 @@ sudo netplan apply || error_exit "Failed to apply netplan configuration."
 # Display current locale settings
 locale || error_exit "Failed to display locale settings."
 
+# Configure SSH to allow root login
+SSHD_CONFIG="/etc/ssh/sshd_config"
+sudo sed -i 's/^#\?PermitRootLogin .*/PermitRootLogin yes/' $SSHD_CONFIG || error_exit "Failed to update SSH configuration."
+
+# Restart SSH service to apply changes
+sudo systemctl restart ssh || error_exit "Failed to restart SSH service."
+
+echo "SSH configuration updated: Root login is now permitted."
+
 echo "Operation completed successfully."
 
 ```
