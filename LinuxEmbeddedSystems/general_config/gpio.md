@@ -48,6 +48,11 @@ echo out > /sys/class/gpio/gpio7/direction
 echo 1 > /sys/class/gpio/gpio7/value
 echo 0 > /sys/class/gpio/gpio7/value
 
+
+echo 8 | sudo tee /sys/class/gpio/export
+echo in | sudo tee /sys/class/gpio/gpio8/direction
+cat /sys/class/gpio/gpio8/value
+
 ```
 ## gpio lib for python 
 ```linux
