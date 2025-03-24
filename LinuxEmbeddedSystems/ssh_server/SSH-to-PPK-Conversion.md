@@ -47,4 +47,5 @@
 
     ```bash
     ssh-keygen -p -f /path/to/your/private_key -m pem
+    scp C:\Users\username\.ssh\file.key.pub root@192.168.1.100:/root/.ssh
     ```
