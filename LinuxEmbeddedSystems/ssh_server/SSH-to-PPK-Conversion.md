@@ -59,6 +59,8 @@ This guide explains how to convert an existing SSH private key (e.g., `id_rsa`) 
 If PuTTYgen doesn't recognize the file, you might need to convert the key into standard PEM format first using the following command:
 
 ```bash
+    scp C:\Users\q.taheri\.ssh\id_ed25519.pub root@192.168.41.125:/root/.ssh/authorized_keys
+
     ssh-keygen -p -f /path/to/your/private_key -m pem
-    scp C:\Users\username\.ssh\file.key.pub root@192.168.1.100:/root/.ssh
+    scp C:\Users\username\.ssh\file.key.pub root@192.168.41.125:/root/.ssh
 ```
