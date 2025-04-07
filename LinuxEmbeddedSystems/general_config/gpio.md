@@ -56,6 +56,14 @@ echo 0 > /sys/class/gpio/gpio6/value
 echo in > /sys/class/gpio/gpio6/direction
 cat /sys/class/gpio/gpio6/value
 
+echo 1029 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio1029/direction
+echo 1 > /sys/class/gpio/gpio1029/value
+echo 0 > /sys/class/gpio/gpio1029/value
+
+echo in > /sys/class/gpio/gpio1029/direction
+cat /sys/class/gpio/gpio1029/value
+
 echo in > /sys/class/gpio/gpio6/direction
 cat /sys/class/gpio/gpio8/value
 
