@@ -1,51 +1,64 @@
-# آموزش تبدیل کلید خصوصی SSH به فرمت .ppk برای PuTTY
+# How to Convert an SSH Private Key to .ppk Format for PuTTY
 
-در این راهنما، مراحل تبدیل یک کلید خصوصی SSH (مانند `id_rsa`) به فرمت `.ppk` با استفاده از ابزار PuTTYgen توضیح داده شده است.
+This guide explains how to convert an existing SSH private key (e.g., `id_rsa`) into the `.ppk` format using **PuTTYgen**, which is required for authentication in PuTTY.
 
-## پیش‌نیازها
+## Prerequisites
 
-* ابزار **PuTTYgen** (معمولاً همراه با نصب PuTTY ارائه می‌شود).
-* فایل کلید خصوصی SSH شما (مثلاً `~/.ssh/id_rsa`).
+- **PuTTYgen** tool (usually comes with the PuTTY installation)
+- Your existing SSH private key file (e.g., `~/.ssh/id_rsa`)
 
-## مراحل گام‌به‌گام
+## Step-by-Step Instructions
 
-1.  **نصب یا اجرای PuTTYgen**
-    * اگر PuTTY را نصب کرده‌اید، PuTTYgen معمولاً در همان بسته موجود است.
-    * در ویندوز: PuTTYgen را از منوی Start یا پوشه نصب PuTTY اجرا کنید.
-    * در لینوکس/مک: می‌توانید PuTTYgen را از طریق بسته PuTTY نصب کنید (مثلاً با `sudo apt install putty-tools` در اوبونتو) و سپس با دستور `puttygen` اجرا کنید.
-2.  **باز کردن کلید خصوصی موجود**
-    * PuTTYgen را باز کنید.
-    * روی دکمه **"Load"** کلیک کنید.
-    * در پنجره بازشده، گزینه **"All Files (\*.\*)"** را انتخاب کنید تا همه فایل‌ها نمایش داده شوند (چون فایل کلید خصوصی معمولاً پسوند ندارد).
-    * به محل فایل کلید خصوصی خود بروید (مثلاً `id_rsa`) و آن را انتخاب کنید.
-    * روی **"Open"** کلیک کنید.
-3.  **وارد کردن رمز عبور (در صورت وجود)**
-    * اگر کلید خصوصی شما با رمز عبور محافظت شده است، در این مرحله از شما خواسته می‌شود رمز عبور را وارد کنید.
-    * رمز عبور را وارد کرده و **"OK"** را بزنید.
-4.  **تنظیمات اختیاری (اختیاری)**
-    * در صورت تمایل، می‌توانید یک **"Key passphrase"** جدید برای فایل `.ppk` تنظیم کنید:
-        * در بخش **"Key passphrase"** و **"Confirm passphrase"** رمز دلخواه خود را وارد کنید.
-    * اگر نمی‌خواهید رمز داشته باشد، این بخش را خالی بگذارید.
-5.  **ذخیره کلید به فرمت .ppk**
-    * روی دکمه **"Save private key"** کلیک کنید.
-    * یک نام برای فایل انتخاب کنید (مثلاً `mykey.ppk`) و محل ذخیره‌سازی را مشخص کنید.
-    * روی **"Save"** کلیک کنید.
-6.  **استفاده از فایل .ppk در PuTTY**
-    * PuTTY را باز کنید.
-    * در بخش **"Connection > SSH > Auth > Credentials"**، روی **"Browse"** کلیک کنید.
-    * فایل `.ppk` که ذخیره کرده‌اید را انتخاب کنید.
-    * تنظیمات اتصال خود را تکمیل کنید (مانند IP سرور و پورت) و سپس **"Open"** را بزنید.
-
-## نکات مهم
-
-* فایل `.ppk` را در محلی امن نگه دارید، زیرا حاوی کلید خصوصی شماست.
-* اگر با خطایی مواجه شدید (مثلاً فرمت نادرست فایل)، مطمئن شوید که فایل ورودی واقعاً یک کلید خصوصی SSH است و با فرمت OpenSSH سازگار است.
-
-## رفع اشکال (در صورت نیاز)
-
-* اگر PuTTYgen فایل را شناسایی نکرد، ممکن است لازم باشد کلید را ابتدا به فرمت استاندارد OpenSSH تبدیل کنید. برای این کار از دستور زیر در ترمینال استفاده کنید:
-
+### 1. Install or Launch PuTTYgen
+- **On Windows**: If you've installed PuTTY, PuTTYgen is included. You can find it in the Start Menu or in the PuTTY installation directory.
+- **On Linux/macOS**:
+  - Install PuTTYgen via your package manager:
     ```bash
+    sudo apt install putty-tools   # Debian/Ubuntu
+    ```
+  - Launch PuTTYgen with:
+    ```bash
+    puttygen
+    ```
+
+### 2. Load Your Existing Private Key
+- Open PuTTYgen.
+- Click the **"Load"** button.
+- In the file dialog, select **"All Files (\*.\*)"** to display files without extensions.
+- Navigate to your private key file (e.g., `id_rsa`) and select it.
+- Click **"Open"**.
+
+### 3. Enter Passphrase (If Required)
+- If your key is protected with a passphrase, you’ll be prompted to enter it now.
+- Enter the passphrase and click **"OK"**.
+
+### 4. Optional: Set a New Passphrase
+- You can optionally set a new **key passphrase** for the `.ppk` file:
+  - Fill in the **"Key passphrase"** and **"Confirm passphrase"** fields.
+- If you prefer not to use a passphrase, leave these fields empty.
+
+### 5. Save the Key in .ppk Format
+- Click the **"Save private key"** button.
+- Choose a file name (e.g., `mykey.ppk`) and a secure location to save the file.
+- Click **"Save"**.
+
+### 6. Use the .ppk File in PuTTY
+- Launch **PuTTY**.
+- Go to **Connection > SSH > Auth > Credentials**.
+- Click **"Browse"** and select the `.ppk` file you saved earlier.
+- Complete the rest of your connection settings (such as the server IP and port).
+- Click **"Open"** to start the session.
+
+## Important Notes
+
+- Keep your `.ppk` file in a secure location, as it contains your private key.
+- If you encounter errors (e.g., invalid format), make sure the original key is a valid OpenSSH private key.
+
+## Troubleshooting
+
+If PuTTYgen doesn't recognize the file, you might need to convert the key into standard PEM format first using the following command:
+
+```bash
     ssh-keygen -p -f /path/to/your/private_key -m pem
     scp C:\Users\username\.ssh\file.key.pub root@192.168.1.100:/root/.ssh
-    ```
+```
