@@ -1,5 +1,5 @@
 Guide to Fix Crontab Error and Set Up Automatic Script Execution
-
+# Cron
 1. Install Cron
 sudo apt-get update
 sudo apt-get install cron
@@ -16,7 +16,13 @@ Add the following line:
 Set executable permission:
 chmod +x /full/path/to/script.py
 
-3. Alternative Method (Systemd)
+For Stop app in core :
+comment line script after run 
+```shell
+corn -e 
+```
+
+# Alternative Method (Systemd)
 sudo nano /etc/systemd/system/auto_script.service
 
 Service file content:
