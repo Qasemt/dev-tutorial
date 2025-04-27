@@ -36,6 +36,11 @@ sudo systemctl enable auto_script.service
 sudo systemctl start auto_script.service
 sudo systemctl status auto_script.service  # Check status
 
+For stop and disable:
+sudo systemctl stop auto_script.service
+sudo systemctl disable auto_script.service # for disable in boot 
+sudo systemctl status auto_script.service  # Check status
+
 4. Important Notes
 - Find the script path using pwd in the terminal
 - Use #!/usr/bin/env python3 at the top of Python scripts
