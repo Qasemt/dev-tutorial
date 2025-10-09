@@ -116,7 +116,7 @@ scripts/install_script/remote/Deploy-App.ps1
 Change the ssh and scp execution lines to this:
 
 ```powershell
-$SshKey = "$ScriptDir/app-deploy-key"
+$SshKey = "$ScriptDir/app-deploy-key" # private key 
 
 # Upload
 scp -i "$SshKey" -r "$LocalWheelhousePath" "deploy@$LinuxIP:$RemoteProjectDir/"
