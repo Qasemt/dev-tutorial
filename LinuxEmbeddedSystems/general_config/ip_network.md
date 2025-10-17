@@ -91,3 +91,8 @@ sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 ### os lite jessi
 
 - https://randomnerdtutorials.com/installing-raspbian-lite-enabling-and-connecting-with-ssh/
+
+## for new os raspberry 
+```
+ sudo nmtui
+```
