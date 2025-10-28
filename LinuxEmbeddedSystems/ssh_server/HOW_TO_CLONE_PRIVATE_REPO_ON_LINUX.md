@@ -33,23 +33,51 @@ Before starting, ensure that:
 
 Generate a new SSH key **directly on the board** to ensure compatibility with its OpenSSH version.
 
+To access private repositories, you need an SSH key pair (`private` + `public`).
+
+> ✅ The safest way is to use the **OpenSSH** format — it works on both Linux and Windows (PowerShell, Git Bash, or WSL).
+
+### **Linux / macOS**
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+````
+
+Then follow the prompts:
+
+```
+Enter file in which to save the key (/root/.ssh/id_ed25519): [Press Enter]
+Enter passphrase (optional): [Press Enter]
+```
+
+This creates:
+
+```
+/root/.ssh/id_ed25519        ← private key
+/root/.ssh/id_ed25519.pub    ← public key
+```
+
+### **Windows (PowerShell or Git Bash)**
+
+If you are using **Git Bash** or **PowerShell (with OpenSSH client)**, you can use the exact same command:
+
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-* When prompted for a file path, press **Enter** to accept the default:
-
-  ```
-  /root/.ssh/id_ed25519
-  ```
-* When prompted for a passphrase, you can leave it empty (just press Enter twice).
-
-This creates two files:
+These keys will also be stored in:
 
 ```
-/root/.ssh/id_ed25519        ← Private key (keep this secret)
-/root/.ssh/id_ed25519.pub    ← Public key (safe to share)
+C:\Users\<username>\.ssh\id_ed25519
+C:\Users\<username>\.ssh\id_ed25519.pub
 ```
+
+> 💡 Do **not** use PuTTYgen unless you need `.ppk` keys.
+> If you already have a PuTTY `.ppk` key, convert it using:
+>
+> ```bash
+> puttygen mykey.ppk -O private-openssh -o id_ed25519
+> ```
+
 
 ---
 
