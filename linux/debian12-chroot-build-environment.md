@@ -47,7 +47,7 @@ Inside the chroot:
 ```bash
 # Update package lists
 apt update
-
+apt install -y iputils-ping dnsutils netcat-openbsd wget curl
 # Install minimal build toolchain
 apt install -y --no-install-recommends \
     build-essential \
