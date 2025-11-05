@@ -47,7 +47,7 @@ Inside the chroot:
 ```bash
 # Update package lists
 apt update
-apt install -y iputils-ping dnsutils netcat-openbsd wget curl
+apt install -y iputils-ping dnsutils netcat-openbsd wget curl unzip git nano 
 # Install minimal build toolchain
 apt install -y --no-install-recommends \
     build-essential \
@@ -115,4 +115,52 @@ Keep `/srv/debian12-chroot` for future builds — no need to recreate it!
 | After apt clean        |  Minimal overhead  |
 
 ---
- 
+
+
+
+
+## 🔑 Optional: Enable SSH Access (for private Git repos)
+
+If your build depends on **private repositories** (e.g., `git@github.com:user/repo.git`), you must make your SSH key available inside the chroot environment.
+
+> **Important:** Never commit private keys to version control. This setup is for local/secure build environments only.
+
+### On the host system:
+
+```bash
+# Create .ssh directory inside chroot (for root user)
+sudo mkdir -p /srv/debian12-chroot/root/.ssh
+
+# Copy your SSH private and public keys
+sudo cp ~/.ssh/id_rsa      /srv/debian12-chroot/root/.ssh/
+sudo cp ~/.ssh/id_rsa.pub  /srv/debian12-chroot/root/.ssh/
+
+# Set strict permissions (required by SSH)
+sudo chmod 700 /srv/debian12-chroot/root/.ssh
+sudo chmod 600 /srv/debian12-chroot/root/.ssh/id_rsa
+sudo chmod 644 /srv/debian12-chroot/root/.ssh/id_rsa.pub
+
+# Optional: copy or generate known_hosts to avoid host verification prompts
+sudo cp ~/.ssh/known_hosts /srv/debian12-chroot/root/.ssh/ 2>/dev/null || \
+  sudo ssh-keyscan github.com | sudo tee /srv/debian12-chroot/root/.ssh/known_hosts
+```
+
+### Inside the chroot (test connectivity):
+
+```bash
+sudo chroot /srv/debian12-chroot
+
+# Install SSH client if not already present
+apt update && apt install -y openssh-client
+
+# Test GitHub access
+ssh -T git@github.com
+```
+
+If you see:
+```
+Hi <your-username>! You've successfully authenticated...
+```
+→ Git over SSH will now work in your build scripts.
+
+> 💡 Tip: For CI or ephemeral builds, consider using **deploy keys** or temporary key injection instead of copying permanent keys. 
