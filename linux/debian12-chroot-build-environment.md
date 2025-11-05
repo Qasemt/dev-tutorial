@@ -12,6 +12,7 @@ It avoids Docker, minimizes disk usage (~400–500 MB), and gives you full contr
 
 ## 🧰 Step-by-Step Setup
 
+
 ### 1. Install required tools (on host system)
 
 ```bash
@@ -43,17 +44,28 @@ sudo chroot /srv/debian12-chroot
 ```
 
 Inside the chroot:
-
+### 🔧 Step 1: Ensure /etc/apt/sources.list is configured
+```
+cat > /etc/apt/sources.list <<EOF
+deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian-security/ bookworm-security main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware
+EOF
+```
+### Fix DNS (if needed)
+```
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+```
+### Install build dependencies
 ```bash
 # Update package lists
 apt update
-apt install -y iputils-ping dnsutils netcat-openbsd wget curl unzip git nano 
+ 
 # Install minimal build toolchain
-apt install -y --no-install-recommends \
-    build-essential \
-    gcc-12 g++-12 \
-    python3.11 python3.11-dev python3-pip \
-    wget ca-certificates
+ apt install -y --no-install-recommends build-essential zlib1g-dev libncurses-dev libgdbm-dev \
+    libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev \
+    libbz2-dev libexpat1-dev liblzma-dev tk-dev libdb-dev uuid-dev wget ca-certificates \
+    iputils-ping dnsutils netcat-openbsd wget curl unzip git nano gcc-12 g++-12
 
 # Set GCC 12 as default compiler
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 120
