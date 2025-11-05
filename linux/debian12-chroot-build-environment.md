@@ -65,7 +65,7 @@ apt update
  apt install -y --no-install-recommends build-essential zlib1g-dev libncurses-dev libgdbm-dev \
     libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev \
     libbz2-dev libexpat1-dev liblzma-dev tk-dev libdb-dev uuid-dev wget ca-certificates \
-    iputils-ping dnsutils netcat-openbsd wget curl unzip git nano gcc-12 g++-12
+    iputils-ping dnsutils netcat-openbsd wget curl unzip git nano gcc-12 g++-12 openssh-client
 
 # Set GCC 12 as default compiler
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 120
@@ -74,6 +74,16 @@ update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 120
 # Clean APT cache to save space
 apt clean
 rm -rf /var/lib/apt/lists/*
+```
+## install Python 3.12.5 with sqlit3 pip ssl
+
+```bash
+wget https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tar.xz
+tar -xf Python-3.12.5.tar.xz
+cd Python-3.12.5
+./configure --enable-optimizations --with-ssl --with-sqlite3  --with-ensurepip=install
+make -j$(nproc)
+sudo make altinstall
 ```
 
 > **Note:** Debian 12 officially provides Python 3.11, not 3.12.
