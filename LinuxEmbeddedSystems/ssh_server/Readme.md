@@ -30,6 +30,16 @@ set
 PermitRootLogin yes
 ```
 
+## SSH Password Login for Non-Root Users
+
+To allow SSH access for users other than `root` using a password, make sure the following options are set in `/etc/ssh/sshd_config`:
+
+```conf
+PasswordAuthentication yes
+AllowUsers root <username>
+```
+
+
 #### enable root login from ssh
 
 ```bash
@@ -43,7 +53,7 @@ PermitRootLogin yes
 
 ```
 
-# SSH Config
+## SSH Config
 
 causes of slow ssh logins
 Try setting UseDNS to no in **/etc/sshd_config** or **/etc/ssh/sshd_config**
