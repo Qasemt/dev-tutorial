@@ -40,6 +40,8 @@ To access private repositories, you need an SSH key pair (`private` + `public`).
 ### **Linux / macOS**
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
+or with name
+ssh-keygen -t ed25519 -C "your_email@example.com" -f c:\app_name
 ````
 
 Then follow the prompts:
