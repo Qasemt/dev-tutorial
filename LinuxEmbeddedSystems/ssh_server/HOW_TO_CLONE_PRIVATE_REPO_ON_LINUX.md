@@ -72,6 +72,96 @@ These keys will also be stored in:
 C:\Users\<username>\.ssh\id_ed25519
 C:\Users\<username>\.ssh\id_ed25519.pub
 ```
+# Easy way to generate standard keys
+
+Use this Python script to generate a standard Ed25519 key pair (private_key.pem and public_key.pem).
+The script automatically converts SSH keys into PEM format, making them fully compatible with the license manager.
+```python
+from pathlib import Path
+import subprocess
+import sys
+
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.backends import default_backend
+
+
+ROOT = Path(__file__).resolve().parent.parent
+
+OUT_DIR = ROOT / "out"
+OUT_DIR.mkdir(exist_ok=True)
+
+TEMP_KEY = OUT_DIR / "temp_ed25519"
+TEMP_PUB = OUT_DIR / "temp_ed25519.pub"
+
+PRIVATE_KEY = OUT_DIR / "private_key.pem"
+PUBLIC_KEY = OUT_DIR / "public_key.pem"
+
+
+def run(cmd):
+    print(">", " ".join(cmd))
+    subprocess.run(cmd, check=True)
+
+
+def main():
+    try:
+        # 1️⃣ generate ed25519 key (OpenSSH format)
+        run([
+            "ssh-keygen",
+            "-t", "ed25519",
+            "-C", "license@manager",
+            "-f", str(TEMP_KEY),
+            "-N", ""
+        ])
+
+        # 2️⃣ load private key (OpenSSH) and save as PEM
+        private_bytes = TEMP_KEY.read_bytes()
+        private_key = serialization.load_ssh_private_key(
+            private_bytes,
+            password=None,
+            backend=default_backend()
+        )
+
+        PRIVATE_KEY.write_bytes(
+            private_key.private_bytes(
+                encoding=serialization.Encoding.PEM,
+                format=serialization.PrivateFormat.PKCS8,
+                encryption_algorithm=serialization.NoEncryption()
+            )
+        )
+
+        # 3️⃣ load public key (OpenSSH) and save as PEM
+        public_bytes = TEMP_PUB.read_bytes()
+        public_key = serialization.load_ssh_public_key(
+            public_bytes,
+            backend=default_backend()
+        )
+
+        PUBLIC_KEY.write_bytes(
+            public_key.public_bytes(
+                encoding=serialization.Encoding.PEM,
+                format=serialization.PublicFormat.SubjectPublicKeyInfo
+            )
+        )
+
+        # 4️⃣ cleanup temp files
+        TEMP_KEY.unlink(missing_ok=True)
+        TEMP_PUB.unlink(missing_ok=True)
+
+        print("\n✅ Keys generated successfully!")
+        print(f"📂 Output directory: {OUT_DIR}")
+        print(" - private_key.pem")
+        print(" - public_key.pem")
+
+    except Exception as e:
+        print("❌ Key generation failed:")
+        print(e)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
+
+```
 
 > 💡 Do **not** use PuTTYgen unless you need `.ppk` keys.
 > If you already have a PuTTY `.ppk` key, convert it using:
