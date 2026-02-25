@@ -83,4 +83,12 @@ pip install -r requirements.txt
 deactivate     # برای خروج
 ```
 
+```
+# Newest Python
+py -m venv .venv
+
+# Exactly Python 3.12
+py -3.12 -m venv .venv
+py -3.12 -m venv venv-312
+```
 
