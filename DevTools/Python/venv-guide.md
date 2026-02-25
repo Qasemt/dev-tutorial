@@ -84,6 +84,7 @@ deactivate     # برای خروج
 ```
 
 ```
+py --list          # show all found Pythons
 # Newest Python
 py -m venv .venv
 
