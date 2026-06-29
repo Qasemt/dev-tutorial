@@ -26,6 +26,15 @@ iface eth0 inet static
         gateway 10.0.2.2
         dns-nameservers 8.8.8.8
 ```
+Or
+```
+iface eth0 inet static
+        address 192.168.41.146
+        netmask 255.255.255.0
+        network 192.168.41.0
+        gateway 192.168.41.254
+        dns-nameservers 8.8.8.8
+```
 
 ##### Step1 :
 
@@ -96,3 +105,11 @@ sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 ```
  sudo nmtui
 ```
+## network restart 
+```
+sudo systemctl restart networking
+or 
+sudo /etc/init.d/networking restart
+```
+ریستارت سرویس شبکه:
+
