@@ -16,7 +16,7 @@ sudo apt install -y build-essential pkg-config libssl-dev zlib1g-dev \
 libncurses5-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev \
 liblzma-dev libgdbm-dev libnss3-dev libedit-dev uuid-dev
 
-./configure --enable-optimizations --with-ssl --with-sqlite3  --with-ensurepip=install --without-pgo
+./configure --enable-optimizations --with-ssl --with-sqlite3  --with-ensurepip=install  
 make -j$(nproc)
 sudo make altinstall
 ```
