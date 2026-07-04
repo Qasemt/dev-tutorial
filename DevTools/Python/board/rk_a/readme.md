@@ -1,3 +1,4 @@
+```
 # Download the script
 wget https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/DevTools/Python/board_china_a/download_and_install_python.sh
 
@@ -9,3 +10,4 @@ chmod +x download_and_install_python.sh
 
 # Run it
 bash download_and_install_python.sh
+```
