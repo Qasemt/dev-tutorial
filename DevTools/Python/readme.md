@@ -8,6 +8,13 @@ sudo apt install build-essential python3-dev gcc-aarch64-linux-gnu
 ## build via source python 
 ```bash
 wget https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tar.xz
+
+if ! command -v xz &> /dev/null; then
+    echo "xz-utils is not installed. Installing now..."
+    apt update && apt install -y xz-utils
+else
+    echo "xz-utils is already installed."
+fi
 tar -xf Python-3.12.5.tar.xz
 cd Python-3.12.5
 sudo apt-get install libssl-dev libsqlite3-dev
