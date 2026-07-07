@@ -21,7 +21,7 @@ sudo apt-get install libssl-dev libsqlite3-dev nano screen
 
 screen -S setup_python
 # reconnect to screen setup_python
-#screen -r pythonsource
+#screen -r setup_python or screen -D -r setup_python
 
 sudo apt install -y build-essential pkg-config libssl-dev zlib1g-dev \
 libncurses5-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev \
