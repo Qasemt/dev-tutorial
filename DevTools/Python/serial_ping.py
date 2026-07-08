@@ -1,73 +1,114 @@
 #!/usr/bin/env python3
 """
-Serial Port Ping Script
-Send ping messages to a serial port to help identify TX/RX pins on Linux boards
+Serial Port Ping/Pong Script
+Send ping messages and listen for pong responses to help identify TX/RX pins on Linux boards
 """
 
 import serial
 import time
 import argparse
 import sys
+import threading
+from datetime import datetime
 
-def send_ping(port, baudrate=115200, interval=0.5, message="PING"):
-    """
-    Send ping message over serial port
+class SerialPingPong:
+    def __init__(self, port, baudrate=115200, interval=0.5, message="PING"):
+        self.port = port
+        self.baudrate = baudrate
+        self.interval = interval
+        self.message = message
+        self.ser = None
+        self.running = False
+        self.pong_count = 0
+        self.ping_count = 0
+        
+    def open_port(self):
+        """Open serial port"""
+        try:
+            self.ser = serial.Serial(
+                port=self.port,
+                baudrate=self.baudrate,
+                bytesize=serial.EIGHTBITS,
+                parity=serial.PARITY_NONE,
+                stopbits=serial.STOPBITS_ONE,
+                timeout=0.1
+            )
+            return True
+        except serial.SerialException as e:
+            print(f"Error opening port {self.port}: {e}")
+            return False
     
-    Args:
-        port: Serial port path (e.g., /dev/ttyS4)
-        baudrate: Baud rate (default: 115200)
-        interval: Time between transmissions in seconds (default: 0.5)
-        message: Message to send (default: "PING")
-    """
-    try:
-        # Open serial port
-        ser = serial.Serial(
-            port=port,
-            baudrate=baudrate,
-            bytesize=serial.EIGHTBITS,
-            parity=serial.PARITY_NONE,
-            stopbits=serial.STOPBITS_ONE,
-            timeout=1
-        )
-        
-        print(f"Successfully opened port {port}")
-        print(f"Settings: {baudrate} baud, 8N1")
-        print(f"Sending '{message}' every {interval} seconds...")
-        print("Press Ctrl+C to stop\n")
-        
+    def listen_for_pong(self):
+        """Thread function to continuously listen for pong responses"""
+        while self.running:
+            try:
+                if self.ser and self.ser.is_open and self.ser.in_waiting > 0:
+                    data = self.ser.readline().decode('utf-8', errors='ignore').strip()
+                    if data:
+                        timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
+                        if "PONG" in data.upper():
+                            self.pong_count += 1
+                            print(f"[{timestamp}] PONG received: '{data}' (Total: {self.pong_count})")
+                        else:
+                            print(f"[{timestamp}] Data received: '{data}'")
+            except Exception as e:
+                if self.running:
+                    print(f"Read error: {e}")
+            time.sleep(0.01)
+    
+    def send_ping(self):
+        """Send ping messages"""
         counter = 0
         
-        while True:
+        print(f"Successfully opened port {self.port}")
+        print(f"Settings: {self.baudrate} baud, 8N1")
+        print(f"Sending '{self.message}' every {self.interval} seconds...")
+        print("Listening for PONG responses...")
+        print("Press Ctrl+C to stop\n")
+        print("="*60)
+        
+        listener_thread = threading.Thread(target=self.listen_for_pong, daemon=True)
+        listener_thread.start()
+        
+        while self.running:
             try:
-                # Create message with counter
-                ping_message = f"{message} #{counter}\r\n"
+                timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
+                ping_message = f"{self.message} #{counter}\r\n"
                 
-                # Send data
-                ser.write(ping_message.encode('utf-8'))
-                print(f"Sent: {ping_message.strip()}")
-                
-                # Check for incoming data (optional)
-                if ser.in_waiting > 0:
-                    received = ser.readline().decode('utf-8').strip()
-                    if received:
-                        print(f"Received: {received}")
+                bytes_sent = self.ser.write(ping_message.encode('utf-8'))
+                self.ping_count += 1
+                print(f"[{timestamp}] Sent: {ping_message.strip()} (Pings: {self.ping_count}, Pongs: {self.pong_count})")
                 
                 counter += 1
-                time.sleep(interval)
+                time.sleep(self.interval)
                 
             except serial.SerialException as e:
                 print(f"Serial error: {e}")
                 break
-                
-    except serial.SerialException as e:
-        print(f"Error opening port {port}: {e}")
-        sys.exit(1)
-    except KeyboardInterrupt:
-        print("\n\nTransmission stopped")
-    finally:
-        if 'ser' in locals() and ser.is_open:
-            ser.close()
-            print(f"Port {port} closed")
+            except Exception as e:
+                print(f"Error: {e}")
+                break
+    
+    def start(self):
+        """Main function to run ping/pong"""
+        if not self.open_port():
+            sys.exit(1)
+        
+        try:
+            self.running = True
+            self.send_ping()
+        except KeyboardInterrupt:
+            print("\n" + "="*60)
+            print("Transmission stopped")
+            print(f"Statistics: {self.ping_count} pings sent, {self.pong_count} pongs received")
+            if self.ping_count > 0:
+                success_rate = (self.pong_count / self.ping_count) * 100
+                print(f"Success rate: {success_rate:.1f}%")
+        finally:
+            self.running = False
+            if self.ser and self.ser.is_open:
+                self.ser.close()
+                print(f"Port {self.port} closed")
 
 def list_serial_ports():
     """List available serial ports"""
@@ -81,16 +122,22 @@ def list_serial_ports():
     print("Available serial ports:")
     for port in ports:
         print(f"  {port.device} - {port.description}")
+        if hasattr(port, 'hwid'):
+            print(f"     HWID: {port.hwid}")
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Send ping over serial port for pin identification',
+        description='Send ping and listen for pong over serial port for pin identification',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   %(prog)s /dev/ttyS4
   %(prog)s /dev/ttyS4 -b 9600 -i 1 -m "TEST"
+  %(prog)s /dev/ttyS4 -b 115200 -i 0.5 -m "HELLO"
   %(prog)s --list
+
+Note: This script expects the other device to respond with "PONG" 
+      when it receives a ping message.
         """
     )
     
@@ -115,11 +162,11 @@ Examples:
         print("\nError: Port argument is required")
         sys.exit(1)
     
-    send_ping(args.port, args.baudrate, args.interval, args.message)
+    ping_pong = SerialPingPong(args.port, args.baudrate, args.interval, args.message)
+    ping_pong.start()
 
 if __name__ == "__main__":
     main()
-
 
 
 
