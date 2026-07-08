@@ -62,50 +62,54 @@ sudo systemctl disable bluetooth 2>/dev/null
 sudo systemctl mask bluetooth 2>/dev/null
 echo "Bluetooth has been stopped, disabled, and masked."
 
-# --- 5. Locale Configuration ---
+# --- 5. Locale Configuration (FIXED) ---
 echo "Configuring locale to en_US.UTF-8..."
-sudo locale-gen en_US.UTF-8 || error_exit "Failed to generate en_US.UTF-8 locale."
-# sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 || error_exit "Failed to update locale settings."
 
-# Apply changes immediately to current session
+# اصلاح فایل اصلی لوکال‌ها (کامنت کردن چینی و باز کردن انگلیسی)
+if [ -f /etc/locale.gen ]; then
+    sudo sed -i 's/^zh_CN.UTF-8/# zh_CN.UTF-8/' /etc/locale.gen
+    sudo sed -i 's/^#\s*en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+fi
+
+# تولید مجدد لوکال‌ها و پاک کردن لوکال چینی از کش
+sudo locale-gen --purge en_US.UTF-8 || error_exit "Failed to generate en_US.UTF-8 locale."
+
+# استفاده از ابزار استاندارد دبیان برای تنظیم پیش‌فرض سیستم (جلوگیری از ==)
+sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 || error_exit "Failed to update locale settings."
+
+# اعمال به سشن فعلی اسکریپت
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-# Set locale in /etc/environment (Avoid duplicates)
-for VAR in "LANG=en_US.UTF-8" "LC_ALL=en_US.UTF-8" "LANGUAGE=en_US.UTF-8"; do
-    grep -q "$VAR" /etc/environment || echo "$VAR" | sudo tee -a /etc/environment
-done
-
-# Disable zh_CN.UTF-8 and Enable en_US in ~/.bashrc
+# اصلاح تمیز فایل ~/.bashrc و حذف آثار زبان چینی
 BASHRC_FILE="$HOME/.bashrc"
 if [[ ! -f "$BASHRC_FILE" ]]; then
-    echo "Creating a new ~/.bashrc..."
-    touch "$BASHRC_FILE" || error_exit "Failed to create ~/.bashrc."
+    touch "$BASHRC_FILE"
 fi
 
-sed -i 's/^export LANG=zh_CN.UTF-8/# export LANG=zh_CN.UTF-8/' "$BASHRC_FILE"
-sed -i 's/^export LC_ALL=zh_CN.UTF-8/# export LC_ALL=zh_CN.UTF-8/' "$BASHRC_FILE"
-sed -i 's/^export LANGUAGE=zh_CN.UTF-8/# export LANGUAGE=zh_CN.UTF-8/' "$BASHRC_FILE"
+sed -i '/zh_CN.UTF-8/d' "$BASHRC_FILE" 2>/dev/null
+sed -i '/en_US.UTF-8/d' "$BASHRC_FILE" 2>/dev/null
 
-grep -q '^export LANG=en_US.UTF-8' "$BASHRC_FILE" || echo 'export LANG=en_US.UTF-8' >> "$BASHRC_FILE"
-grep -q '^export LC_ALL=en_US.UTF-8' "$BASHRC_FILE" || echo 'export LC_ALL=en_US.UTF-8' >> "$BASHRC_FILE"
-grep -q '^export LANGUAGE=en_US.UTF-8' "$BASHRC_FILE" || echo 'export LANGUAGE=en_US.UTF-8' >> "$BASHRC_FILE"
+echo 'export LANG=en_US.UTF-8' >> "$BASHRC_FILE"
+echo 'export LC_ALL=en_US.UTF-8' >> "$BASHRC_FILE"
+echo 'export LANGUAGE=en_US.UTF-8' >> "$BASHRC_FILE"
 
-# --- 6. Network Configuration (Static IP) ---
+# --- 6. Network Configuration (Static IP - FIXED) ---
 INTERFACES_FILE="/etc/network/interfaces"
 if [ -f "$INTERFACES_FILE" ]; then
     echo "Checking static IP in $INTERFACES_FILE..."
-    # Prevent duplicate appending
     if ! grep -q "192.168.40.147" "$INTERFACES_FILE"; then
-        echo "
+        # استفاده از EOF برای ایجاد بلاک متنی تمیز و بدون مشکل فرمت
+        sudo tee -a "$INTERFACES_FILE" > /dev/null <<EOF
+
 auto eth0
 iface eth0 inet static
     address 192.168.40.147
     netmask 255.255.255.0
     gateway 192.168.40.1
-    dns-nameservers 172.20.10.1" | sudo tee -a "$INTERFACES_FILE" || error_exit "Failed to configure static IP."
-        
+    dns-nameservers 172.20.10.1
+EOF
         # Restart networking service
         sudo systemctl restart networking 2>/dev/null
     else
