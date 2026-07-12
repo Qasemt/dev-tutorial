@@ -65,16 +65,16 @@ echo "Bluetooth has been stopped, disabled, and masked."
 # --- 5. Locale Configuration (FIXED) ---
 echo "Configuring locale to en_US.UTF-8..."
 
-# اصلاح فایل اصلی لوکال‌ها (کامنت کردن چینی و باز کردن انگلیسی)
+# اصلاح فایل اصلی لوکالها (کامنت کردن چینی و باز کردن انگلیسی)
 if [ -f /etc/locale.gen ]; then
     sudo sed -i 's/^zh_CN.UTF-8/# zh_CN.UTF-8/' /etc/locale.gen
     sudo sed -i 's/^#\s*en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
 fi
 
-# تولید مجدد لوکال‌ها و پاک کردن لوکال چینی از کش
+# تولید مجدد لوکالها و پاک کردن لوکال چینی از کش
 sudo locale-gen --purge en_US.UTF-8 || error_exit "Failed to generate en_US.UTF-8 locale."
 
-# استفاده از ابزار استاندارد دبیان برای تنظیم پیش‌فرض سیستم (جلوگیری از ==)
+# استفاده از ابزار استاندارد دبیان برای تنظیم پیشفرض سیستم (جلوگیری از ==)
 sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US.UTF-8 || error_exit "Failed to update locale settings."
 
 # اعمال به سشن فعلی اسکریپت
@@ -95,26 +95,66 @@ echo 'export LANG=en_US.UTF-8' >> "$BASHRC_FILE"
 echo 'export LC_ALL=en_US.UTF-8' >> "$BASHRC_FILE"
 echo 'export LANGUAGE=en_US.UTF-8' >> "$BASHRC_FILE"
 
-# --- 6. Network Configuration (Static IP - FIXED) ---
-INTERFACES_FILE="/etc/network/interfaces"
-if [ -f "$INTERFACES_FILE" ]; then
-    echo "Checking static IP in $INTERFACES_FILE..."
-    if ! grep -q "192.168.40.147" "$INTERFACES_FILE"; then
-        # استفاده از EOF برای ایجاد بلاک متنی تمیز و بدون مشکل فرمت
+# --- 6. Network Configuration (Static IP) ---
+read -p "Do you want to configure a static IP? (y/N): " CONFIGURE_STATIC_IP
+if [[ "$CONFIGURE_STATIC_IP" =~ ^[Yy]$ ]]; then
+    # Prompt for network configuration details
+    read -p "Enter the network interface name (default: eth0): " NETWORK_INTERFACE
+    NETWORK_INTERFACE=${NETWORK_INTERFACE:-eth0}
+    
+    read -p "Enter static IP address (default: 192.168.40.147): " STATIC_IP
+    STATIC_IP=${STATIC_IP:-192.168.40.147}
+    
+    read -p "Enter netmask (default: 255.255.255.0): " NETMASK
+    NETMASK=${NETMASK:-255.255.255.0}
+    
+    read -p "Enter gateway (default: 192.168.40.1): " GATEWAY
+    GATEWAY=${GATEWAY:-192.168.40.1}
+    
+    read -p "Enter DNS nameserver (default: 172.20.10.1): " DNS_NAMESERVER
+    DNS_NAMESERVER=${DNS_NAMESERVER:-172.20.10.1}
+    
+    echo "Configuring static IP with the following settings:"
+    echo "  Interface: $NETWORK_INTERFACE"
+    echo "  IP Address: $STATIC_IP"
+    echo "  Netmask: $NETMASK"
+    echo "  Gateway: $GATEWAY"
+    echo "  DNS: $DNS_NAMESERVER"
+    
+    INTERFACES_FILE="/etc/network/interfaces"
+    if [ -f "$INTERFACES_FILE" ]; then
+        echo "Adding static IP configuration to $INTERFACES_FILE..."
+        
+        # Remove any existing configuration for this interface to avoid duplicates
+        sudo sed -i "/^auto $NETWORK_INTERFACE/,/^$/d" "$INTERFACES_FILE"
+        
+        # Add new static IP configuration
         sudo tee -a "$INTERFACES_FILE" > /dev/null <<EOF
 
-auto eth0
-iface eth0 inet static
-    address 192.168.40.147
-    netmask 255.255.255.0
-    gateway 192.168.40.1
-    dns-nameservers 172.20.10.1
+auto $NETWORK_INTERFACE
+iface $NETWORK_INTERFACE inet static
+    address $STATIC_IP
+    netmask $NETMASK
+    gateway $GATEWAY
+    dns-nameservers $DNS_NAMESERVER
 EOF
-        # Restart networking service
-        sudo systemctl restart networking 2>/dev/null
+        
+        echo "Static IP configuration added successfully."
+        
+        # Prompt before restarting network
+        read -p "Do you want to restart the networking service now? (y/N): " RESTART_NETWORK
+        if [[ "$RESTART_NETWORK" =~ ^[Yy]$ ]]; then
+            echo "Restarting networking service..."
+            sudo systemctl restart networking 2>/dev/null
+            echo "Network service restarted."
+        else
+            echo "Network restart skipped. Changes will take effect after next reboot."
+        fi
     else
-        echo "Static IP configuration already exists. Skipping."
+        echo "Warning: $INTERFACES_FILE not found. Cannot configure static IP."
     fi
+else
+    echo "Skipping static IP configuration."
 fi
 
 # Apply netplan changes only if netplan config actually exists
