@@ -76,7 +76,7 @@ step_board_config() {
     apt-get update -y || log_info "apt update reported errors (continuing)..."
 
     log_action "Installing core packages..."
-    apt-get install -y nano git net-tools locales curl wget tar || log_info "Some packages failed (continuing)..."
+    apt-get install -y nano net-tools locales curl wget tar || log_info "Some packages failed (continuing)..."
 
     log_action "Disabling Bluetooth..."
     systemctl stop bluetooth 2>/dev/null
