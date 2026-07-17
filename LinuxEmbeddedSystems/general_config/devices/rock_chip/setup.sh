@@ -76,7 +76,7 @@ step_board_config() {
     apt-get update -y || log_info "apt update reported errors (continuing)..."
 
     log_action "Installing core packages..."
-    apt-get install -y nano net-tools locales curl wget tar || log_info "Some packages failed (continuing)..."
+    apt-get install -y nano git net-tools locales curl wget tar || log_info "Some packages failed (continuing)..."
 
     log_action "Disabling Bluetooth..."
     systemctl stop bluetooth 2>/dev/null
@@ -340,64 +340,17 @@ step_configure_paku_paths() {
     local paku_dir="$1" padis_dir="$2" padis_exec="$3"
     local config_file="$paku_dir/files/configs/config.yaml"
     local py="$paku_dir/.venv/bin/python"
-    local service="paku.service"
 
     [ -x "$py" ] || { log_error "paku venv python not found at $py"; return 1; }
 
-    # --- 1. Wait until the paku service is actually RUNNING ---
-    # (config.yaml is only created by paku itself on first boot)
-    log_action "Waiting for $service to become active..."
+    # paku creates files/configs/config.yaml from its factory defaults the
+    # first time it boots (see CoreSystem/Config.load()) — give it a moment.
     local waited=0
-    while ! systemctl is-active --quiet "$service"; do
-        if [ "$waited" -ge 30 ]; then
-            log_error "$service did not become active within 30s. Check: journalctl -u $service -e"
-            return 1
-        fi
+    while [ ! -f "$config_file" ] && [ "$waited" -lt 15 ]; do
         sleep 1; waited=$((waited + 1))
     done
-    log_success "$service is active (after ${waited}s)."
+    [ -f "$config_file" ] || { log_error "paku config.yaml never appeared at $config_file"; return 1; }
 
-    # --- 2. Wait for paku to create files/configs/config.yaml ---
-    # First boot may take a while (factory defaults are written on startup).
-    log_action "Waiting for config.yaml to be created by paku..."
-    waited=0
-    while [ ! -f "$config_file" ]; do
-        if [ "$waited" -ge 60 ]; then
-            log_error "paku config.yaml never appeared at $config_file (waited 60s)."
-            log_info  "Check paku logs: journalctl -u $service -e"
-            return 1
-        fi
-        sleep 1; waited=$((waited + 1))
-    done
-    log_success "config.yaml appeared after ${waited}s."
-
-    # --- 3. Wait until the file is fully written (size stable for 2s) ---
-    local size1 size2
-    waited=0
-    while [ "$waited" -lt 10 ]; do
-        size1=$(stat -c %s "$config_file" 2>/dev/null || echo 0)
-        sleep 2
-        size2=$(stat -c %s "$config_file" 2>/dev/null || echo 0)
-        [ "$size1" = "$size2" ] && [ "$size1" != "0" ] && break
-        waited=$((waited + 2))
-    done
-    log_success "config.yaml is stable (${size2} bytes)."
-
-    # --- 4. Stop paku BEFORE editing ---
-    # If paku rewrites its config on shutdown, editing while it runs would
-    # be silently overwritten. Stop first, edit, then start again.
-    log_action "Stopping $service to edit config safely..."
-    systemctl stop "$service" 2>/dev/null
-    sleep 1
-
-    # --- 5. Make sure PyYAML is available in paku's venv ---
-    if ! "$py" -c "import yaml" 2>/dev/null; then
-        log_action "Installing PyYAML into paku venv (needed for config editing)..."
-        "$py" -m pip install pyyaml 2>/dev/null \
-            || { log_error "PyYAML not available and could not be installed."; systemctl restart "$service" 2>/dev/null; return 1; }
-    fi
-
-    # --- 6. Edit the config ---
     "$py" - "$config_file" "$padis_dir" "padiscontroller" "$padis_exec" "$padis_dir/files" <<'PYEOF'
 import sys
 import yaml
@@ -416,21 +369,10 @@ paths["files_dist_dir"] = files_dist_dir
 with open(config_file, "w", encoding="utf-8") as f:
     yaml.safe_dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
 PYEOF
-    local edit_rc=$?
 
-    # --- 7. Restart paku with the new config ---
-    log_action "Restarting $service with updated config..."
-    systemctl restart "$service" 2>/dev/null
-
-    if [ $edit_rc -eq 0 ]; then
+    if [ $? -eq 0 ]; then
         log_success "paku config.yaml paths -> project_dist_dir=$padis_dir, project_entry_point=$padis_exec"
-        sleep 2
-        if systemctl is-active --quiet "$service"; then
-            log_success "$service restarted successfully with new config."
-        else
-            log_error "$service failed to start after config edit. Check: journalctl -u $service -e"
-            return 1
-        fi
+        systemctl restart paku.service 2>/dev/null
         return 0
     else
         log_error "Failed to update paku config.yaml at $config_file"
