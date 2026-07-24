@@ -254,7 +254,52 @@ If cloning fails, check the following:
 
 ---
 
+
 ## 🧠 Notes
+# Setting Up SSH Config File for Automatic Connection
+
+After testing the SSH connection with your private key successfully, you can configure the SSH config file so you don't need to specify the key path with the `-i` parameter every time.
+
+### 1. Create/Edit the config file
+```bash
+nano ~/.ssh/config
+```
+
+### 2. Add GitHub configuration
+Add the following content to the config file:
+```
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_git_hub
+    IdentitiesOnly yes
+```
+
+### 3. Set proper permissions for the config file
+```bash
+chmod 600 ~/.ssh/config
+```
+
+Test automatic connection
+Now test the connection without specifying the key path:
+```bash
+ssh -T git@github.com
+```
+
+You should receive this message:
+```
+Hi Qasemt! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+### Benefits of using the SSH config file:
+- **No need for `-i` parameter**: Every time you use `git@github.com`, the specified key is automatically used
+- **Multiple key management**: You can define different Hosts for various servers and services
+- **Advanced settings**: Ability to specify port, user, and other parameters for each Host
+
+### Additional notes:
+- If you have other private keys, you can manage them by defining new Host entries in the same file
+- The `IdentitiesOnly yes` option ensures only the specified key is used, ignoring other keys from ssh-agent
+- The config file must have `600` permissions, otherwise SSH will ignore it
 
 * Never share your **private key (`id_ed25519`)**.
 * If your board is used by multiple users, store SSH keys securely.
