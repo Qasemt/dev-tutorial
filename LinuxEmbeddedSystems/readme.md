@@ -1,126 +1,214 @@
-# 🗂️ Index CMDs
+<h1 align="center">Linux Embedded Systems</h1>
 
-- [Linux Command](./general_config/linux_command.md)
-- [Auto start (openRC) ](general_config/auto_start_with_open_rc.md)
-- [Auto start](./general_config/auto_start_old.md)
-- [IP & Network](./general_config/ip_network.md)
-- [Date Time Linux](./general_config/date_time.md)
-- [Curl](./general_config/curl.md)
-- [SSH](./ssh_server/Readme.md)
-- [Rsync](./general_config/rsync.md)
-- [UWF](./general_config/uwf.md)
-- [Resize Disk ](./general_config/resize_disk_linux.md)
+<p align="center">
+  Field notes, commands and configs for embedded Linux boards.
+</p>
 
-#### Alpine
+<p align="center">
+  <code>Alpine</code> · <code>Debian / Ubuntu</code> · <code>BeagleBone</code> · <code>Raspberry Pi</code> · <code>Rockchip</code>
+</p>
 
-- [Setup Alpine](./general_config/alpine_setup.md)
-- [Alpine Tools](./general_config/alpine.md)
+<p align="center">
+  <a href="#system">System</a> ·
+  <a href="#network">Network</a> ·
+  <a href="#remote-access">Remote Access</a> ·
+  <a href="#boot--services">Boot &amp; Services</a> ·
+  <a href="#storage">Storage</a> ·
+  <a href="#boards--devices">Boards &amp; Devices</a> ·
+  <a href="#servers--containers">Servers</a> ·
+  <a href="#cheatsheet">Cheatsheet</a>
+</p>
 
-#### VNC
+---
 
-- [VNC](./general_config/vnc.md)
-- [VNC2](./general_config/vnc2.md)
+## System
 
-#### Webserver
+| Page | Notes |
+| :--- | :--- |
+| [Linux Commands](./general_config/linux_command.md) | Everyday shell commands and package handling |
+| [Cron](./general_config/Crontab.md) | Scheduled jobs with `crontab` |
+| [Date & Time](./general_config/date_time.md) | Timezone and clock setup on Debian/Ubuntu |
+| [Alpine Setup](./general_config/alpine_setup.md) | Installing and preparing Alpine Linux |
+| [Free Desktop](./general_config/devices/free_desktop.md) | Desktop entries and autostart files |
+| [LightDM](./general_config/devices/lightdm.md) | Start, stop and configure the display manager |
+| [Passwordless Login](./general_config/devices/NoPass.md) | Auto-login without a password prompt |
 
-- [Nginx Compile](./general_config/nginx_compile.md)
+## Network
 
-### Devices
+| Page | Notes |
+| :--- | :--- |
+| [IP & Network](./general_config/ip_network.md) | Interfaces, static IP and routing |
+| [iptables](./general_config/ip_table.md) | Chains, rules and NAT |
+| [UFW](./general_config/uwf.md) | Simple firewall rules |
+| [curl](./general_config/curl.md) | Requests, downloads and build tooling |
+| [rsync](./general_config/rsync.md) | Copying and syncing files between machines |
+| [Nekoray](./general_config/nekoray.md) | Proxy client setup on Linux |
+| [Ports](./general_config/devices/ports.md) | Port and cape reference |
 
-- [BBB](./general_config/devices/BBB.md)
-- [BeagleBon Black](./general_config/beaglebone_black.md)
-- [Serial port](./general_config/devices/qextserialport.md)
-- [Audio](./general_config/devices/audio.md)
-- [Raspberry remove unnecessary programs](./general_config/devices/raspberry_remove_unnecessary_programs.md)
-- [Free Desktop](./general_config/devices/free_desktop.md)
-- [Port](./general_config/devices/ports.md)
-- [GPIO](./general_config/gpio.md)
-- [Bluethooth](./general_config/devices/bluetooth.md)
-- [I2C/RTC](./general_config/devices/i2c_and_rtc.md)
-- [lighdm](./general_config/devices//lightdm.md)
-- [Backup MMC](./general_config/devices/backup_EMMC.md)
-- [No Pass](./general_config/devices/NoPass.md)
-- [GIS Lib Config](./general_config/devices/gis_lib_config.md)
+**Wi‑Fi**
 
-> Wifi
+| Page | Notes |
+| :--- | :--- |
+| [Wi‑Fi Hotspot](./general_config/devices/wifi_hotspot.md) | Turning the board into an access point |
+| [Wi‑Fi Power Management](./general_config/devices/wifi_power_management.md) | Preventing the adapter from sleeping |
+| [Ad‑hoc Mode](./general_config/devices/wifi-direct/ad-hoc.md) | Direct board-to-board links |
+| [wpa_supplicant](./general_config/devices/wifi-direct/wpaSupplicant.md) | Manual Wi‑Fi client configuration |
 
-- [Wifi Hotspot](./general_config/devices/wifi_hotspot.md)
-- [Wifi Power](./general_config/devices/wifi_power_management.md)
-- [wifi Ad-hoc](./general_config/devices/wifi-direct/ad-hoc.md)
-- [wifi Supplicant](./general_config/devices/wifi-direct/wpaSupplicant.md)
+**Cellular**
 
-#### Sim
+| Page | Notes |
+| :--- | :--- |
+| [SIM5320](./general_config/devices/sim5320.md) | AT commands and PPP dial-up |
 
-- [sim 5320](./general_config/devices/sim5320.md)
+## Remote Access
 
-## 📚 extract file in linux
-## set proxy 
+**SSH** — [overview](./ssh_server/Readme.md)
+
+| Page | Notes |
+| :--- | :--- |
+| [Passwordless Login](./ssh_server/SSH-Login-No-Password.md) | Key-based access to a board |
+| [Disable SSH Timeout](./ssh_server/Disabling_SSH_Timeout.md) | Keeping long sessions alive |
+| [VS Code Remote SSH](./ssh_server/SSH_Config_for_VSCode.md) | `~/.ssh/config` for Remote‑SSH |
+| [SSH → PPK](./ssh_server/SSH-to-PPK-Conversion.md) | Converting keys for PuTTY |
+| [Deploy Key](./ssh_server/ssh_key_for_deploy.md) | Restricted key for app updates |
+| [Clone a Private Repo](./ssh_server/HOW_TO_CLONE_PRIVATE_REPO_ON_LINUX.md) | Git over SSH on a board |
+| [VM & Windows Host](./ssh_server/config_vm_host_windows.md) | Port forwarding to a guest VM |
+
+**VNC**
+
+| Page | Notes |
+| :--- | :--- |
+| [Install VNC](./general_config/vnc.md) | Basic server installation |
+| [x11vnc](./general_config/vnc_v2.md) | Sharing an existing X session |
+| [TigerVNC](./general_config/tigervnc.md) | Direct connection guide |
+
+## Boot & Services
+
+| Page | Notes |
+| :--- | :--- |
+| [Autostart with OpenRC](./general_config/auto_start_with_open_rc.md) | Init scripts on Alpine |
+| [Autostart (legacy)](./general_config/auto_start_old.md) | Older `vtlstart` approach |
+
+## Storage
+
+| Page | Notes |
+| :--- | :--- |
+| [Resize Disk](./general_config/resize_disk_linux.md) | Growing the root partition |
+| [Backup eMMC](./general_config/devices/backup_EMMC.md) | Full image backup and restore |
+
+## Boards & Devices
+
+| Page | Notes |
+| :--- | :--- |
+| [BeagleBone Black](./general_config/devices/beaglebone_black.md) | Board setup and quirks |
+| [BBB Pinout](./general_config/devices/BBB.md) | Hardware and cape header diagrams |
+| [Rockchip](./general_config/devices/rock_chip/readme.md) | Setup and Python install scripts |
+| [Raspberry Pi Slimming](./general_config/devices/raspberry_remove_unnecessary_programs.md) | Removing unnecessary packages |
+| [GPIO](./general_config/gpio.md) | Reading and driving pins |
+| [Serial Port](./general_config/devices/qextserialport.md) | QextSerialPort usage |
+| [I²C & RTC](./general_config/devices/i2c_and_rtc.md) | Bus scanning and hardware clock |
+| [Bluetooth](./general_config/devices/bluetooth.md) | Pairing and services |
+| [Audio](./general_config/devices/audio.md) | ALSA devices and test sounds |
+| [GIS Library Config](./general_config/devices/gis_lib_config.md) | GDAL / PROJ linker flags |
+| [Build Script Notes](./general_config/devices/hunane_config_script.md) | Packaging a config script |
+
+## Servers & Containers
+
+| Page | Notes |
+| :--- | :--- |
+| [Compile Nginx](./general_config/nginx_compile.md) | Building from source with modules |
+| [Podman & Distrobox](./general_config/podman_docker.md) | Rootless containers on a board |
+
+---
+
+## Cheatsheet
+
+<details>
+<summary><b>APT behind a proxy</b></summary>
+
 ```bash
-echo 'Acquire::http::Proxy "http://USERNAME:PASS@172.20.10.1:3128/";' | sudo tee /etc/apt/apt.conf.d/95proxy
-
-```
-```bash
-tar xpvf /path/to/my_archive.tar.xz -C /path/to/extract
-
-```
-## Configure APT to Use the Proxy
-```
 sudo nano /etc/apt/apt.conf.d/90proxy
+```
 
-Acquire::http::Proxy "http://172.20.10.1:3128";
+```conf
+Acquire::http::Proxy  "http://172.20.10.1:3128";
 Acquire::https::Proxy "http://172.20.10.1:3128";
+```
 
-# If your proxy requires a username and password (e.g., myuser:mypass), add
+With credentials:
 
-Acquire::http::Proxy "http://username:password@proxy.server:port";
+```conf
+Acquire::http::Proxy  "http://username:password@proxy.server:port";
 Acquire::https::Proxy "http://username:password@proxy.server:port";
 ```
-## 🔑 Change root password
+
+One-liner:
 
 ```bash
-$ sudo su
-$ passwd
+echo 'Acquire::http::Proxy "http://USERNAME:PASS@172.20.10.1:3128/";' \
+  | sudo tee /etc/apt/apt.conf.d/95proxy
 ```
 
-## 💽 Space Avaiable
+</details>
 
-#### **CMD 1:**
+<details>
+<summary><b>Extract an archive</b></summary>
+
+```bash
+tar xpvf /path/to/my_archive.tar.xz -C /path/to/extract
+```
+
+</details>
+
+<details>
+<summary><b>Change the root password</b></summary>
+
+```bash
+sudo su
+passwd
+```
+
+</details>
+
+<details>
+<summary><b>Check free space</b></summary>
+
+Per-directory usage, largest first:
 
 ```bash
 du --max-depth=1 | sort -nr
+```
 
+```text
 668716  .
 283508  ./lib
 226560  ./share
-69668   ./local
-58544   ./bin
-25092   ./include
-5332    ./sbin
-4       ./src
-4       ./games
-
+ 69668  ./local
+ 58544  ./bin
 ```
 
-#### **CMD 2:**
+Mounted filesystems:
 
 ```bash
 df -h
-%%%%
+```
+
+```text
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/root       1.2G  1.1G   17M  99% /
-devtmpfs        459M     0  459M   0% /dev
-tmpfs           463M     0  463M   0% /dev/shm
 tmpfs           463M  6.2M  457M   2% /run
-tmpfs           5.0M  4.0K  5.0M   1% /run/lock
-tmpfs           463M     0  463M   0% /sys/fs/cgroup
 /dev/mmcblk0p1   60M   20M   41M  34% /boot
-
 ```
 
-## 🏟️ Change host name
+</details>
 
-```
+<details>
+<summary><b>Change the hostname</b></summary>
+
+```bash
 echo "alpine_pc" > /etc/hostname
 hostname -F /etc/hostname
-$ hostname
+hostname
 ```
+
+</details>
