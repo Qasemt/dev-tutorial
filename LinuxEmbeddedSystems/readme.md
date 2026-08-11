@@ -45,6 +45,68 @@
 | [Nekoray](./general_config/nekoray.md) | Proxy client setup on Linux |
 | [Ports](./general_config/devices/ports.md) | Port and cape reference |
 
+**Proxy**
+
+| Script | Notes |
+| :--- | :--- |
+| [`setup-proxy.sh`](./general_config/setup-proxy.sh) | Applies a proxy system-wide on Debian — every layer at once |
+| [`clear-proxy.sh`](./general_config/clear-proxy.sh) | Removes every proxy setting again, with backups |
+
+<details>
+<summary><b>Usage</b></summary>
+
+`setup-proxy.sh` writes the proxy into all the places that matter, because
+none of them read each other: systemd (system **and** user manager),
+`/etc/environment`, `/etc/profile.d`, apt, wget, git, sudo `env_keep`,
+`cron.d`, dconf for GTK apps, and fish/tcsh. It runs a preflight first —
+if the proxy host does not resolve or the port is closed, it aborts and
+writes nothing.
+
+```bash
+sudo ./setup-proxy.sh http://192.168.40.10:8080   # install
+./setup-proxy.sh --show                           # resolved values, no changes
+./setup-proxy.sh --verify                         # did it actually take effect?
+./setup-proxy.sh --walk                           # find the stale process
+sudo ./setup-proxy.sh --uninstall                 # undo
+```
+
+Dry run against a fake root, touching no real file:
+
+```bash
+ROOT=/tmp/proxytest ./setup-proxy.sh http://192.168.40.10:8080
+```
+
+**The step people miss.** A process copies its environment at `exec()` and it
+can never be changed from outside afterwards. So your current shell keeps the
+old value no matter how often you re-run the script — that is not a failure.
+Test what the *next* login gets, then refresh:
+
+```bash
+bash -lc 'echo $https_proxy'    # the honest test
+exec bash -l                    # refresh this shell, keeps SSH alive
+pkill -f '.vscode-server'       # the usual stale ancestor (ppid=1)
+```
+
+A stale **ancestor** poisons every child it spawns, so killing a leaf process
+does not help. `sudo reboot` clears every layer at once.
+
+`clear-proxy.sh` reverses all of it and backs up each edited file to
+`<file>.bak-<timestamp>`:
+
+```bash
+sudo ./clear-proxy.sh             # system level; reports per-user files
+sudo ./clear-proxy.sh --all       # also clean ~/.bashrc, ~/.npmrc, etc.
+sudo ./clear-proxy.sh --dry-run   # show only
+```
+
+Both scripts default to a placeholder address and an internal domain of
+`.emdad.local` — override with `INTERNAL_DOMAIN` or edit the CONFIG block.
+For a loopback proxy (cntlm, v2ray/Xray on `127.0.0.1`), make that client a
+systemd unit with `WantedBy=multi-user.target`, or boot-time services will
+run before it is up and fail.
+
+</details>
+
 **Wi‑Fi**
 
 | Page | Notes |
@@ -124,7 +186,9 @@
 ## Cheatsheet
 
 <details>
-<summary><b>APT behind a proxy</b></summary>
+<summary><b>APT behind a proxy</b> — manual, for one-off boards</summary>
+
+For a full system-wide setup use [`setup-proxy.sh`](./general_config/setup-proxy.sh) instead; this is the minimal manual equivalent.
 
 ```bash
 sudo nano /etc/apt/apt.conf.d/90proxy
