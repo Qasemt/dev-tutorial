@@ -38,6 +38,7 @@
 | Page | Notes |
 | :--- | :--- |
 | [Connecting Remote Teams](./tailscale_dev_setup.md) | Mesh VPN between NAT'd teams, no port forwarding |
+| [Remote Serial Port Bridge](./remote_serial_bridge.md) | Windows COM port → Linux virtual serial port, via hub4com + socat |
 
 ## Domains
 
