@@ -74,7 +74,7 @@ Target convention: `kebab-case.md` for content pages, `readme.md` (lowercase) fo
 - `docs/embedded-linux/ssh_server/Readme.md` — capital `R`, the only one in the repo.
 - `docs/toolchain/compile_cxx/cygwin_building on_windows_using_cygwin.md` — a literal space; its one inbound link already percent-encodes it, but other tooling may not.
 
-**Do not batch-rename the ~68 non-conforming legacy files in one pass** (67 non-kebab-case content pages plus `Readme.md`) — that is a mass rename (see Ground rules) and needs explicit approval first. Rename a legacy file opportunistically when you're already substantially editing it, updating its inbound links in the same commit.
+**Do not batch-rename the ~67 non-conforming legacy files in one pass** (66 non-kebab-case content pages plus `Readme.md`) — that is a mass rename (see Ground rules) and needs explicit approval first. Rename a legacy file opportunistically when you're already substantially editing it, updating its inbound links in the same commit. Confirmed precedent: `docs/embedded-linux/ssh_server/HOW_TO_CLONE_PRIVATE_REPO_ON_LINUX.md` → `how-to-clone-private-repo-on-linux.md`, author-approved — going forward, rename any new SCREAMING_SNAKE_CASE or otherwise non-kebab-case file to `kebab-case.md` the next time it's touched, updating inbound links in the same commit.
 
 ## Scripts and binary assets
 

@@ -133,7 +133,7 @@ run before it is up and fail.
 | [VS Code Remote SSH](./ssh_server/SSH_Config_for_VSCode.md) | `~/.ssh/config` for Remote‑SSH |
 | [SSH → PPK](./ssh_server/SSH-to-PPK-Conversion.md) | Converting keys for PuTTY |
 | [Deploy Key](./ssh_server/ssh_key_for_deploy.md) | Restricted key for app updates |
-| [Clone a Private Repo](./ssh_server/HOW_TO_CLONE_PRIVATE_REPO_ON_LINUX.md) | Git over SSH on a board |
+| [Clone a Private Repo](./ssh_server/how-to-clone-private-repo-on-linux.md) | Git over SSH on a board |
 | [VM & Windows Host](./ssh_server/config_vm_host_windows.md) | Port forwarding to a guest VM |
 
 **VNC**
