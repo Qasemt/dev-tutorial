@@ -18,27 +18,27 @@ Available Scripts:
 How to Run:
 
 1. (Recommended) Review the script first:
-   curl -s https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/linux/bootstrap-debian12.sh
+   curl -s https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/docs/embedded-linux/host-bootstrap/bootstrap-debian12.sh
    # or for Debian 13:
-   curl -s https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/linux/bootstrap-debian13.sh
+   curl -s https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/docs/embedded-linux/host-bootstrap/bootstrap-debian13.sh
 
 2. Download and run:
    # Debian 12:
-   wget https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/linux/bootstrap-debian12.sh
+   wget https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/docs/embedded-linux/host-bootstrap/bootstrap-debian12.sh
    chmod +x bootstrap-debian12.sh
    sudo ./bootstrap-debian12.sh
 
    # Debian 13:
-   wget https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/linux/bootstrap-debian13.sh
+   wget https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/docs/embedded-linux/host-bootstrap/bootstrap-debian13.sh
    chmod +x bootstrap-debian13.sh
    sudo ./bootstrap-debian13.sh
 
 3. (Optional) Run directly without saving:
    # Debian 12:
-   sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/linux/bootstrap-debian12.sh)"
+   sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/docs/embedded-linux/host-bootstrap/bootstrap-debian12.sh)"
 
    # Debian 13:
-   sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/linux/bootstrap-debian13.sh)"
+   sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Qasemt/dev-tutorial/master/docs/embedded-linux/host-bootstrap/bootstrap-debian13.sh)"
 
 After Installation:
 

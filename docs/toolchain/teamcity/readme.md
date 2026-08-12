@@ -19,7 +19,7 @@ sudo update-alternatives --config java
 ```
 _________________
 #### Build tool for nginx 
-* [link build tools](https://github.com/Qasemt/dev-tutorial/blob/master/LinuxEmbeddedSystems/3.nginx.md)
+* [Compile Nginx](../../embedded-linux/general_config/nginx_compile.md)
 _________________
 ``` console 
 mkdir -p workspace/buildAgent & cd workspace/buildAgent

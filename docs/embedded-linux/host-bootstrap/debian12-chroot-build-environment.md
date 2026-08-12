@@ -75,16 +75,9 @@ update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 120
 apt clean
 rm -rf /var/lib/apt/lists/*
 ```
-## install Python 3.12.5 with sqlit3 pip ssl
+## install Python 3.12.5 with sqlite3, pip, ssl
 
-```bash
-wget https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tar.xz
-tar -xf Python-3.12.5.tar.xz
-cd Python-3.12.5
-./configure --enable-optimizations --with-ssl --with-sqlite3  --with-ensurepip=install
-make -j$(nproc)
-sudo make altinstall
-```
+Run the same "build via source" steps from [Python on Boards](../../toolchain/Python/readme.md) *inside the chroot* — the build commands are identical, only the environment (chroot vs. a board) differs.
 
 > **Note:** Debian 12 officially provides Python 3.11, not 3.12.
 > If you require Python 3.12, it must be compiled from source inside the chroot.

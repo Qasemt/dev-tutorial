@@ -1,3 +1,12 @@
+## Related Links
+
+1. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+2. [Markdown Master](https://guides.github.com/features/mastering-markdown/)
+3. [Emoji List](https://emojipedia.org/people/)
+4. [SVG Icons](https://icons8.com/icons/set/editing--static--black)
+
+---
+
 # Dillinger
 
 ## _The Last Markdown Editor, Ever_
