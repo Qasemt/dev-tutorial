@@ -1,0 +1,8 @@
+# rsync
+> sync two folder , if have a new file in src folder
+
+``` shell
+#!/bin/bash
+rsync -av  --ignore-existing /home/xxxx/tmp/test/* administrator@XXX.XXX.XXX.XXX:/home/administrator/test/
+```
+______
