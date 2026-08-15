@@ -32,6 +32,12 @@ netsh winhttp set proxy proxyserver:port
 ```
 Revert with `netsh winhttp reset proxy`. Find the proxy address under Settings → Network & Internet → Proxy, or ask IT.
 
+If [Proxifier](https://www.proxifier.com/) is forcing all traffic through a proxy, add a bypass rule for these process names so Tailscale connects directly instead of through the proxy:
+```text
+tailscale-setup-1.102.2.exe; tailscale; tailscale-ipn.exe; tailscaled.exe; tailscale.exe
+```
+<!-- UNVERIFIED: needs a check on real hardware -->
+
 > `sudo tailscale up` without extra flags (no `--exit-node`, no subnet router) does not affect existing SSH/VNC sessions.
 
 ## 3. Get IP and verify connectivity
