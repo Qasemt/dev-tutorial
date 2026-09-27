@@ -44,6 +44,8 @@
 | [Remote Python Debug Setup](./Python/RemotePythonDebugSetup.md) | `debugpy` + VS Code on a remote board |
 | [venv Guide](./Python/venv-guide.md) | Creating/activating virtual environments *(Persian — pending translation)* |
 | [Wheel Management](./Python/whl_managment.md) | Building/installing `.whl` packages |
+| [serial_ping.py](./Python/serial_ping.py) | Serial ping/pong TX/RX pin finder — run on the board |
+| [serial_ping.py without an editor](./Python/serial-ping-echo.md) | Paste-ready `echo` / heredoc blocks that write the script on a board — no `vi` needed |
 
 ## Node.js & Electron
 

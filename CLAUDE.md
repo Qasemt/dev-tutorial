@@ -115,7 +115,7 @@ Nothing exists today: no build, no test runner, no linter, no CI, no `.gitignore
 ## Open questions / known debt
 
 - `docs/reference/markdown.md` is **not a markdown style guide** — it's a verbatim copy of a third-party project's (Dillinger) README. Root `README.md`'s description of it ("Markdown syntax reference") is misleading. Needs a human decision: replace its content, or repoint/remove the README's link.
-- Two zip archives in `docs/embedded-linux/` and `docs/toolchain/Python/serial_ping.py` are never referenced from any page — confirmed orphans, not yet triaged.
+- Two zip archives in `docs/embedded-linux/` are never referenced from any page — confirmed orphans, not yet triaged. (`serial_ping.py` has left this list: it is now linked from `docs/toolchain/Python/serial-ping-echo.md` and the toolchain index.)
 - `docs/networking/v2ray/` is a single 19-line file in its own folder; `docs/networking/squid/squid_baic.md` and `test_squid.md` duplicate a curl block verbatim. Both are consolidation candidates, not yet acted on.
 - Ten files code-switch Persian/Finglish into English prose (see Language policy) and still need per-file cleanup.
 - No repo-wide orphan-page sweep (index-by-index) has been done — only the two zips and one script are confirmed so far.
