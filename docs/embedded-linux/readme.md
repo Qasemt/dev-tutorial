@@ -52,6 +52,10 @@
 | [`setup-proxy.sh`](./general_config/setup-proxy.sh) | Applies a proxy system-wide on Debian — every layer at once |
 | [`clear-proxy.sh`](./general_config/clear-proxy.sh) | Removes every proxy setting again, with backups |
 
+| Page | Notes |
+| :--- | :--- |
+| [Route Traffic Through a Remote VPS](./general_config/route-traffic-through-vps.md) | Exit through a VPS's IP: tinyproxy + `ssh -L`, or plain `ssh -D` SOCKS5 |
+
 <details>
 <summary><b>Usage</b></summary>
 
