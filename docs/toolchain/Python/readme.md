@@ -126,3 +126,5 @@ python3 -m pip install debugpy
 ---
 
 See also: [Python install script for the "rk_a" Rockchip board](board/rk_a/readme.md)
+
+See also: [Cross-compile Python 3.12 for 32-bit ARM (RK3506G2)](./cross-compile-python-armhf.md) — for boards with no compiler or `apt`

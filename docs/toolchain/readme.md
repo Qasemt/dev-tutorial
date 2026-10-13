@@ -40,6 +40,7 @@
 | Page | Notes |
 | :--- | :--- |
 | [Python on Boards](./Python/readme.md) | Build 3.12 from source, portable package, cross-board transfer |
+| [Cross-compile Python 3.12 for 32-bit ARM](./Python/cross-compile-python-armhf.md) | Build on x86 with `arm-none-linux-gnueabihf` (RK3506G2) — deps, `config.site`, packaging |
 | [Python on "rk_a" (Rockchip)](./Python/board/rk_a/readme.md) | Install script for that specific board |
 | [Remote Python Debug Setup](./Python/RemotePythonDebugSetup.md) | `debugpy` + VS Code on a remote board |
 | [venv Guide](./Python/venv-guide.md) | Creating/activating virtual environments *(Persian — pending translation)* |
