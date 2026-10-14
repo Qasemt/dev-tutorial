@@ -26,7 +26,7 @@ Also inside: [Host Bootstrap](./docs/embedded-linux/host-bootstrap/readme.md) �
 
 **[→ Raspberry Pi](./docs/boards/raspberry-pi/readme.md)** — pinout/GPIO, boot screen, resolution, USB.
 
-**[→ Luckfox Lyra](./docs/boards/luckfox-lyra/readme.md)** — RK3506G2: USB internet from Windows (ICS), cross-compiled Python.
+**[→ Luckfox Lyra](./docs/boards/luckfox-lyra/readme.md)** — RK3506G2: USB internet from Windows (ICS), clock/NTP fix for SSL errors, cross-compiled Python.
 
 BeagleBone Black and Rockchip live under [Embedded Linux → Boards & Devices](./docs/embedded-linux/readme.md#boards--devices), since most of their notes are config/peripheral pages shared with the rest of that section.
 
