@@ -137,7 +137,7 @@ To find the line in the script: `grep -n "\-m pip" <INSTALL_SCRIPT>.sh`. The exa
 | Issue | Explanation | Action |
 | --- | --- | --- |
 | No `apt` or `ntpd` | The Luckfox image is Buildroot-based and has no package manager | Use the Python NTP script |
-| Dependencies with no armv7l wheel | pip tries to compile on the device and fails because there is no `gcc` | Download the wheels on another machine, then install offline on the device |
+| Dependencies with no armv7l wheel | pip tries to compile on the device and fails because there is no `gcc` | Download the wheels on another machine, then install offline on the device — see [Python Apps on Low Memory](./low-memory-python-install-swap.md#step-2-install-the-application-offline) |
 | DNS error during sync | `pool.ntp.org` doesn't resolve | Put the NTP server's IP address in the script |
 | venv removed | The init script uses the Python inside the venv and stops working after removal | If `which python3` shows a system Python, put its path in the init script |
 
